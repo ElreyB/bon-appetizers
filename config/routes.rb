@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  root :to => 'event#index'
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :users do
+    resources :events
+  end
+
+  resources :events do
+    resources :menus
+  end
 end
