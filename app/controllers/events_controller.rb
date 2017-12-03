@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def index
+    @user_fullname = "#{current_user.first_name} #{current_user.last_name}" 
     @events = Event.all
   end
 
@@ -45,6 +46,6 @@ class EventsController < ApplicationController
 private
 
   def method_name
-    params.require(:event).permit(:numbnumber_of_people. :date_and_time)
+    params.require(:event).permit(:numbnumber_of_people, :date_and_time)
   end
 end

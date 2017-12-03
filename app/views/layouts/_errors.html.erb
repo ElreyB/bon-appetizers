@@ -1,0 +1,8 @@
+<% if object.errors.any? %>
+<%= image_tag('oooops.gif') %>
+
+    <% object.errors.full_messages.each do |message| %>
+      <p class="text-danger"><%= message %></p>
+    <% end %>
+
+<% end %>
