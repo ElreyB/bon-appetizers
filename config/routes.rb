@@ -12,5 +12,11 @@ Rails.application.routes.draw do
     resources :menus
   end
 
+  resources :events do
+    resources :reviews
+  end
+
   resources :menus
+
+  resources :reviews
 end
