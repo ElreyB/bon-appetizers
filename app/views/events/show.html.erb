@@ -8,7 +8,7 @@
 <% if @event.menus.any? %>
   <ul>
     <% @event.menus.each do |menu| %>
-    <li><%= menu.wine %></li>
+    <li><%= link_to menu.style, edit_event_menu_path(@event, menu)%></li>
     <% end %>
   </ul>
 <% end %>

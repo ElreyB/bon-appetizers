@@ -14,9 +14,9 @@ class MenusController < ApplicationController
     @menu = Menu.new
     @wines = Wine.all.by_name
     @antipastis = Antipasti.all.by_name
-    # @pastas = Pasta.all.by_name
-    @main_dishes = MainDish.all.by_name
-    @desserts Dessert.all.by_name
+    @pastas = PastaDish.all.by_name
+    @main_dishes = Main.all.by_name
+    @desserts = Dessert.all.by_name
   end
 
   def create
@@ -35,6 +35,11 @@ class MenusController < ApplicationController
   def edit
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
+    @wines = Wine.all.by_name
+    @antipastis = Antipasti.all.by_name
+    @pastas = PastaDish.all.by_name
+    @main_dishes = Main.all.by_name
+    @desserts = Dessert.all.by_name
   end
 
   def update

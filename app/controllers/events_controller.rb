@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    @user = current_user
     @event = Event.find(params[:id])
   end
 

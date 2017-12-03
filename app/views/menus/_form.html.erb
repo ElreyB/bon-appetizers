@@ -1,10 +1,11 @@
-<%= render 'layouts/errors', :object => @event %>
+<%= render 'layouts/errors', :object => @menu %>
 
 <%= form_for [@event, @menu] do |f| %>
   <div class="form-group">
     <%= f.label :style %>
     <%= f.text_field :style, class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label :price %>
     <%= f.number_field :price, class: "form-control", min: 1, max: 9999, steps: 1 %>
@@ -12,19 +13,20 @@
 
   <div class="form-group">
     <%= f.label :antipasti %>
-    <%= f.text_field :antipasti, class: "form-control" %>
+    <%= f.select :antipasti, @antipastis.collect { |antipasti| antipasti.name }, include_blank: true, class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label :pasta %>
-    <%= f.text_field :pasta, class: "form-control" %>
+    <%= f.select :pasta, @pastas.collect { |pasta| pasta.name }, include_blank: true, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :main_dish %>
-    <%= f.text_field :main_dish, class: "form-control" %>
+    <%= f.select :main_dish, @main_dishes.collect { |main| [main.name] }, include_blank: true, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :dessert %>
-    <%= f.text_field :dessert, class: "form-control" %>
+    <%= f.select :dessert, @desserts.collect { |dessert| [dessert.name] }, include_blank: true,  class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :wine %>
