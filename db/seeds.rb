@@ -1,8 +1,8 @@
 Wine.destroy_all
 Antipasti.destroy_all
 PastaDish.destroy_all
-# MainDish.destroy_all
-# Dessert.destroy_all
+Main.destroy_all
+Dessert.destroy_all
 
 
 grapes = ["Riesling", "Gewurztraminer", "Chardonnay", "Sauvignon Blanc", "Syrah", "Merlot", "Cabernet Sauvignon", "Pinot Noir"]
@@ -18,12 +18,12 @@ main_dishes = ["Seared sea Scallops", "Slow roasted Pork Belly", "Grilled RIb-ey
 grapes.each { |grape_type| Wine.create!(grape: grape_type)}
 antipastis.each { |antipasti| Antipasti.create!(name: antipasti)}
 pasta_dishes.each { |pasta| PastaDish.create!(name: pasta) }
-# main_dishes.each { |main_dish| MainDish.create!(name: main_dish)}
-# desserts.each { |dessert| Dessert.create!(name: dessert)}
+main_dishes.each { |main_dish| Main.create!(name: main_dish)}
+desserts.each { |dessert| Dessert.create!(name: dessert)}
 
 
 p "Created #{Wine.count} wines."
 p "Created #{Antipasti.count} antipastis."
 p "Created #{PastaDish.count} pasta."
-# p "Created #{MainDish.count} main dishes."
-# p "Created #{Dessert.count} desserts."
+p "Created #{Main.count} main dishes."
+p "Created #{Dessert.count} desserts."
