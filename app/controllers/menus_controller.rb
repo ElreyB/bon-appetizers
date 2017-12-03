@@ -21,6 +21,11 @@ class MenusController < ApplicationController
 
   def create
     @user = current_user
+    @wines = Wine.all.by_name
+    @antipastis = Antipasti.all.by_name
+    @pastas = PastaDish.all.by_name
+    @main_dishes = Main.all.by_name
+    @desserts = Dessert.all.by_name
     @event = Event.find(params[:event_id])
     @menu = @event.menus.new(menu_params)
     if @menu.save

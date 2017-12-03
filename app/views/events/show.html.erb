@@ -1,5 +1,6 @@
 <%= link_to 'Edit Event', edit_event_path(@event) %>
 <%= link_to 'Select Menu', new_event_menu_path(@event) %>
+<%= link_to 'Add Review', new_event_review_path(@event) %>
 
 <h1><%= @event.party_for %></h1>
 <p><%= @event.number_of_people %></p>
@@ -8,7 +9,23 @@
 <% if @event.menus.any? %>
   <ul>
     <% @event.menus.each do |menu| %>
-    <li><%= link_to menu.style, edit_event_menu_path(@event, menu)%></li>
+    <li><%= link_to menu.style, event_menu_path(@event, menu)%></li>
+    <p><%=menu.price  %></p>
+    <p><%=  menu.antipasti%></p>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @event.reviews.any? %>
+  <ul>
+    <% @event.reviews.each do |review| %>
+    <li>
+    <p><%= review.reviewer %></p>
+    <% review.rating.times do %>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <%end%>
+    <p><%= review.body %></p>
+  </li>
     <% end %>
   </ul>
 <% end %>

@@ -1,0 +1,15 @@
+<%= render 'layouts/errors', :object => @review %>
+
+<%= form_for [@event, @review] do |f| %>
+
+  <%= f.label :reviewer %>
+  <%= f.text_field :reviewer, class: "form-group form-control" %>
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating, min: 1, max: 5, steps: 1, class: "form-group form-control" %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body, rows: 8, class: "form-group form-control" %>
+
+  <%= f.submit class: "btn btn-block btn-primary" %>
+<% end %>
