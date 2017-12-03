@@ -11,26 +11,26 @@
     <%= f.number_field :price, class: "form-control", min: 1, max: 9999, steps: 1 %>
   </div>
 
-  <div class="form-group">
+
     <%= f.label :antipasti %>
-    <%= f.select :antipasti, @antipastis.collect { |antipasti| antipasti.name }, include_blank: true, class: "form-control" %>
-  </div>
+    <%= f.select :antipasti, options_for_select(@antipastis.collect { |antipasti| [antipasti.name] }), { include_blank: true }, class: "form form-group form-control"%>
+
 
   <div class="form-group">
     <%= f.label :pasta %>
-    <%= f.select :pasta, @pastas.collect { |pasta| pasta.name }, include_blank: true, class: "form-control" %>
+    <%= f.select :pasta, options_for_select(@pastas.collect { |pasta| pasta.name }), { include_blank: true }, class: "form form-group form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :main_dish %>
-    <%= f.select :main_dish, @main_dishes.collect { |main| [main.name] }, include_blank: true, class: "form-control" %>
+    <%= f.select :main_dish, options_for_select(@main_dishes.collect { |main| [main.name] }), { include_blank: true }, class: "form form-group form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :dessert %>
-    <%= f.select :dessert, @desserts.collect { |dessert| [dessert.name] }, include_blank: true,  class: "form-control" %>
+    <%= f.select :dessert, options_for_select(@desserts.collect { |dessert| [dessert.name] }), { include_blank: true },  class: "form form-group form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :wine %>
-    <%= f.select :wine, @wines.collect { |wine| [wine.grape] }, include_blank: true, class: "form-control" %>
+    <%= f.select :wine, options_for_select(@wines.collect { |wine| [wine.grape] }), { include_blank: true }, class: "form form-group form-control" %>
   </div>
 
   <%= f.submit "Create Menu", class: "btn btn-block btn-primary" %>
