@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202224123) do
+ActiveRecord::Schema.define(version: 20171203070905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "antipastis", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "desserts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,6 +33,13 @@ ActiveRecord::Schema.define(version: 20171202224123) do
     t.string   "date_and_time"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "party_for"
+  end
+
+  create_table "main_dishes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "menus", force: :cascade do |t|
@@ -32,6 +51,12 @@ ActiveRecord::Schema.define(version: 20171202224123) do
     t.string   "main_dish"
     t.string   "dessert"
     t.string   "wine"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pastas", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +80,12 @@ ActiveRecord::Schema.define(version: 20171202224123) do
     t.boolean  "admin",                  default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string   "grape"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

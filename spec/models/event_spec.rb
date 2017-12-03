@@ -16,4 +16,5 @@ describe Event do
     event2.update({user_id: user.id})
     expect(Event.user_events(user.id)).to eq [event, event2]
   end
+
 end

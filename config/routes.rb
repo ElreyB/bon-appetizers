@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :events do
     resources :menus
   end
+
+  resources :menus
 end

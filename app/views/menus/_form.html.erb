@@ -1,0 +1,35 @@
+<%= render 'layouts/errors', :object => @event %>
+
+<%= form_for [@event, @menu] do |f| %>
+  <div class="form-group">
+    <%= f.label :style %>
+    <%= f.text_field :style, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: "form-control", min: 1, max: 9999, steps: 1 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :antipasti %>
+    <%= f.text_field :antipasti, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pasta %>
+    <%= f.text_field :pasta, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :main_dish %>
+    <%= f.text_field :main_dish, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dessert %>
+    <%= f.text_field :dessert, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :wine %>
+    <%= f.select :wine, @wines.collect { |wine| [wine.grape] }, include_blank: true, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Create Menu", class: "btn btn-block btn-primary" %>
+<% end %>

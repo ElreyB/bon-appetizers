@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
 
   def index
+    @user = current_user
     @menus = Menu.all
   end
 
@@ -11,12 +12,17 @@ class MenusController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
     @menu = Menu.new
+    @wines = Wine.all.by_name
+    @antipastis = Antipasti.all.by_name
+    # @pastas = Pasta.all.by_name
+    @main_dishes = MainDish.all.by_name
+    @desserts Dessert.all.by_name
   end
 
   def create
     @user = current_user
     @event = Event.find(params[:event_id])
-    @menu = event.menus.new(menu_params)
+    @menu = @event.menus.new(menu_params)
     if @menu.save
       flash[:notice] = "Guest menu has been added."
       redirect_to user_path(@user)

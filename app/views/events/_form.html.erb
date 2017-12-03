@@ -1,0 +1,21 @@
+<%= render 'layouts/errors', :object => @event %>
+
+<%= form_for [@user, @event] do |f| %>
+  <div class="form-group">
+    <%= f.label :party_for %>
+    <%= f.text_field :party_for %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :number_of_people %>
+    <%= f.number_field :number_of_people, class: "form-control", min: 10, max: 50, steps: 1 %>
+    <p>(Party must be no less than 10 no greater than 50 people)</p>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date_and_time %>
+    <%= f.datetime_field :date_and_time, class: "form-control" %>
+  </div>
+
+  <%= f.submit 'Request Reservation', class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,14 @@
+<%= link_to 'Edit Event', edit_event_path(@event) %>
+<%= link_to 'Select Menu', new_event_menu_path(@event) %>
+
+<h1><%= @event.party_for %></h1>
+<p><%= @event.number_of_people %></p>
+<p><%= @event.date_and_time %></p>
+
+<% if @event.menus.any? %>
+  <ul>
+    <% @event.menus.each do |menu| %>
+    <li><%= menu.wine %></li>
+    <% end %>
+  </ul>
+<% end %>
