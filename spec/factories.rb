@@ -11,6 +11,7 @@ FactoryBot.define do
 
   factory :event do
     number_of_people 12
+    date_and_time "dec. 03,2017"
   end
 
   factory :menu do
