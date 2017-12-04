@@ -1,6 +1,13 @@
 <%= render 'layouts/errors', :object => @menu %>
 
-<%= form_for [@event, @menu] do |f| %>
+<%= form_for [@event, @menu], url: event_menus_path do |f| %>
+
+<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+  <div class="file-upload btn btn-primary">
+     <span>Upload Image</span>
+    <%= f.file_field :image, class: "form-control upload form-group", id: "uploadBtn" %>
+  </div>
+
   <div class="form-group">
     <%= f.label :style %>
     <%= f.text_field :style, class: "form-control" %>

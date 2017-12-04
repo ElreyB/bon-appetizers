@@ -32,7 +32,7 @@ class MenusController < ApplicationController
       flash[:notice] = "Guest menu has been added."
       redirect_to user_path(@user)
     else
-      flash[:notice] = "Looks like something went wrong:"
+      flash[:alert] = "Looks like something went wrong:"
       render :new
     end
   end
@@ -75,6 +75,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style, :price, :antipasti, :pasta, :main_dish, :dessert, :wine)
+    params.require(:menu).permit(:style, :price, :antipasti, :pasta, :main_dish, :dessert, :wine, :image)
   end
 end

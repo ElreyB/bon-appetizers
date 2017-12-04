@@ -10,6 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require turbolinks
-//= require_tree .
+// = require_tree .
+// = require jquery3
+// = require jquery_ujs
+// = require bootstrap-sprockets
+
+$(document).ready(function(){
+  $("#uploadBtn").on( "change", function() {
+    $("#uploadFile").val(this.value);
+  });
+});
