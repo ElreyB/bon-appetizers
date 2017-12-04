@@ -1,20 +1,23 @@
 
 <nav aria-label="breadcrumb" role="navigation">
   <ol class="breadcrumb">
+    <% if current_user.admin %>
     <li class="breadcrumb-item">
       <a href="#"><%= link_to 'Edit Event', edit_event_path(@event) %></a>
     </li>
       <li class="breadcrumb-item">
         <a href="#"><%= link_to 'Select Menu', new_event_menu_path(@event) %></a>
       </li>
-      <li class="breadcrumb-item">
-        <a href="#"><%= link_to 'Add Review', new_event_review_path(@event) %></a>
-      </li>
       <li class="breadcrumb-item active" aria-current="page">
         <a href="#"><%= link_to "Delete Event", event_path(@event),
                   :data => {:confirm => "You sure?",
                     :method => "delete"} %></a>
       </li>
+      <% else %>
+      <li class="breadcrumb-item">
+        <a href="#"><%= link_to 'Add Review', new_event_review_path(@event) %></a>
+      </li>
+      <% end %>
   </ol>
 </nav>
 
