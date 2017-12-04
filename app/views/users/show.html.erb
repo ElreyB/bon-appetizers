@@ -1,8 +1,6 @@
-<%= link_to "Request Event", new_user_event_path(@user) %>
-<h1><%= @user_fullname %></h1>
 
 <% if @user_events.any? %>
-  <ul>
+  <ul class="row">
     <% @user_events.each do |event| %>
       <li><%= link_to event.party_for, event_path(event) %></li>
     <% end %>

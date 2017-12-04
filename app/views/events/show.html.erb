@@ -1,6 +1,23 @@
-<%= link_to 'Edit Event', edit_event_path(@event) %>
-<%= link_to 'Select Menu', new_event_menu_path(@event) %>
-<%= link_to 'Add Review', new_event_review_path(@event) %>
+
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#"><%= link_to 'Edit Event', edit_event_path(@event) %></a>
+    </li>
+      <li class="breadcrumb-item">
+        <a href="#"><%= link_to 'Select Menu', new_event_menu_path(@event) %></a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="#"><%= link_to 'Add Review', new_event_review_path(@event) %></a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        <a href="#"><%= link_to "Delete Event", event_path(@event),
+                  :data => {:confirm => "You sure?",
+                    :method => "delete"} %></a>
+      </li>
+  </ol>
+</nav>
+
 
 <h1><%= @event.party_for %></h1>
 <p><%= @event.number_of_people %></p>

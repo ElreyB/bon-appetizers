@@ -1,5 +1,59 @@
-<h1>Welcome to Bon Appetizers</h1>
+<div class="page-header">
+  <h1>Welcome to Bon Appetizers</h1>
+</div>
+
 
 <% if current_user %>
-  <%= link_to "Request Event", new_user_event_path(@user) %>
+<p>Example menus, reviews</p>
+<% else %>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag ("image0.jpg"), class: 'w-100'%>
+        <div class="carousel-caption">
+          <h2>Amazing Projects</h2>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag ("image1.jpg"), class: 'w-100'%>
+        <div class="carousel-caption">
+          <h2>That works for you.</h2>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag ("image2.jpg"), class: 'w-100'%>
+        <div class="carousel-caption">
+          <h2><%= link_to "Sign In to See all our Products!!!", '/signin' %></h2>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag ("image3.jpg"), class: 'w-100'%>
+        <div class="carousel-caption">
+          <h2><%= link_to "Sign In to See all our Products!!!", '/signin' %></h2>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag ("image4.jpg"), class: 'w-100'%>
+        <div class="carousel-caption">
+          <h2><%= link_to "Sign In to See all our Products!!!", '/signin' %></h2>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
 <% end %>

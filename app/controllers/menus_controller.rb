@@ -6,10 +6,12 @@ class MenusController < ApplicationController
   end
 
   def show
+    @user = current_user
     @menu = Menu.find(params[:id])
   end
 
   def new
+    @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.new
     @wines = Wine.all.by_name
@@ -38,6 +40,7 @@ class MenusController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
     @wines = Wine.all.by_name
@@ -48,6 +51,7 @@ class MenusController < ApplicationController
   end
 
   def update
+    @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
     if @menu.update(menu_params)
@@ -60,6 +64,7 @@ class MenusController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     if params([:event_id])
       @event = Event.find(params[:event_id])
       @menu = Menu.find(params[:id])

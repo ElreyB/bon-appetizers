@@ -1,5 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Aladin');
+
+
+body {
+  font-family: 'Aladin', cursive;
+  font-size: 24px;
+}
 
 .file-upload {
     position: relative;
@@ -17,4 +24,8 @@
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
+}
+
+.w-100 {
+  width: 100%;
 }

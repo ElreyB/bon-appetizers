@@ -20,4 +20,9 @@ $(document).ready(function(){
   $("#uploadBtn").on( "change", function() {
     $("#uploadFile").val(this.value);
   });
+
+  $('#myCarousel').carousel({
+    interval: 2000
+  });
+  
 });
