@@ -13,4 +13,5 @@ class Menu < ActiveRecord::Base
   # validates :wine, uniqueness: true
 
   scope :menu_styles, ->(menu_style){where("style = ?", menu_style)}
+  scope :three_menu, -> {order(created_at: :DESC).limit(3)}
 end
