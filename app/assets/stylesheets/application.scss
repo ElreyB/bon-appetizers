@@ -5,7 +5,19 @@
 
 body {
   font-family: 'Aladin', cursive;
+  background-color: #1B1C16;
+}
+
+.navbar-brand, body {
   font-size: 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+a, .carousel-caption h2 a:hover {
+  color: #86B8B7;
 }
 
 .file-upload {
@@ -28,4 +40,17 @@ body {
 
 .w-100 {
   width: 100%;
+}
+
+.carousel-caption {
+  // color: #1B1C16;
+  font-size: 40px;
+}
+
+.carousel-caption h2 a {
+  color: white;
+}
+
+.navbar {
+  background-color: #7A0E0C;
 }

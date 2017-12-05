@@ -1,22 +1,22 @@
-<div class="page-header">
+<!-- <div class="page-header">
   <h1>Welcome to Bon Appetizers</h1>
-</div>
+</div> -->
 
 
 <% if current_user %>
-<p>Example menus, reviews</p>
-<ul class="row">
-  <% @ex_menu.each do |menu| %>
-  <li class="col-md-4 well">
-    <div class="thumbnail">
-      <%= image_tag(menu.image) %>
-      <div class="caption">
-        <%= menu.style %>
+  <p>Example menus, reviews</p>
+  <ul class="row">
+    <% @ex_menu.each do |menu| %>
+    <li class="col-md-4 well">
+      <div class="thumbnail">
+        <%= image_tag(menu.image) %>
+        <div class="caption">
+          <%= menu.style %>
+        </div>
       </div>
-    </div>
-  </li>
-  <% end %>
-</ul>
+    </li>
+    <% end %>
+  </ul>
 <% else %>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -29,32 +29,33 @@
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <%= image_tag ("image0.jpg"), class: 'w-100'%>
-        <div class="carousel-caption">
-          <h2>Amazing Projects</h2>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Amazing Food</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
       <div class="item">
         <%= image_tag ("image1.jpg"), class: 'w-100'%>
-        <div class="carousel-caption">
-          <h2>That works for you.</h2>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Best food in all of Seattle</h2>
         </div>
       </div>
       <div class="item">
         <%= image_tag ("image2.jpg"), class: 'w-100'%>
-        <div class="carousel-caption">
-          <h2><%= link_to "Sign In to See all our Products!!!", '/signin' %></h2>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Wonderful atmosphere</h2>
         </div>
       </div>
       <div class="item">
         <%= image_tag ("image3.jpg"), class: 'w-100'%>
-        <div class="carousel-caption">
-          <h2><%= link_to "Sign In to See all our Products!!!", '/signin' %></h2>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>"Great Food!!!""</h2>
         </div>
       </div>
       <div class="item">
         <%= image_tag ("image4.jpg"), class: 'w-100'%>
-        <div class="carousel-caption">
-          <h2><%= link_to "Sign In to See all our Products!!!", '/signin' %></h2>
+        <div class="carousel-caption d-none d-md-block">
+          <h2><%= link_to "Sign In to make an event request!!!", '/signin' %></h2>
         </div>
       </div>
     </div>
