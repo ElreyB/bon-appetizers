@@ -5,11 +5,18 @@
 
 <% if current_user %>
 <p>Example menus, reviews</p>
-
-<% @ex_menu.each do |menu| %>
-  <%= image_tag(@ex_menu.last.image) %>
-  <%= @ex_menu.last.style %>
-<% end %>
+<ul class="row">
+  <% @ex_menu.each do |menu| %>
+  <li class="col-md-4 well">
+    <div class="thumbnail">
+      <%= image_tag(menu.image) %>
+      <div class="caption">
+        <%= menu.style %>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
 <% else %>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
