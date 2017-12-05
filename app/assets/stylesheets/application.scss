@@ -16,7 +16,7 @@ ul {
   list-style: none;
 }
 
-a, .carousel-caption h2 a:hover {
+a, .carousel-caption h2 a:hover, .well {
   color: #86B8B7;
 }
 
@@ -51,6 +51,6 @@ a, .carousel-caption h2 a:hover {
   color: white;
 }
 
-.navbar {
+.navbar, .well {
   background-color: #7A0E0C;
 }
