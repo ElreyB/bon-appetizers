@@ -1,53 +1,93 @@
 
-<nav aria-label="breadcrumb" role="navigation">
-  <ol class="breadcrumb">
-    <% if current_user.admin %>
-    <li class="breadcrumb-item">
-      <a href="#"><%= link_to 'Edit Event', edit_event_path(@event) %></a>
-    </li>
+<% if current_user.admin %>
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="#"><%= link_to 'Select Menu', new_event_menu_path(@event) %></a>
+        <a href="#"><%= link_to 'Edit Event', edit_event_path(@event) %></a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">
-        <a href="#"><%= link_to "Delete Event", event_path(@event),
-                  :data => {:confirm => "You sure?",
-                    :method => "delete"} %></a>
-      </li>
-      <% else %>
-      <li class="breadcrumb-item">
-        <a href="#"><%= link_to 'Add Review', new_event_review_path(@event) %></a>
-      </li>
-      <% end %>
-  </ol>
-</nav>
-
-
-<h1><%= @event.party_for %></h1>
-<p><%= @event.number_of_people %></p>
-<p><%= @event.date_and_time %></p>
-
-<% if @event.menus.any? %>
-  <ul>
-    <% @event.menus.each do |menu| %>
-    <li><%= link_to menu.style, event_menu_path(@event, menu)%>
-    <p><%=menu.price  %></p>
-    <p><%= menu.antipasti%></p>
-    <%= image_tag menu.image %>
-    </li>
-    <% end %>
-  </ul>
+        <li class="breadcrumb-item">
+          <a href="#"><%= link_to 'Select Menu', new_event_menu_path(@event) %></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <a href="#"><%= link_to "Delete Event", event_path(@event),
+                    :data => {:confirm => "You sure?",
+                      :method => "delete"} %></a>
+        </li>
+    </ol>
+  </nav>
 <% end %>
 
-<% if @event.reviews.any? %>
-  <ul>
-    <% @event.reviews.each do |review| %>
-    <li>
-    <p><%= review.reviewer %></p>
-    <% review.rating.times do %>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    <%end%>
-    <p><%= review.body %></p>
-  </li>
+<div class="panel">
+  <div class="panel-heading">
+    <div class="page-header">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Party For:</h2>
+          <p><%= @event.party_for %></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Number of guest:</h2>
+          <p><%= @event.number_of_people %></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Date and Time of Event:</h2>
+          <p><%= @event.date_and_time %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <% if @event.menus.any? %>
+      <ul>
+        <% @event.menus.each do |menu| %>
+        <li>
+          <div class="thumbnail">
+            <%= image_tag(menu.image) %>
+            <div class="caption">
+              <div class="page-heading">
+                <h2>Menu Style: <%= menu.style %></h2>
+              </div>
+              <h2>Antipasti</h2>
+              <hr class="hr-menu">
+              <p><%= menu.antipasti %></p>
+              <br>
+              <h2>Pasta</h2>
+              <hr class="hr-menu">
+              <p><%= menu.pasta %></p>
+              <br>
+              <h2>Main</h2>
+              <hr class="hr-menu">
+              <p><%= menu.main_dish %></p>
+              <br>
+              <h2>Dessert</h2>
+              <hr class="hr-menu">
+              <p><%= menu.dessert %></p>
+              <br>
+              <h2>Wine</h2>
+              <hr class="hr-menu">
+              <p><%= menu.wine %></p>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+  <div class="panel-footer">
+    <button type="button" class="btn btn-review"><%= link_to 'Add Review', new_event_review_path(@event) %></button>
+    <hr>
+    <% if @event.reviews.any? %>
+      <ul>
+        <% @event.reviews.each do |review| %>
+        <li class="well">
+        <p><%= review.reviewer %></p>
+        <% review.rating.times do %>
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        <%end%>
+        <p><%= review.body %></p>
+      </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

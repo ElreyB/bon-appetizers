@@ -1,17 +1,33 @@
-<!-- <div class="page-header">
-  <h1>Welcome to Bon Appetizers</h1>
-</div> -->
-
 
 <% if current_user %>
-  <p>Example menus, reviews</p>
   <ul class="row">
     <% @ex_menu.each do |menu| %>
     <li class="col-md-4 well">
       <div class="thumbnail">
         <%= image_tag(menu.image) %>
         <div class="caption">
-          <%= menu.style %>
+          <div class="page-heading">
+            <h2>Menu Style: <%= menu.style %></h2>
+          </div>
+          <h2>Antipasti</h2>
+          <hr class="hr-menu">
+          <p><%= menu.antipasti %></p>
+          <br>
+          <h2>Pasta</h2>
+          <hr class="hr-menu">
+          <p><%= menu.pasta %></p>
+          <br>
+          <h2>Main</h2>
+          <hr class="hr-menu">
+          <p><%= menu.main_dish %></p>
+          <br>
+          <h2>Dessert</h2>
+          <hr class="hr-menu">
+          <p><%= menu.dessert %></p>
+          <br>
+          <h2>Wine</h2>
+          <hr class="hr-menu">
+          <p><%= menu.wine %></p>
         </div>
       </div>
     </li>
@@ -68,5 +84,16 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
+  <br>
+  <div class="well welcome">
+    <div class="page-header">
+      <h1>Welcome to Bon Appetizers</h1>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
 <% end %>

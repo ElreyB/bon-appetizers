@@ -22,7 +22,7 @@
           <% if current_user.admin %>
           <li><%= link_to "Admin Dashboard", '/admin' %></li>
           <% else %>
-          <li><%= link_to "Request Event", new_user_event_path(@user) %></li>
+          <li><%= link_to "Request Event", new_user_event_path(current_user) %></li>
           <% end %>
           <li><%= link_to "|  Sign out  |", "/users/sign_out", method: :delete %></li>
           <% else %>

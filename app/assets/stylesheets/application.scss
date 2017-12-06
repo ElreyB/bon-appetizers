@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Aladin');
 
 
-body {
+body, .panel-footer {
   font-family: 'Aladin', cursive;
   background-color: #1B1C16;
 }
@@ -16,7 +16,7 @@ ul {
   list-style: none;
 }
 
-a, .carousel-caption h2 a:hover, .well {
+a, .carousel-caption h2 a:hover, .well, .panel, .welcome {
   color: #86B8B7;
 }
 
@@ -51,6 +51,26 @@ a, .carousel-caption h2 a:hover, .well {
   color: white;
 }
 
-.navbar, .well {
+.navbar, .well, .panel-heading, .panel-body, .btn-review, .breadcrumb {
   background-color: #7A0E0C;
+}
+
+.hr-menu {
+  border-top: 1px solid #790d0b;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 33%;
+  width: 34%;
+}
+
+.panel-heading, .welcome, .thumbnail {
+  text-align: center;
+}
+
+.panel .thumbnail {
+  background-color: #CE8826;
+}
+
+.panel-footer ul {
+  padding: 0;
 }
