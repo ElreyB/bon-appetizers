@@ -1,0 +1,3 @@
+class AntipastisController <  ApplicatinController
+
+end

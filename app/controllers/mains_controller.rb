@@ -1,0 +1,3 @@
+class MainsController < ApplicatinController
+
+end
