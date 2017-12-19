@@ -1,39 +1,54 @@
-<div class="well">
-  <% @events.each do |event| %>
-  <p><%= event.number_of_people %></p>
-  <% end %>
-</div>
-<div class="well">
-  <%= link_to "Add Dessert Item", new_dessert_path %>
-  <% @desserts.each do |dessert| %>
-  <p><%= dessert.name %></p>
-  <% end %>
-</div>
+<div class="row">
+  <div class="col-md-2">
+    <div class="well">
+      <p>Event Request</p>
+      <a href="#antipastis"><p>Antipastis</p></a>
+      <a href="#pasta_dishes"><p>Pasta Dishes</p></a>
+      <a href="#mains"><p>Mains</p></a>
+      <a href="#desserts"><p>Desserts</p></a>
+      <a href="#wines"><p>Wines</p></a>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div class="well">
+      <% @events.each do |event| %>
+      <p><%= event.number_of_people %></p>
+      <% end %>
+    </div>
 
-<div class="well">
-  <%= link_to "Add Antipasti Item", new_antipasti_path %>
-  <% @antipastis.each do |antipasti| %>
-  <p><%= antipasti.name %></p>
-  <% end %>
-</div>
+    <div class="well"  id="antipastis">
+      <%= link_to "Add Antipasti Item", new_antipasti_path %>
+      <% @antipastis.each do |antipasti| %>
+      <p><%= antipasti.name %></p>
+      <% end %>
+    </div>
 
-<div class="well">
-  <%= link_to "Add Main Item", new_main_path %>
-  <% @mains.each do |main| %>
-  <p><%= main.name %></p>
-  <% end %>
-</div>
+    <div class="well" id="pasta_dishes">
+      <%= link_to "Add Pasta Dish Item", new_pasta_dish_path %>
+      <% @pasta_dishes.each do |pasta_dish| %>
+      <p><%= pasta_dish.name %></p>
+      <% end %>
+    </div>
 
-<div class="well">
-  <%= link_to "Add Pasta Dish Item", new_pasta_dish_path %>
-  <% @pasta_dishes.each do |pasta_dish| %>
-  <p><%= pasta_dish.name %></p>
-  <% end %>
-</div>
+    <div class="well" id="mains">
+      <%= link_to "Add Main Item", new_main_path %>
+      <% @mains.each do |main| %>
+      <p><%= main.name %></p>
+      <% end %>
+    </div>
 
-<div class="well">
-  <%= link_to "Add Wine Item", new_wine_path %>
-  <% @wines.each do |wine| %>
-  <p><%= wine.grape %></p>
-  <% end %>
+    <div class="well" id="desserts">
+      <%= link_to "Add Dessert Item", new_dessert_path %>
+      <% @desserts.each do |dessert| %>
+      <p><%= dessert.name %></p>
+      <% end %>
+    </div>
+
+    <div class="well" id="wines">
+      <%= link_to "Add Wine Item", new_wine_path %>
+      <% @wines.each do |wine| %>
+      <p><%= wine.grape %></p>
+      <% end %>
+    </div>
+  </div>
 </div>
