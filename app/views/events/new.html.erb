@@ -1,5 +1,8 @@
+<h1>Request Event</h1>
 <div class="well">
-  <h1>Request Event</h1>
-
-  <%= render 'form' %>
+  <% if current_user.admin %>
+    <%= render 'admin_form' %>
+  <% else %>
+    <%= render 'user_form' %>
+  <% end %>
 </div>

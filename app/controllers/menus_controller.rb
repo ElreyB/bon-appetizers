@@ -14,11 +14,11 @@ class MenusController < ApplicationController
     @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.new
-    @wines = Wine.all.by_name
-    @antipastis = Antipasti.all.by_name
-    @pastas = PastaDish.all.by_name
-    @main_dishes = Main.all.by_name
-    @desserts = Dessert.all.by_name
+    @wines = Wine.by_grape
+    @antipastis = Antipasti.by_name
+    @pastas = PastaDish.by_name
+    @main_dishes = Main.by_name
+    @desserts = Dessert.by_name
   end
 
   def create

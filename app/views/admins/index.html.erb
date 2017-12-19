@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-2">
     <div class="well">
-      <p>Event Request</p>
+      <%= link_to "Event Request", new_event_path %>
       <a href="#antipastis"><p>Antipastis</p></a>
       <a href="#pasta_dishes"><p>Pasta Dishes</p></a>
       <a href="#mains"><p>Mains</p></a>
@@ -12,7 +12,8 @@
   <div class="col-md-10">
     <div class="well">
       <% @events.each do |event| %>
-      <p><%= event.number_of_people %></p>
+      <p><%= event.number_of_people %> | <%= event.user_id %></p>
+      <p><%= event.party_for %></p>
       <% end %>
     </div>
 
