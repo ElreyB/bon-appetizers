@@ -9,3 +9,10 @@
   <p><%= dessert.name %></p>
   <% end %>
 </div>
+
+<div class="well">
+  <%= link_to "Add Antipasti Item", new_antipasti_path %>
+  <% @antipastis.each do |antipasti| %>
+  <p><%= antipasti.name %></p>
+  <% end %>
+</div>

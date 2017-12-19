@@ -1,6 +1,6 @@
-<%= render 'layouts/errors', :object => @dessert %>
+<%= render 'layouts/errors', :object => @antipasti %>
 
-<%= form_for @dessert do |f| %>
+<%= form_for @antipasti do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
@@ -19,5 +19,5 @@
     </div>
   </div>
 
-  <%= f.submit "Submit Dessert Item", class: "btn btn-success btn-block"%>
+  <%= f.submit "Submit Antipasti Item", class: "btn btn-success btn-block"%>
 <% end %>

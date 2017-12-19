@@ -1,26 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/event_spec.rb": [
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/antipasti_spec.rb": [
         1,
         null,
         1,
-        2,
-        2,
-        2,
         null,
         2,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
+        2,
+        2,
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/rails_helper.rb": [
@@ -176,6 +164,7 @@
         null,
         null,
         null,
+        1,
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/config/initializers/application_controller_renderer.rb": [
@@ -575,19 +564,31 @@
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/config/routes.rb": [
         1,
-        1,
-        1,
         null,
         1,
         null,
         1,
-        1,
-        null,
         null,
         1,
         1,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         null
       ],
@@ -608,6 +609,62 @@
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/helpers/application_helper.rb": [
         1,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/models/antipasti.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/dessert_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/models/dessert.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/event_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        2,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/models/event.rb": [
@@ -633,11 +690,6 @@
         null,
         1,
         2,
-        2,
-        2,
-        2,
-        2,
-        2,
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/models/menu.rb": [
@@ -647,10 +699,15 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         1,
         null
       ],
@@ -688,6 +745,6 @@
         null
       ]
     },
-    "timestamp": 1512304134
+    "timestamp": 1513704711
   }
 }

@@ -1,0 +1,24 @@
+<h1>Antipastis</h1>
+
+<% if @antipastis.any? %>
+<div class="row">
+    <% @antipastis.each do |antipasti| %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= image_tag antipasti.image.url(:medium) %>
+        </div>
+        <div class="caption">
+          <p><%= antipasti.price %></p>
+          <p><%= antipasti.name %></p>
+        </div>
+        <div class="panel-footer">
+          <p><%= link_to "Edit Dessert", edit_antipasti_path(antipasti) %> | <%= link_to "Delete Dessert", antipasti_path(antipasti),
+          :data => {:confirm => "You sure?",
+            :method => "delete"} %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Currently there are no antipasti.</p>
+<% end %>

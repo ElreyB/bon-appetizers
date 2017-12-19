@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :desserts
   resources :antipastis
-  resources :reviews
+  resources :mains
   resources :reviews
   resources :reviews
   resources :reviews
