@@ -19,4 +19,10 @@ Rails.application.routes.draw do
   resources :menus
   resources :admins
   resources :reviews
+  resources :desserts
+  resources :antipastis
+  resources :reviews
+  resources :reviews
+  resources :reviews
+  resources :reviews
 end

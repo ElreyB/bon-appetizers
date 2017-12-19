@@ -1,3 +1,11 @@
-<% @events.each do |event| %>
-<p><%= event.number_of_people %></p>
-<% end %>
+<div class="well">
+  <% @events.each do |event| %>
+  <p><%= event.number_of_people %></p>
+  <% end %>
+</div>
+<div class="well">
+  <%= link_to "Add Dessert Item", new_dessert_path %>
+  <% @desserts.each do |dessert| %>
+  <p><%= dessert.name %></p>
+  <% end %>
+</div>

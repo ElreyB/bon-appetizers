@@ -1,0 +1,22 @@
+<% if @desserts.any? %>
+<div class="row">
+    <% @desserts.each do |dessert| %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= image_tag dessert.image.url(:medium) %>
+        </div>
+        <div class="caption">
+          <p><%= dessert.price %></p>
+          <p><%= dessert.name %></p>
+        </div>
+        <div class="panel-footer">
+          <p><%= link_to "Edit Dessert", edit_dessert_path(dessert) %> | <%= link_to "Delete Dessert", dessert_path(dessert),
+          :data => {:confirm => "You sure?",
+            :method => "delete"} %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Currently there are no dessert.</p>
+<% end %>

@@ -17,12 +17,14 @@
 // = require bootstrap-sprockets
 
 $(document).ready(function(){
-  $("#uploadBtn").on( "change", function() {
+
+  $(document).on('change', 'input#uploadBtn', function(e){
+    e.preventDefault();
     $("#uploadFile").val(this.value);
   });
 
   $('#myCarousel').carousel({
     interval: 2000
   });
-  
+
 });
