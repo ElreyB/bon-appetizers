@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :desserts
   resources :antipastis
   resources :mains
-  resources :reviews
+  resources :pasta_dishes
   resources :reviews
   resources :reviews
 end

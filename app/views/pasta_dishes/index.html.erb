@@ -1,0 +1,24 @@
+<h1>Pasta Dishes</h1>
+
+<% if @pasta_dishes.any? %>
+<div class="row">
+    <% @pasta_dishes.each do |pasta_dish| %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= image_tag pasta_dish.image.url(:medium) %>
+        </div>
+        <div class="caption">
+          <p><%= pasta_dish.price %></p>
+          <p><%= pasta_dish.name %></p>
+        </div>
+        <div class="panel-footer">
+          <p><%= link_to "Edit Pasta Dish", edit_pasta_dish_path(pasta_dish) %> | <%= link_to "Delete Pasta Dish", pasta_dish_path(pasta_dish),
+          :data => {:confirm => "You sure?",
+            :method => "delete"} %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Currently there are no pasta_dish.</p>
+<% end %>

@@ -733,7 +733,26 @@
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/pasta_spec.rb": [
-
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/models/pasta_dish.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/review_spec.rb": [
         1,
@@ -772,6 +791,6 @@
 
       ]
     },
-    "timestamp": 1513707070
+    "timestamp": 1513707867
   }
 }

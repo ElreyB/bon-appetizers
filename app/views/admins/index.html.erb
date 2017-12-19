@@ -23,3 +23,10 @@
   <p><%= main.name %></p>
   <% end %>
 </div>
+
+<div class="well">
+  <%= link_to "Add Pasta Dish Item", new_pasta_dish_path %>
+  <% @pasta_dishes.each do |pasta_dish| %>
+  <p><%= pasta_dish.name %></p>
+  <% end %>
+</div>
