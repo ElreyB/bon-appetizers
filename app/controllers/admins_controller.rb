@@ -5,6 +5,6 @@ class AdminsController < ApplicationController
     @antipastis = Antipasti.by_name
     @mains = Main.by_name
     @pasta_dishes = PastaDish.by_name
-    @wines = Wine.by_name
+    @wines = Wine.by_grape
   end
 end

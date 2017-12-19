@@ -788,9 +788,27 @@
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/wine_spec.rb": [
-
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/app/models/wine.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1513707867
+    "timestamp": 1513710711
   }
 }

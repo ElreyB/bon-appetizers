@@ -30,3 +30,10 @@
   <p><%= pasta_dish.name %></p>
   <% end %>
 </div>
+
+<div class="well">
+  <%= link_to "Add Wine Item", new_wine_path %>
+  <% @wines.each do |wine| %>
+  <p><%= wine.grape %></p>
+  <% end %>
+</div>
