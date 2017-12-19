@@ -1,0 +1,24 @@
+<h1>Mains</h1>
+
+<% if @mains.any? %>
+<div class="row">
+    <% @mains.each do |main| %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <%= image_tag main.image.url(:medium) %>
+        </div>
+        <div class="caption">
+          <p><%= main.price %></p>
+          <p><%= main.name %></p>
+        </div>
+        <div class="panel-footer">
+          <p><%= link_to "Edit Main", edit_main_path(main) %> | <%= link_to "Delete Main", main_path(main),
+          :data => {:confirm => "You sure?",
+            :method => "delete"} %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Currently there are no main.</p>
+<% end %>
