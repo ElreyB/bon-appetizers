@@ -1,8 +1,11 @@
 <h1>Request Event</h1>
 <div class="well">
   <% if current_user.admin %>
-  <h2>Admin/host form</h2>
-    <%= render 'admin_form' %>
+  <%= link_to "Current Guest", new_event_path, id: "current-guest", remote: true %>
+  <p id="new-guest">New Guest</p>
+  <div class="fill-form">
+
+  </div>
   <% else %>
     <%= render 'user_form' %>
   <% end %>
