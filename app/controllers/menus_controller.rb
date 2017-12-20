@@ -56,7 +56,6 @@ class MenusController < ApplicationController
   end
 
   def update
-    @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
     if @menu.update(menu_params)

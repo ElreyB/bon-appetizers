@@ -42,10 +42,9 @@
         <% @event.menus.each do |menu| %>
         <li>
           <div class="thumbnail">
-            <%= image_tag(menu.image) %>
             <div class="caption">
               <div class="page-heading">
-                <h2>Menu Style: <%= menu.style %></h2>
+                <h2>Menu Style: <%= menu.style %> | <%= link_to "Edit Menu", edit_event_menu_path(@event, menu) %></h2>
               </div>
               <h2>Antipasti</h2>
               <hr class="hr-menu">
