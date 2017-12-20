@@ -23,6 +23,7 @@ class MenusController < ApplicationController
 
   def create
     @user = current_user
+    @users = User.all
     @wines = Wine.all.by_name
     @antipastis = Antipasti.all.by_name
     @pastas = PastaDish.all.by_name

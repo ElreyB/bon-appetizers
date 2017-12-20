@@ -14,12 +14,18 @@ class EventsController < ApplicationController
   end
 
   def new
+    @users = User.all
     @event = Event.new
   end
 
   def create
-    @user = User.find(current_user.id)
+    if current_user.admin
+      @user = User.find(event_params[:user_id])
+    else
+      @user = User.find(current_user.id)
+    end
     @event = @user.events.new(event_params)
+    binding.pry
     if @event.save
       flash[:notice] = "Your event has been saved. Someone will contact you soon."
       redirect_to user_path(@user)
@@ -56,6 +62,6 @@ class EventsController < ApplicationController
 private
 
   def event_params
-    params.require(:event).permit(:number_of_people, :date_and_time, :party_for)
+    params.require(:event).permit(:number_of_people, :date_and_time, :party_for, :user_id)
   end
 end
