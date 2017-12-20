@@ -24,16 +24,20 @@ class MenusController < ApplicationController
   def create
     @user = current_user
     @users = User.all
-    @wines = Wine.all.by_name
-    @antipastis = Antipasti.all.by_name
-    @pastas = PastaDish.all.by_name
-    @main_dishes = Main.all.by_name
-    @desserts = Dessert.all.by_name
+    @wines = Wine.by_grape
+    @antipastis = Antipasti.by_name
+    @pastas = PastaDish.by_name
+    @main_dishes = Main.by_name
+    @desserts = Dessert.by_name
     @event = Event.find(params[:event_id])
     @menu = @event.menus.new(menu_params)
     if @menu.save
       flash[:notice] = "Guest menu has been added."
-      redirect_to user_path(@user)
+      if current_user.admin
+        redirect_to event_path(@event)
+      else
+        redirect_to user_path(@user)
+      end
     else
       flash[:alert] = "Looks like something went wrong:"
       render :new
@@ -44,11 +48,11 @@ class MenusController < ApplicationController
     @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
-    @wines = Wine.all.by_name
-    @antipastis = Antipasti.all.by_name
-    @pastas = PastaDish.all.by_name
-    @main_dishes = Main.all.by_name
-    @desserts = Dessert.all.by_name
+    @wines = Wine.by_grape
+    @antipastis = Antipasti.by_name
+    @pastas = PastaDish.by_name
+    @main_dishes = Main.by_name
+    @desserts = Dessert.by_name
   end
 
   def update

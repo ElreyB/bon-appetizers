@@ -11,9 +11,8 @@
   </div>
   <div class="col-md-10">
     <div class="well">
-      <% @events.each do |event| %>
-      <p><%= event.number_of_people %> | <%= event.user_id %></p>
-      <p><%= event.party_for %></p>
+      <% @users.each do |user| %>
+      <p><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)%></p>
       <% end %>
     </div>
 

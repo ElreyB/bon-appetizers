@@ -3,7 +3,9 @@
 
 <%= form_for [@user, @event] do |f| %>
 
-<%= f.select "user_id", options_from_collection_for_select(@users, "id", "first_name") %>
+  <div class="form-group">
+    <%= f.select "user_id", options_from_collection_for_select(@users, "id", "first_name") %>
+  </div>
 
   <div class="form-group">
     <%= f.label :party_for %>

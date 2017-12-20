@@ -26,5 +26,4 @@ Rails.application.routes.draw do
   resources :mains
   resources :pasta_dishes
   resources :wines
-  resources :reviews
 end

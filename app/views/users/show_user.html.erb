@@ -1,0 +1,7 @@
+<h1>some stuff</h1>
+
+<%= @user.first_name %>
+
+<% @user.events.each do |event| %>
+  <%= link_to event.party_for, event_path(event) %>
+<% end %>
