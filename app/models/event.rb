@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
     time.strftime("%-m/%-d/%Y %I:%M %p %Z")
   end
 
-  def before_parse
-    self.date_and_time
-  end
+  # def before_parse
+  #   self.date_and_time
+  # end
 end
