@@ -1,12 +1,12 @@
-# _Bon Appertizers_
+# _Vespolina Evento_
 
-#### _Bon Appertizers: Epicodus solo exercise, 12.1.2017_
+#### _Vespolina Evento: Epicodus Capstone Project, 12.21.2017_
 
 #### By _**Elrey Belmonti**_
 
 ## Description
 
-_The concept for the app is for users to be able fill out a form so they can have their event a particular restaurant._
+_This app makes it easier to request reservation for an event at Vespolina. A guest would be able to sign up request a day to have their event. A host or manager would also be able to request a event day for a guest that is already sign up on the app._
 
 ## Setup/Installation Requirements
 * _Clone this repository_
