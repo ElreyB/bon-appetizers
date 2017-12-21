@@ -28,11 +28,11 @@ pasta_dishes = ["Tagliatelle", "Squid ink Spaghetti", "Nettle Gnocchi"]
 
 main_dishes = ["Seared sea Scallops", "Slow roasted Pork Belly", "Grilled RIb-eye"]
 
-grapes.each { |grape_type| Wine.create!(grape: grape_type)}
-antipastis.each { |antipasti| Antipasti.create!(name: antipasti)}
-pasta_dishes.each { |pasta| PastaDish.create!(name: pasta) }
-main_dishes.each { |main_dish| Main.create!(name: main_dish)}
-desserts.each { |dessert| Dessert.create!(name: dessert)}
+grapes.each { |grape_type| Wine.create!(grape: grape_type, price: Faker::Number.between(20, 200))}
+antipastis.each { |antipasti| Antipasti.create!(name: antipasti, price: Faker::Number.between(8, 12))}
+pasta_dishes.each { |pasta| PastaDish.create!(name: pasta, price: Faker::Number.between(12, 22)) }
+main_dishes.each { |main_dish| Main.create!(name: main_dish, price: Faker::Number.between(14, 60))}
+desserts.each { |dessert| Dessert.create!(name: dessert, price: Faker::Number.between(7, 12))}
 
 
 2.times do
@@ -41,7 +41,7 @@ desserts.each { |dessert| Dessert.create!(name: dessert)}
   3.times do
     events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: Faker::Time.between(2.days.ago, Date.today, :evening), party_for: Faker::Superhero.name + " Birthday")
     1.times do
-      events.menus.create!(style: styles[Faker::Number.between(0, 2)], price: Faker::Number.between(1000, 9888), antipasti: antipastis[Faker::Number.between(0, 2)], pasta: pasta_dishes[Faker::Number.between(0, 2)], main_dish: main_dishes[Faker::Number.between(0, 2)], dessert: desserts[Faker::Number.between(0, 2)], wine: grapes[Faker::Number.between(0, 7)], image: File.open(File.join(Rails.root, "/app/assets/images/image" + Faker::Number.between(0, 4).to_s + ".jpg")))
+      events.menus.create!(style: styles[Faker::Number.between(0, 2)], price: Faker::Number.between(1000, 9888), antipasti: antipastis[Faker::Number.between(0, 2)], pasta: pasta_dishes[Faker::Number.between(0, 2)], main_dish: main_dishes[Faker::Number.between(0, 2)], dessert: desserts[Faker::Number.between(0, 2)], wine: grapes[Faker::Number.between(0, 7)])
     end
 
     5.times do
