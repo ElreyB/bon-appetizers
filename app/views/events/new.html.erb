@@ -2,7 +2,7 @@
 <div class="well">
   <% if current_user.admin %>
   <%= link_to "Current Guest", new_event_path, id: "current-guest", remote: true %>
-  <p id="new-guest">New Guest</p>
+  <%= link_to "New Guest", new_user_registration_path, id: "new-guest", remote: true %>
   <div class="fill-form">
 
   </div>
