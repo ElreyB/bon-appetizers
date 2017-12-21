@@ -1,4 +1,4 @@
-
+<!-- add breadcrumb for user to see menu items -->
 <% if current_user.admin %>
   <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
@@ -37,6 +37,8 @@
     </div>
   </div>
   <div class="panel-body">
+    <!-- Add menu item images on the sides -->
+    <!-- Add comments section-->
     <% if @event.menus.any? %>
       <ul>
         <% @event.menus.each do |menu| %>
@@ -49,19 +51,15 @@
               <h2>Antipasti</h2>
               <hr class="hr-menu">
               <p><%= menu.antipasti %></p>
-              <br>
               <h2>Pasta</h2>
               <hr class="hr-menu">
               <p><%= menu.pasta %></p>
-              <br>
               <h2>Main</h2>
               <hr class="hr-menu">
               <p><%= menu.main_dish %></p>
-              <br>
               <h2>Dessert</h2>
               <hr class="hr-menu">
               <p><%= menu.dessert %></p>
-              <br>
               <h2>Wine</h2>
               <hr class="hr-menu">
               <p><%= menu.wine %></p>

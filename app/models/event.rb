@@ -10,8 +10,12 @@ class Event < ActiveRecord::Base
   # before_save :before_parse, :parse_date_and_time
 
   def parse_datetime
-    time = Time.parse(self.date_and_time)
-    time.strftime("%-m/%-d/%Y %I:%M %p %Z")
+    if self.date_and_time
+      time = Time.parse(self.date_and_time)
+      time.strftime("%-m/%-d/%Y %I:%M %p %Z")
+    else
+      self.date_and_time = nil
+    end
   end
 
   # def before_parse
