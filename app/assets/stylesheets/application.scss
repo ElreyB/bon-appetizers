@@ -16,7 +16,7 @@ ul {
   list-style: none;
 }
 
-a, .carousel-caption h2 a:hover, .well, .panel, .welcome {
+a, .carousel-caption h2 a:hover, .well, .panel, .welcome, .gold-bg a:hover {
   color: #86B8B7;
 }
 
@@ -70,8 +70,12 @@ a, .carousel-caption h2 a:hover, .well, .panel, .welcome {
   text-align: center;
 }
 
-.panel .thumbnail {
+.gold-bg {
   background-color: #CE8826;
+}
+
+.gold-bg a {
+  color: #333333;
 }
 
 .panel-footer ul {

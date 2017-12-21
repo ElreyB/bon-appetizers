@@ -2,7 +2,7 @@
 <% if @user.events.any? %>
   <ul class="row">
     <% @user.events.each do |event| %>
-      <li class="col-md-4 well">
+      <li class="col-md-4 well gold-bg">
         <%= link_to event.party_for, event_path(event) %> | <%= link_to 'Quick Detail', event_path(event), id: "event#{event.id}", remote: true %>
         <div id="event-detail<%=event.id%>">
 
