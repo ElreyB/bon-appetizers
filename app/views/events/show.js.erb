@@ -1,0 +1,5 @@
+if ($('#event-detail<%=@event.id%>').children().length == 0 ){
+  $('#event-detail<%=@event.id%>').html('<%= j render("event_details")%>');
+} else {
+  $('#event-detail<%=@event.id%>').empty();
+}
