@@ -46,6 +46,6 @@ class PastaDishesController < ApplicationController
   private
 
   def pasta_dish_params
-    params.require(:pasta_dish).permit(:name, :price, :image)
+    params.require(:pasta_dish).permit(:name, :price, :image, :description)
   end
 end

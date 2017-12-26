@@ -46,6 +46,6 @@ class AntipastisController <  ApplicationController
   private
 
   def antipasti_params
-    params.require(:antipasti).permit(:name, :price, :image)
+    params.require(:antipasti).permit(:name, :price, :image, :description)
   end
 end
