@@ -1,7 +1,7 @@
 <% if @wines.any? %>
 <div class="row">
     <% @wines.each do |wine| %>
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <div class="thumbnail">
           <%= image_tag wine.image.url(:medium) %>
         </div>

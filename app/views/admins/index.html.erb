@@ -1,17 +1,45 @@
-<div class="row">
-  <div class="col-md-2">
-    <div class="well">
-      <!-- breadcrumb links, link to menu item index page -->
-      <!-- find events my date, guest name, phone number???? -->
+
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
       <%= link_to "Event Request", new_event_path %>
-      <a href="#antipastis"><p>Antipastis</p></a>
-      <a href="#pasta_dishes"><p>Pasta Dishes</p></a>
-      <a href="#mains"><p>Mains</p></a>
-      <a href="#desserts"><p>Desserts</p></a>
-      <a href="#wines"><p>Wines</p></a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="#antipastis">
+        Antipastis
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="#pasta_dishes">
+        Pasta Dishes
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="#desserts">
+        Desserts
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="#wines">
+        Wines
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <a href="#mains">
+        Mains
+      </a>
+    </li>
+  </ol>
+</nav>
+
+
+<div class="row">
+  <div class="col-sm-2">
+    <div class="well">
+      <!-- find events my date, guest name, phone number???? -->
     </div>
   </div>
-  <div class="col-md-10">
+  <div class="col-sm-10">
     <!-- calender of confirm events  -->
     <div class="well">
       <% @users.each do |user| %>
@@ -27,7 +55,7 @@
       </div>
       <div class="row">
         <% @antipastis.each do |antipasti| %>
-        <p class="col-md-6"><%= antipasti.name %></p>
+        <p class="col-sm-6"><%= antipasti.name %></p>
         <% end %>
       </div>
     </div>
@@ -40,7 +68,7 @@
       </div>
       <div class="row">
         <% @pasta_dishes.each do |pasta_dish| %>
-        <p class="col-md-6"><%= pasta_dish.name %></p>
+        <p class="col-sm-6"><%= pasta_dish.name %></p>
         <% end %>
       </div>
     </div>
@@ -53,7 +81,7 @@
       </div>
       <div class="row">
         <% @mains.each do |main| %>
-        <p class="col-md-6"><%= main.name %></p>
+        <p class="col-sm-6"><%= main.name %></p>
         <% end %>
       </div>
     </div>
@@ -66,7 +94,7 @@
       </div>
       <div class="row">
         <% @desserts.each do |dessert| %>
-        <p class="col-md-6"><%= dessert.name %></p>
+        <p class="col-sm-6"><%= dessert.name %></p>
         <% end %>
       </div>
     </div>
@@ -79,7 +107,7 @@
       </div>
       <div class="row">
         <% @wines.each do |wine| %>
-        <p class="col-md-6"><%= wine.grape %></p>
+        <p class="col-sm-6"><%= wine.grape %></p>
         <% end %>
       </div>
     </div>
