@@ -1,24 +1,27 @@
-<h1>Antipastis</h1>
+<div class="well">
+  <h1>Antipastis</h1>
 
-<% if @antipastis.any? %>
-<div class="row">
-    <% @antipastis.each do |antipasti| %>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <%= image_tag antipasti.image.url(:medium) %>
+  <% if @antipastis.any? %>
+  <div class="row">
+      <% @antipastis.each do |antipasti| %>
+        <div class="col-sm-4">
+          <div class="thumbnail gold-bg" >
+            <%= image_tag antipasti.image.url(:medium), id: "antipasti_#{antipasti.id}" %>
+            <div class="caption">
+              <p><%= antipasti.name %></p>
+              <!-- <hr>
+              <p>
+                <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
+                :data => {:confirm => "You sure?",
+                  :method => "delete"} %>
+                </p> -->
+              </div>
+          </div>
         </div>
-        <div class="caption">
-          <p><%= antipasti.price %></p>
-          <p><%= antipasti.name %></p>
-        </div>
-        <div class="panel-footer">
-          <p><%= link_to "Edit Antipasti", edit_antipasti_path(antipasti) %> | <%= link_to "Delete Antipasti", antipasti_path(antipasti),
-          :data => {:confirm => "You sure?",
-            :method => "delete"} %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% else %>
-  <p>Currently there are no antipasti.</p>
-<% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Currently there are no antipasti.</p>
+  <% end %>
+
+</div>
