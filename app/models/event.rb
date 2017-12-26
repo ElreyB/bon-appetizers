@@ -7,8 +7,6 @@ class Event < ActiveRecord::Base
 
   scope :user_events, ->(user_id){ where("user_id = ?", user_id)}
 
-  # before_save :before_parse, :parse_date_and_time
-
   def parse_datetime
     if self.date_and_time
       time = Time.parse(self.date_and_time)
@@ -18,7 +16,4 @@ class Event < ActiveRecord::Base
     end
   end
 
-  # def before_parse
-  #   self.date_and_time
-  # end
 end

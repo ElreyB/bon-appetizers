@@ -17,4 +17,5 @@ describe Event do
     expect(Event.user_events(user.id)).to eq [event, event2]
   end
 
+
 end
