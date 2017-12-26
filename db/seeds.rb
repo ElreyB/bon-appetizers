@@ -8,7 +8,7 @@ Event.destroy_all
 Review.destroy_all
 
 
-admin = User.create!(first_name: "Admin", last_name: "Admin", phone: '1111111111', email: "admin@admin.com", password: "password", password_confirmation: "password", admin: true)
+admin = User.create!(first_name: "Admin", last_name: "Admin", phone: '1111111111', email: "admin@admin.com", password: "Admin123!", password_confirmation: "Admin123!", admin: true)
 
 grapes = ["Riesling", "Gewurztraminer", "Chardonnay", "Sauvignon Blanc", "Syrah", "Merlot", "Cabernet Sauvignon", "Pinot Noir"]
 
@@ -22,26 +22,34 @@ styles = ["Family style", "Indivial places", "Meeting dinner"]
 
 desserts = ["Bombolini", "Carmelized", "Winter ale Galato"]
 
-antipastis = ["PioTosini: Prosciutto di Parma", "Chicory salad", "Stuffed artichokes"]
+
 
 pasta_dishes = ["Tagliatelle", "Squid ink Spaghetti", "Nettle Gnocchi"]
 
 main_dishes = ["Seared sea Scallops", "Slow roasted Pork Belly", "Grilled RIb-eye"]
 
-grapes.each { |grape_type| Wine.create!(grape: grape_type, price: Faker::Number.between(20, 200))}
-antipastis.each { |antipasti| Antipasti.create!(name: antipasti, price: Faker::Number.between(8, 12))}
-pasta_dishes.each { |pasta| PastaDish.create!(name: pasta, price: Faker::Number.between(12, 22)) }
-main_dishes.each { |main_dish| Main.create!(name: main_dish, price: Faker::Number.between(14, 60))}
-desserts.each { |dessert| Dessert.create!(name: dessert, price: Faker::Number.between(7, 12))}
+grapes.each { |grape_type| Wine.create!(grape: grape_type, price: Faker::Number.between(20, 200), description: Faker::Lorem.paragraph)}
 
+menu_items = {
+  "Antipasti" => "antipastis",
+  "PastaDish" => "pasta_dishes",
+  "Main" => "mains",
+  "Dessert" => "desserts"
+}
+menu_items.each do |class_name, file_name|
+  CSV.foreach("#{file_name}.csv", { headers: true, :header_converters => :symbol }) do |row|
+    new_antipasti = "#{class_name}".constantize.new(row.to_h)
+    new_antipasti.save
+  end
+end
 
 2.times do
-  users = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, password: "123456", password_confirmation: "123456")
+  users = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, password: "User123!", password_confirmation: "User123!")
 
   3.times do
     events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: Faker::Time.between(2.days.ago, Date.today, :evening), party_for: Faker::Superhero.name + " Birthday")
     1.times do
-      events.menus.create!(style: styles[Faker::Number.between(0, 2)], price: Faker::Number.between(1000, 9888), antipasti: antipastis[Faker::Number.between(0, 2)], pasta: pasta_dishes[Faker::Number.between(0, 2)], main_dish: main_dishes[Faker::Number.between(0, 2)], dessert: desserts[Faker::Number.between(0, 2)], wine: grapes[Faker::Number.between(0, 7)])
+      events.menus.create!(style: styles[Faker::Number.between(0, 2)], price: Faker::Number.between(1000, 9888), antipasti: Antipasti.all[rand(0...Antipasti.all.length)].name, pasta: pasta_dishes[Faker::Number.between(0, 2)], main_dish: main_dishes[Faker::Number.between(0, 2)], dessert: desserts[Faker::Number.between(0, 2)], wine: grapes[Faker::Number.between(0, 7)])
     end
 
     5.times do

@@ -5,8 +5,8 @@ FactoryBot.define do
     last_name 'Smith'
     phone '1111111111'
     email 'bob@test.com'
-    password '123456'
-    password_confirmation '123456'
+    password 'User123!'
+    password_confirmation 'User123!'
   end
 
   factory :event do
