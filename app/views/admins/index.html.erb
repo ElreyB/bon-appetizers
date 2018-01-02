@@ -2,41 +2,45 @@
 <nav aria-label="breadcrumb" role="navigation">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
+      <%= link_to "Antipasti List", antipastis_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Pasta Dish List", pasta_dishes_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Main List", mains_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Dessert List", desserts_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Wine List", wines_path %>
+    </li>
+    <li class="breadcrumb-item right">
       <%= link_to "Event Request", new_event_path %>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="#antipastis">
-        Antipastis
-      </a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="#pasta_dishes">
-        Pasta Dishes
-      </a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="#desserts">
-        Desserts
-      </a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="#wines">
-        Wines
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      <a href="#mains">
-        Mains
-      </a>
     </li>
   </ol>
 </nav>
-
 
 <div class="row">
   <div class="col-sm-2">
     <div class="well">
       <!-- find events my date, guest name, phone number???? -->
+      <p>
+        <a href="#antipastis">Antipastis</a>
+      </p>
+      <p>
+        <a href="#pasta_dishes">Pasta Dishes</a>
+      </p>
+      <p>
+        <a href="#mains">Mains</a>
+      </p>
+      <p>
+        <a href="#desserts">Desserts</a>
+      </p>
+      <p>
+        <a href="#wines">Wines</a>
+      </p>
     </div>
   </div>
   <div class="col-sm-10">
@@ -49,9 +53,6 @@
 
     <div class="well"  id="antipastis">
       <div class="page-header item-header">
-        <button type="button" class="btn gold-bg">
-          <%= link_to "Add Antipasti Item", new_antipasti_path %>
-        </button>
         <button type="button" class="btn gold-bg">
           <%= link_to "Antipasti List", antipastis_path %>
         </button>
@@ -78,7 +79,7 @@
     <div class="well" id="pasta_dishes">
       <div class="page-header item-header">
         <button type="button" class="btn gold-bg">
-          <%= link_to "Add Pasta Dish Item", new_pasta_dish_path %>
+          <%= link_to "Pasta Dish List", pasta_dishes_path %>
         </button>
       </div>
       <% if @pasta_dishes.any? %>
@@ -96,14 +97,14 @@
           <% end %>
         </div>
       <% else %>
-        <p>Currently there are no antipasti.</p>
+        <p>Currently there are no pasta dishes.</p>
       <% end %>
     </div>
 
     <div class="well" id="mains">
       <div class="page-header item-header">
         <button type="button" class="btn gold-bg">
-          <%= link_to "Add Main Item", new_main_path %>
+          <%= link_to "Main List", mains_path %>
         </button>
       </div>
       <% if @mains.any? %>
@@ -121,14 +122,14 @@
           <% end %>
         </div>
       <% else %>
-        <p>Currently there are no antipasti.</p>
+        <p>Currently there are no mains.</p>
       <% end %>
     </div>
 
     <div class="well" id="desserts">
       <div class="page-header item-header">
         <button type="button" class="btn gold-bg">
-          <%= link_to "Add Dessert Item", new_dessert_path %>
+          <%= link_to "Dessert List", desserts_path %>
         </button>
       </div>
       <% if @desserts.any? %>
@@ -146,14 +147,14 @@
           <% end %>
         </div>
       <% else %>
-        <p>Currently there are no antipasti.</p>
+        <p>Currently there are no dessert.</p>
       <% end %>
     </div>
 
     <div class="well" id="wines">
       <div class="page-header item-header">
         <button type="button" class="btn gold-bg">
-          <%= link_to "Add Wine Item", new_wine_path %>
+          <%= link_to "Wine List", wines_path %>
         </button>
       </div>
       <% if @wines.any? %>
@@ -171,7 +172,7 @@
           <% end %>
         </div>
       <% else %>
-        <p>Currently there are no antipasti.</p>
+        <p>Currently there are no wines.</p>
       <% end %>
     </div>
   </div>

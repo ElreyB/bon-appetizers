@@ -1,6 +1,10 @@
 <div class="well">
-  <h1>Antipastis</h1>
-
+  <div class="page-header item-header">
+    <h1 class="text-center">Antipastis</h1>
+    <button type="button" class="btn gold-bg">
+      <%= link_to "Add Antipasti Item", new_antipasti_path %>
+    </button>
+  </div>
   <% if @antipastis.any? %>
     <div class="row">
       <% @antipastis.each do |antipasti| %>
@@ -9,13 +13,13 @@
             <%= image_tag antipasti.image.url(:medium), id: "antipasti_#{antipasti.id}" %>
             <div class="caption">
               <p><%= antipasti.name %></p>
-              <!-- <hr>
+              <hr>
               <p>
                 <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
                 :data => {:confirm => "You sure?",
                   :method => "delete"} %>
-                </p> -->
-              </div>
+              </p>
+            </div>
           </div>
         </div>
       <% end %>
