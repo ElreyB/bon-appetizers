@@ -56,11 +56,23 @@
           <%= link_to "Antipasti List", antipastis_path %>
         </button>
       </div>
-      <div class="row">
-        <% @antipastis.each do |antipasti| %>
-        <p class="col-sm-6"><%= antipasti.name %></p>
-        <% end %>
-      </div>
+      <% if @antipastis.any? %>
+        <div class="row display-flex">
+          <% @antipastis.each do |antipasti| %>
+            <div class="col-sm-6">
+              <div class="thumbnail gold-bg" >
+                <%= image_tag antipasti.image.url(:medium), id: "antipasti_#{antipasti.id}" %>
+                <div class="caption">
+                  <p><%= antipasti.name %> | <%= antipasti.price %></p>
+                  <p><%= antipasti.description %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Currently there are no antipasti.</p>
+      <% end %>
     </div>
 
     <div class="well" id="pasta_dishes">
@@ -69,11 +81,23 @@
           <%= link_to "Add Pasta Dish Item", new_pasta_dish_path %>
         </button>
       </div>
-      <div class="row">
-        <% @pasta_dishes.each do |pasta_dish| %>
-        <p class="col-sm-6"><%= pasta_dish.name %></p>
-        <% end %>
-      </div>
+      <% if @pasta_dishes.any? %>
+        <div class="row display-flex">
+          <% @pasta_dishes.each do |pasta_dishes| %>
+            <div class="col-sm-6">
+              <div class="thumbnail gold-bg" >
+                <%= image_tag pasta_dishes.image.url(:medium), id: "pasta_dishes_#{pasta_dishes.id}" %>
+                <div class="caption">
+                  <p><%= pasta_dishes.name %> | <%= pasta_dishes.price %></p>
+                  <p><%= pasta_dishes.description %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Currently there are no antipasti.</p>
+      <% end %>
     </div>
 
     <div class="well" id="mains">
@@ -82,11 +106,23 @@
           <%= link_to "Add Main Item", new_main_path %>
         </button>
       </div>
-      <div class="row">
-        <% @mains.each do |main| %>
-        <p class="col-sm-6"><%= main.name %></p>
-        <% end %>
-      </div>
+      <% if @mains.any? %>
+        <div class="row display-flex">
+          <% @mains.each do |main| %>
+            <div class="col-sm-6">
+              <div class="thumbnail gold-bg" >
+                <%= image_tag main.image.url(:medium), id: "main_#{main.id}" %>
+                <div class="caption">
+                  <p><%= main.name %> | <%= main.price %></p>
+                  <p><%= main.description %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Currently there are no antipasti.</p>
+      <% end %>
     </div>
 
     <div class="well" id="desserts">
@@ -95,11 +131,23 @@
           <%= link_to "Add Dessert Item", new_dessert_path %>
         </button>
       </div>
-      <div class="row">
-        <% @desserts.each do |dessert| %>
-        <p class="col-sm-6"><%= dessert.name %></p>
-        <% end %>
-      </div>
+      <% if @desserts.any? %>
+        <div class="row display-flex">
+          <% @desserts.each do |dessert| %>
+            <div class="col-sm-6">
+              <div class="thumbnail gold-bg" >
+                <%= image_tag dessert.image.url(:medium), id: "dessert_#{dessert.id}" %>
+                <div class="caption">
+                  <p><%= dessert.name %> | <%= dessert.price %></p>
+                  <p><%= dessert.description %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Currently there are no antipasti.</p>
+      <% end %>
     </div>
 
     <div class="well" id="wines">
@@ -108,11 +156,23 @@
           <%= link_to "Add Wine Item", new_wine_path %>
         </button>
       </div>
-      <div class="row">
-        <% @wines.each do |wine| %>
-        <p class="col-sm-6"><%= wine.grape %></p>
-        <% end %>
-      </div>
+      <% if @wines.any? %>
+        <div class="row display-flex">
+          <% @wines.each do |wine| %>
+            <div class="col-sm-6">
+              <div class="thumbnail gold-bg" >
+                <%= image_tag wine.image.url(:medium), id: "wine_#{wine.id}" %>
+                <div class="caption">
+                  <p><%= wine.grape %> | <%= wine.price %></p>
+                  <p><%= wine.description %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Currently there are no antipasti.</p>
+      <% end %>
     </div>
   </div>
 </div>
