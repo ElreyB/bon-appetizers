@@ -64,7 +64,7 @@
               <div class="thumbnail gold-bg" >
                 <%= image_tag antipasti.image.url(:medium), id: "antipasti_#{antipasti.id}" %>
                 <div class="caption">
-                  <p><%= antipasti.name %> | <%= antipasti.price %></p>
+                  <p><%= antipasti.name %> | $<%= antipasti.price %></p>
                   <p><%= antipasti.description %></p>
                 </div>
               </div>
@@ -89,7 +89,7 @@
               <div class="thumbnail gold-bg" >
                 <%= image_tag pasta_dishes.image.url(:medium), id: "pasta_dishes_#{pasta_dishes.id}" %>
                 <div class="caption">
-                  <p><%= pasta_dishes.name %> | <%= pasta_dishes.price %></p>
+                  <p><%= pasta_dishes.name %> | $<%= pasta_dishes.price %></p>
                   <p><%= pasta_dishes.description %></p>
                 </div>
               </div>
@@ -114,7 +114,7 @@
               <div class="thumbnail gold-bg" >
                 <%= image_tag main.image.url(:medium), id: "main_#{main.id}" %>
                 <div class="caption">
-                  <p><%= main.name %> | <%= main.price %></p>
+                  <p><%= main.name %> | $<%= main.price %></p>
                   <p><%= main.description %></p>
                 </div>
               </div>
@@ -139,7 +139,7 @@
               <div class="thumbnail gold-bg" >
                 <%= image_tag dessert.image.url(:medium), id: "dessert_#{dessert.id}" %>
                 <div class="caption">
-                  <p><%= dessert.name %> | <%= dessert.price %></p>
+                  <p><%= dessert.name %> | $<%= dessert.price %></p>
                   <p><%= dessert.description %></p>
                 </div>
               </div>
@@ -164,7 +164,7 @@
               <div class="thumbnail gold-bg" >
                 <%= image_tag wine.image.url(:medium), id: "wine_#{wine.id}" %>
                 <div class="caption">
-                  <p><%= wine.grape %> | <%= wine.price %></p>
+                  <p><%= wine.grape %> | $<%= wine.price %></p>
                   <p><%= wine.description %></p>
                 </div>
               </div>
