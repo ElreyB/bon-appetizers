@@ -18,4 +18,16 @@ describe Event do
   end
 
 
+  it "returns list of events within 30days" do
+    user = FactoryBot.create(:user)
+    event = FactoryBot.create(:event)
+    event2 = FactoryBot.create(:event)
+    event3 = FactoryBot.create(:event)
+    event.update({date_and_time: Faker::Date.forward(15)})
+    event2.update({date_and_time: Faker::Date.forward(20)})
+    event3.update({date_and_time: Faker::Date.backward(15)})
+    expect(Event.within_30_days).to eq [event, event2]
+  end
+
+
 end
