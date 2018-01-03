@@ -8,8 +8,14 @@ class User < ApplicationRecord
 
   validate :password_complexity
 
+  def self.get_fullname(user_id)
+    user = User.find(user_id)
+    "#{user.first_name} #{user.last_name}"
+  end
+
+
   def password_complexity
-    
+
     # PASSWORD_FORMAT = /\A
     #   (?=.{8,})          # Must contain 8 or more characters
     #   (?=.*\d)           # Must contain a digit

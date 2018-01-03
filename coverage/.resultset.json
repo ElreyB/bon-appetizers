@@ -607,6 +607,12 @@
         1,
         null,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
         null,
         null,
         null,
@@ -616,7 +622,7 @@
         null,
         null,
         null,
-        2,
+        4,
         0,
         null,
         null,
@@ -870,6 +876,12 @@
         null,
         2,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/elreybelmonti/Desktop/epicodus-lessons/Rails/bon-appetizers-two/spec/models/wine_spec.rb": [
@@ -906,6 +918,6 @@
         null
       ]
     },
-    "timestamp": 1515005243
+    "timestamp": 1515014790
   }
 }

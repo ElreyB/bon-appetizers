@@ -46,8 +46,13 @@
   <div class="col-sm-10">
     <!-- calender of confirm events  -->
     <div class="well">
-      <% @users.each do |user| %>
-      <p><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)%></p>
+      <% if @events_within_30_days.any? %>
+        <ul>
+          <% @events_within_30_days.each do |event| %>
+            
+          <% end %>
+        </ul>
+      <% else %>
       <% end %>
     </div>
 
