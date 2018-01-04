@@ -2,7 +2,7 @@
   <div class="page-header item-header">
     <h1 class="text-center">Antipastis</h1>
     <button type="button" class="btn gold-bg">
-      <%= link_to "Add Antipasti Item", new_antipasti_path %>
+      <%= link_to "Add Antipasti", new_antipasti_path %>
     </button>
   </div>
   <% if @antipastis.any? %>
@@ -10,15 +10,16 @@
       <% @antipastis.each do |antipasti| %>
         <div class="col-sm-4">
           <div class="thumbnail gold-bg" >
-            <%= image_tag antipasti.image.url(:medium), id: "antipasti_#{antipasti.id}" %>
+            <p>
+              <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
+              :data => {:confirm => "You sure?",
+                :method => "delete"} %>
+            </p>
+            <%= image_tag antipasti.image.url(:medium) %>
             <div class="caption">
-              <p><%= antipasti.name %></p>
+              <p><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
               <hr>
-              <p>
-                <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
-                :data => {:confirm => "You sure?",
-                  :method => "delete"} %>
-              </p>
+
             </div>
           </div>
         </div>

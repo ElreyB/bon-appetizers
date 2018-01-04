@@ -5,6 +5,7 @@ class AntipastisController <  ApplicationController
 
   def show
     @antipasti = Antipasti.find(params[:id])
+    
   end
 
   def new

@@ -1,22 +1,31 @@
-<% if @wines.any? %>
-<div class="row">
-    <% @wines.each do |wine| %>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <%= image_tag wine.image.url(:medium) %>
-        </div>
-        <div class="caption">
-          <p><%= wine.price %></p>
-          <p><%= wine.grape %></p>
-        </div>
-        <div class="panel-footer">
-          <p><%= link_to "Edit Wine", edit_wine_path(wine) %> | <%= link_to "Delete Wine", wine_path(wine),
-          :data => {:confirm => "You sure?",
-            :method => "delete"} %></p>
-        </div>
-      </div>
-    <% end %>
+<div class="well">
+  <div class="page-header item-header">
+    <h1 class="text-center">Wine List</h1>
+    <button type="button" class="btn gold-bg">
+      <%= link_to "Add Wine", new_wine_path %>
+    </button>
   </div>
-<% else %>
-  <p>Currently there are no wine.</p>
-<% end %>
+  <% if @wines.any? %>
+    <div class="row">
+      <% @wines.each do |wine| %>
+        <div class="col-sm-4">
+          <div class="thumbnail gold-bg">
+            <%= image_tag wine.image.url(:medium) %>
+            <div class="caption">
+              <p><%= wine.grape %></p>
+              <hr>
+              <p>
+                <%= link_to "Edit Wine", edit_wine_path(wine) %> | <%= link_to "Delete Wine", wine_path(wine),
+                :data => {:confirm => "You sure?",
+                  :method => "delete"} %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Currently there are no wine.</p>
+  <% end %>
+
+</div>
