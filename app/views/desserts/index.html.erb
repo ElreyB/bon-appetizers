@@ -14,7 +14,7 @@
               <%= image_tag dessert.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p><%= link_to dessert.name, dessert_path(dessert), id: "dessert_#{dessert.id}", remote: true %></p>
+              <p class="no-line"><%= link_to dessert.name, dessert_path(dessert), id: "dessert_#{dessert.id}", remote: true %></p>
               <hr>
               <p>
                 <%= link_to "Edit Dessert", edit_dessert_path(dessert) %> | <%= link_to "Delete Dessert", dessert_path(dessert),

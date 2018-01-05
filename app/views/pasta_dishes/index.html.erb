@@ -14,7 +14,7 @@
               <%= image_tag pasta_dish.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p><%= link_to pasta_dish.name, pasta_dish_path(pasta_dish), id: "pasta_dish_#{pasta_dish.id}", remote: true %></p>
+              <p class="no-line"><%= link_to pasta_dish.name, pasta_dish_path(pasta_dish), id: "pasta_dish_#{pasta_dish.id}", remote: true %></p>
               <hr>
               <p>
                 <%= link_to "Edit", edit_pasta_dish_path(pasta_dish) %> | <%= link_to "Delete", pasta_dish_path(pasta_dish),

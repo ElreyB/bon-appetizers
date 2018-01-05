@@ -14,7 +14,7 @@
               <%= image_tag antipasti.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
+              <p class="no-line"><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
               <hr>
               <p>
                 <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),

@@ -10,9 +10,11 @@
       <% @mains.each do |main| %>
         <div class="col-sm-4">
           <div class="thumbnail gold-bg">
-            <%= image_tag main.image.url(:medium) %>
+            <div id="main_details_<%=main.id%>">
+              <%= image_tag main.image.url(:medium) %>
+            </div>
             <div class="caption">
-              <p><%= main.name %></p>
+              <p class="no-line"><%= link_to main.name, main_path(main), id: "main_#{main.id}", remote: true %></p>
               <hr>
               <p>
                 <%= link_to "Edit Main", edit_main_path(main) %> | <%= link_to "Delete Main", main_path(main),
