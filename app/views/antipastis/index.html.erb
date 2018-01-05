@@ -9,17 +9,18 @@
     <div class="row">
       <% @antipastis.each do |antipasti| %>
         <div class="col-sm-4">
-          <div class="thumbnail gold-bg" >
-            <p>
-              <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
-              :data => {:confirm => "You sure?",
-                :method => "delete"} %>
-            </p>
-            <%= image_tag antipasti.image.url(:medium) %>
+          <div class="thumbnail gold-bg">
+            <div id="antipasti_details_<%=antipasti.id%>">
+              <%= image_tag antipasti.image.url(:medium) %>
+            </div>
             <div class="caption">
               <p><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
               <hr>
-
+              <p>
+                <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
+                :data => {:confirm => "You sure?",
+                  :method => "delete"} %>
+              </p>
             </div>
           </div>
         </div>

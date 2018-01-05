@@ -10,16 +10,18 @@
       <% @desserts.each do |dessert| %>
         <div class="col-sm-4">
           <div class="thumbnail gold-bg">
-            <%= image_tag dessert.image.url(:medium) %>
+            <div id="dessert_details_<%=dessert.id%>">
+              <%= image_tag dessert.image.url(:medium) %>
+            </div>
             <div class="caption">
-              <p><%= dessert.name %></p>
+              <p><%= link_to dessert.name, dessert_path(dessert), id: "dessert_#{dessert.id}", remote: true %></p>
               <hr>
               <p>
                 <%= link_to "Edit Dessert", edit_dessert_path(dessert) %> | <%= link_to "Delete Dessert", dessert_path(dessert),
               :data => {:confirm => "You sure?",
                 :method => "delete"} %>
               </p>
-            </div>  
+            </div>
           </div>
         </div>
       <% end %>
