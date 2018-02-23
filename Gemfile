@@ -15,7 +15,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bullet'
 gem 'faker'
 gem 'devise', '~> 4.3.0'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'rails_admin', '~> 1.2'
 gem 'cancancan', '~> 2.0'
 
