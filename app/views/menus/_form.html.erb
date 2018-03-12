@@ -27,8 +27,14 @@
     <%= f.select :main_dish, options_for_select(@main_dishes.collect { |main| [main.name] }, :selected => @menu.main_dish), { include_blank: true }, class: "form form-group form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :dessert %>
-    <%= f.select :dessert, options_for_select(@desserts.collect { |dessert| [dessert.name] }, :selected => @menu.dessert), { include_blank: true },  class: "form form-group form-control" %>
+    <%= f.label :desserts %>
+   <div>
+    <% @desserts.each do |dessert|%>
+      <div class="checkbox-inline">
+        <%= check_box_tag(dessert.name,dessert.name, false, class: "checkbox") %><%= dessert.name %>
+      </div>
+    <% end %>
+   </div>
   </div>
   <div class="form-group">
     <%= f.label :wine %>

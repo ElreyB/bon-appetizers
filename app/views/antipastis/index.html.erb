@@ -8,7 +8,7 @@
   <% if @antipastis.any? %>
     <div class="row">
       <% @antipastis.each do |antipasti| %>
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <div class="thumbnail gold-bg">
             <div id="antipasti_details_<%=antipasti.id%>">
               <%= image_tag antipasti.image.url(:medium) %>

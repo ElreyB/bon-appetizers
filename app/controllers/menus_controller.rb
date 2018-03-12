@@ -84,6 +84,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style, :price, :antipasti, :pasta, :main_dish, :dessert, :wine, :image)
+    params.require(:menu).permit(:style, :price, :antipasti, :pasta, :main_dish, :wine, :image,  :desserts => [])
   end
 end
