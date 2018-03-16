@@ -50,13 +50,19 @@
               </div>
               <h2>Antipasti</h2>
               <hr class="hr-menu">
-              <p><%= menu.antipasti %></p>
+              <% menu.antipastis.each do |antipasti|%>
+               <p><%= antipasti %></p>
+              <%end%>
               <h2>Pasta</h2>
               <hr class="hr-menu">
-              <p><%= menu.pasta %></p>
+              <% menu.pastas.each do |pasta|%>
+               <p><%= pasta %></p>
+              <%end%>
               <h2>Main</h2>
               <hr class="hr-menu">
-              <p><%= menu.main_dish %></p>
+              <% menu.main_dishes.each do |main_dish|%>
+               <p><%= main_dish %></p>
+              <%end%>
               <h2>Dessert</h2>
               <hr class="hr-menu">
               <% menu.desserts.each do |dessert|%>

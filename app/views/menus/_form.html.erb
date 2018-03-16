@@ -4,34 +4,48 @@
 
   <div class="form-group">
     <%= f.label :style %>
+    <%= option_for_select([[""]])%>
     <%= f.text_field :style, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :price %>
-    <%= f.number_field :price, class: "form-control", min: 1, max: 9999, steps: 1 %>
-  </div>
-
-  <div class="form-group">
     <%= f.label :antipasti %>
-    <%= f.select :antipasti, options_for_select(@antipastis.collect { |antipasti| [antipasti.name] }, :selected => @menu.antipasti),  { include_blank: true }, class: "form-control"%>
+    <div>
+    <% @antipastis.each do |antipasti|%>
+      <div class="checkbox-inline">
+        <%= check_box_tag("menu[antipastis][]", antipasti.name, @menu.antipastis.include?(antipasti.name), class: "checkbox") %><%= antipasti.name %>
+      </div>
+    <% end %>
+   </div>
   </div>
-
 
   <div class="form-group">
     <%= f.label :pasta %>
-    <%= f.select :pasta, options_for_select(@pastas.collect { |pasta| pasta.name }, :selected => @menu.pasta), { include_blank: true }, class: "form-control" %>
+    <div>
+    <% @pastas.each do |pasta|%>
+      <div class="checkbox-inline">
+        <%= check_box_tag("menu[pastas][]", pasta.name, @menu.pastas.include?(pasta.name), class: "checkbox") %><%= pasta.name %>
+      </div>
+    <% end %>
+   </div>
   </div>
+
   <div class="form-group">
     <%= f.label :main_dish %>
-    <%= f.select :main_dish, options_for_select(@main_dishes.collect { |main| [main.name] }, :selected => @menu.main_dish), { include_blank: true }, class: "form form-group form-control" %>
+    <div>
+    <% @mains.each do |main|%>
+      <div class="checkbox-inline">
+        <%= check_box_tag("menu[main_dishes][]", main.name, @menu.main_dishes.include?(main.name), class: "checkbox") %><%= main.name %>
+      </div>
+    <% end %>
+   </div>
   </div>
+
   <div class="form-group">
     <%= f.label :desserts %>
    <div>
     <% @desserts.each do |dessert|%>
       <div class="checkbox-inline">
-
         <%= check_box_tag("menu[desserts][]", dessert.name, @menu.desserts.include?(dessert.name), class: "checkbox") %><%= dessert.name %>
       </div>
     <% end %>
