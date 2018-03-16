@@ -20,7 +20,7 @@ FactoryBot.define do
     antipasti "meats"
     pasta "Linage"
     main "example main"
-    dessert "example dessert"
+    dessert ["example dessert"]
     wine "example wine"
   end
 end

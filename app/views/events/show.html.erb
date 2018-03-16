@@ -59,7 +59,9 @@
               <p><%= menu.main_dish %></p>
               <h2>Dessert</h2>
               <hr class="hr-menu">
-              <p><%= menu.desserts%></p>
+              <% menu.desserts.each do |dessert|%>
+               <p><%= dessert %></p>
+              <%end%>
               <h2>Wine</h2>
               <hr class="hr-menu">
               <p><%= menu.wine %></p>

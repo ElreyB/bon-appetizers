@@ -31,7 +31,8 @@
    <div>
     <% @desserts.each do |dessert|%>
       <div class="checkbox-inline">
-        <%= check_box_tag(dessert.name,dessert.name, false, class: "checkbox") %><%= dessert.name %>
+
+        <%= check_box_tag("menu[desserts][]", dessert.name, @menu.desserts.include?(dessert.name), class: "checkbox") %><%= dessert.name %>
       </div>
     <% end %>
    </div>
