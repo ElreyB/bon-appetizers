@@ -27,7 +27,7 @@ class MenusController < ApplicationController
     @wines = Wine.by_grape
     @antipastis = Antipasti.by_name
     @pastas = PastaDish.by_name
-    @main_dishes = Main.by_name
+    @mains = Main.by_name
     @desserts = Dessert.by_name
     @event = Event.find(params[:event_id])
     @menu = @event.menus.new(menu_params)

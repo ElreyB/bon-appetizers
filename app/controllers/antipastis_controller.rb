@@ -18,7 +18,7 @@ class AntipastisController <  ApplicationController
   def create
     @antipasti = Antipasti.new(antipasti_params)
     if @antipasti.save
-      flash[:notice] = "You antipasti menu item has been created."
+      flash[:notice] = "Antipasti menu item has been created."
       redirect_to antipastis_path
     else
       flash[:alert] = "Soemthing has gone wrong.."

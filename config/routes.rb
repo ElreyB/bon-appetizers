@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'style/index'
+
+  get 'style/new'
+
+  get 'style/edit'
+
+  get 'style/update'
+
+  get 'style/destroy'
+
+  get 'style/style_params'
+
+  get 'style/create'
+
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root :to => 'events#index'
 

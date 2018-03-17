@@ -538,6 +538,9 @@
       ],
       "/Users/elreybelmonti/Desktop/bon-appetizers/spec/factories.rb": [
         1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -566,6 +569,20 @@
       ],
       "/Users/elreybelmonti/Desktop/bon-appetizers/config/routes.rb": [
         1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
         null,
         1,
         null,
@@ -635,6 +652,10 @@
         null
       ],
       "/Users/elreybelmonti/Desktop/bon-appetizers/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/bon-appetizers/app/helpers/style_helper.rb": [
         1,
         null
       ],
@@ -876,6 +897,22 @@
         1,
         null
       ],
+      "/Users/elreybelmonti/Desktop/bon-appetizers/spec/models/style_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/elreybelmonti/Desktop/bon-appetizers/app/models/style.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/elreybelmonti/Desktop/bon-appetizers/spec/models/user_spec.rb": [
         1,
         null,
@@ -925,6 +962,6 @@
         null
       ]
     },
-    "timestamp": 1521220425
+    "timestamp": 1521330268
   }
 }
