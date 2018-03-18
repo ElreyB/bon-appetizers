@@ -4,8 +4,7 @@
 
   <div class="form-group">
     <%= f.label :style %>
-    <%= option_for_select([[""]])%>
-    <%= f.text_field :style, class: "form-control" %>
+    <%= f.select :style, options_for_select(@styles.collect { |style| [style.name] }, :selected => @menu.style), { include_blank: true },  class: "form form-group form-control" %>
   </div>
 
   <div class="form-group">
@@ -33,7 +32,7 @@
   <div class="form-group">
     <%= f.label :main_dish %>
     <div>
-    <% @mains.each do |main|%>
+    <% @main_dishes.each do |main|%>
       <div class="checkbox-inline">
         <%= check_box_tag("menu[main_dishes][]", main.name, @menu.main_dishes.include?(main.name), class: "checkbox") %><%= main.name %>
       </div>

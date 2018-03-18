@@ -54,6 +54,7 @@ class MenusController < ApplicationController
     @pastas = PastaDish.by_name
     @main_dishes = Main.by_name
     @desserts = Dessert.by_name
+    @styles = Style.by_name
   end
 
   def update
@@ -86,6 +87,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style, :price, :antipasti, :pasta, :main_dish, :wine, :desserts => [])
+    params.require(:menu).permit(:style, :price, :wine, :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
   end
 end
