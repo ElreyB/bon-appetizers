@@ -16,9 +16,9 @@
 // = require jquery_ujs
 // = require bootstrap-sprockets
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-  $(document).on('change', 'input#uploadBtn', function(e){
+  $(document).on('change', 'input#uploadBtn', function (e) {
     e.preventDefault();
     $("#uploadFile").val(this.value);
   });
@@ -26,5 +26,17 @@ $(document).ready(function(){
   $('#myCarousel').carousel({
     interval: 3000
   });
+
+  const menuStyle = document.getElementById('menu_style').value;
+  let formContainer;
+  if (menuStyle === "HORS D’OEUVRES") {
+    formContainer = document.getElementById('bits_form')
+    formContainer.hidden = false;
+    formContainer.innerHTML(``)
+  } else if (menuStyle === "The Traditional Italian Dinner") {
+    document.getElementById('family_form').hidden = false;
+  } else if (menuStyle === "The Traditional Italian Dinner with Individually Plated Entrees") {
+    document.getElementById('individual_form').hidden = false;
+  }
 
 });

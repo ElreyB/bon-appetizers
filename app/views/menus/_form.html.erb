@@ -2,57 +2,18 @@
 
 <%= form_for [@event, @menu] do |f| %>
 
-  <div class="form-group">
+  <div class="form-group" id="styles">
     <%= f.label :style %>
     <%= f.select :style, options_for_select(@styles.collect { |style| [style.name] }, :selected => @menu.style), { include_blank: true },  class: "form form-group form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :antipasti %>
-    <div>
-    <% @antipastis.each do |antipasti|%>
-      <div class="checkbox-inline">
-        <%= check_box_tag("menu[antipastis][]", antipasti.name, @menu.antipastis.include?(antipasti.name), class: "checkbox") %><%= antipasti.name %>
-      </div>
-    <% end %>
-   </div>
+  <div id="bits_form" hidden>
   </div>
-
-  <div class="form-group">
-    <%= f.label :pasta %>
-    <div>
-    <% @pastas.each do |pasta|%>
-      <div class="checkbox-inline">
-        <%= check_box_tag("menu[pastas][]", pasta.name, @menu.pastas.include?(pasta.name), class: "checkbox") %><%= pasta.name %>
-      </div>
-    <% end %>
-   </div>
+  <div id="family_form" hidden>
+    <%= render 'family_form' %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :main_dish %>
-    <div>
-    <% @main_dishes.each do |main|%>
-      <div class="checkbox-inline">
-        <%= check_box_tag("menu[main_dishes][]", main.name, @menu.main_dishes.include?(main.name), class: "checkbox") %><%= main.name %>
-      </div>
-    <% end %>
-   </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :desserts %>
-   <div>
-    <% @desserts.each do |dessert|%>
-      <div class="checkbox-inline">
-        <%= check_box_tag("menu[desserts][]", dessert.name, @menu.desserts.include?(dessert.name), class: "checkbox") %><%= dessert.name %>
-      </div>
-    <% end %>
-   </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :wine %>
-    <%= f.select :wine, options_for_select(@wines.collect { |wine| [wine.grape] }, :selected => @menu.wine), { include_blank: true }, class: "form form-group form-control" %>
+  <div id="individual_form" hidden>
+    <%= render 'individual_form' %>
   </div>
 
   <%= f.submit "Create Menu", class: "btn btn-block btn-primary" %>

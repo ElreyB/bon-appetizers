@@ -1,0 +1,10 @@
+  <div class="form-group">
+    <%= f.label :antipasti %>
+    <div>
+    <% @antipastis.each do |antipasti|%>
+      <div class="checkbox-inline">
+        <%= check_box_tag("menu[antipastis][]", antipasti.name, @menu.antipastis.include?(antipasti.name), class: "checkbox") %><%= antipasti.name %>
+      </div>
+    <% end %>
+   </div>
+  </div>
