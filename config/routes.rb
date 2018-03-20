@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   resources :pasta_dishes
   resources :wines
   resources :styles
+  resources :bits
 end
