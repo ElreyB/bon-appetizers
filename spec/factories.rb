@@ -19,10 +19,10 @@ FactoryBot.define do
 
   factory :menu do
     style "Family Style"
-    price "3400"
-    antipasti "meats"
-    pasta "Linage"
-    main "example main"
+    price 3456.00
+    antipasti ["meats"]
+    pasta ["Linage"]
+    main ["example main"]
     dessert ["example dessert"]
     wine "example wine"
   end

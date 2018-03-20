@@ -55,6 +55,10 @@ class MenusController < ApplicationController
     @main_dishes = Main.by_name
     @desserts = Dessert.by_name
     @styles = Style.by_name
+    # respond_to do |format|
+    #   format.html { }
+    #   format.js { }
+    # end
   end
 
   def update

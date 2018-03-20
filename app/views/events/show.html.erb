@@ -37,8 +37,7 @@
     </div>
   </div>
   <div class="panel-body">
-    <!-- Add menu item images on the sides -->
-    <!-- Add comments section-->
+
     <% if @event.menus.any? %>
       <ul>
         <% @event.menus.each do |menu| %>
@@ -51,22 +50,22 @@
               <h2>Antipasti</h2>
               <hr class="hr-menu">
               <% menu.antipastis.each do |antipasti|%>
-               <p><%= antipasti %></p>
+              <p><%= antipasti %></p>
               <%end%>
               <h2>Pasta</h2>
               <hr class="hr-menu">
               <% menu.pastas.each do |pasta|%>
-               <p><%= pasta %></p>
+              <p><%= pasta %></p>
               <%end%>
               <h2>Main</h2>
               <hr class="hr-menu">
               <% menu.main_dishes.each do |main_dish|%>
-               <p><%= main_dish %></p>
+              <p><%= main_dish %></p>
               <%end%>
               <h2>Dessert</h2>
               <hr class="hr-menu">
               <% menu.desserts.each do |dessert|%>
-               <p><%= dessert %></p>
+              <p><%= dessert %></p>
               <%end%>
               <h2>Wine</h2>
               <hr class="hr-menu">

@@ -27,45 +27,35 @@ $(document).ready(function () {
     interval: 3000
   });
 
-  const menuStyle = document.getElementById('menu_style')
+  const menuStyle = document.getElementById('menu_style');
 
-  if (menuStyle.value) {
+  if (menuStyle || menuStyle.value === null) {
     const menuStyleValue = menuStyle.value;
-
     if (menuStyleValue === "HORS D’OEUVRES") {
       document.getElementById('bits_form').hidden = false;
       document.getElementById('family_form').hidden = true;
-      document.getElementById('individual_form').hidden = true;
-    } else if (menuStyleValue === "The Traditional Italian Dinner") {
+    } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
       document.getElementById('family_form').hidden = false;
       document.getElementById('bits_form').hidden = true;
-      document.getElementById('individual_form').hidden = true;
-    } else if (menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
-      document.getElementById('individual_form').hidden = false;
-      document.getElementById('bits_form').hidden = true;
+    } else {
       document.getElementById('family_form').hidden = true;
+      document.getElementById('bits_form').hidden = true;
     }
-    console.log(menuStyleValue, "beginning");
   }
 
-
-  menuStyle.addEventListener('change', function () {
-    const menuStyleValue = menuStyle.value;
-    if (menuStyleValue === "HORS D’OEUVRES") {
-      document.getElementById('bits_form').hidden = false;
-      document.getElementById('family_form').hidden = true;
-      document.getElementById('individual_form').hidden = true;
-    } else if (menuStyleValue === "The Traditional Italian Dinner") {
-      document.getElementById('family_form').hidden = false;
-      document.getElementById('bits_form').hidden = true;
-      document.getElementById('individual_form').hidden = true;
-    } else if (menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
-      document.getElementById('individual_form').hidden = false;
-      document.getElementById('bits_form').hidden = true;
-      document.getElementById('family_form').hidden = true;
-    }
-    console.log(menuStyleValue, "event");
-  });
-
-  console.log(menuStyle.value);
+  if (menuStyle.value) {
+    menuStyle.addEventListener('change', function () {
+      const menuStyleValue = menuStyle.value;
+      if (menuStyleValue === "HORS D’OEUVRES") {
+        document.getElementById('bits_form').hidden = false;
+        document.getElementById('family_form').hidden = true;
+      } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
+        document.getElementById('family_form').hidden = false;
+        document.getElementById('bits_form').hidden = true;
+      } else {
+        document.getElementById('family_form').hidden = true;
+        document.getElementById('bits_form').hidden = true;
+      }
+    });
+  }
 });
