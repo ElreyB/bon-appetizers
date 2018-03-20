@@ -14,7 +14,6 @@ class MenusController < ApplicationController
     @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.new
-    @wines = Wine.by_grape
     @antipastis = Antipasti.by_name
     @pastas = PastaDish.by_name
     @mains = Main.by_name
@@ -24,7 +23,6 @@ class MenusController < ApplicationController
   def create
     @user = current_user
     @users = User.all
-    @wines = Wine.by_grape
     @antipastis = Antipasti.by_name
     @pastas = PastaDish.by_name
     @mains = Main.by_name
@@ -49,7 +47,6 @@ class MenusController < ApplicationController
     @user = current_user
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
-    @wines = Wine.by_grape
     @antipastis = Antipasti.by_name
     @pastas = PastaDish.by_name
     @main_dishes = Main.by_name
@@ -91,6 +88,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style, :price, :wine, :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
+    params.require(:menu).permit(:style, :price, :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
   end
 end
