@@ -1,4 +1,4 @@
-<%# const menuStyle = document.getElementById('menu_style')
+const menuStyle = document.getElementById('menuStyle')
 
   if (menuStyle && menuStyle.value === null) {
     const menuStyleValue = menuStyle.value;
@@ -15,7 +15,7 @@
   }
 
 
-  menuStyle.addEventListener('change', function () {
+  <%# menuStyle.addEventListener('change', function () {
     const menuStyleValue = menuStyle.value;
     if (menuStyleValue === "HORS D’OEUVRES") {
       document.getElementById('bits_form').hidden = false;
@@ -26,5 +26,5 @@
     } else {
       document.getElementById('family_form').hidden = true;
       document.getElementById('bits_form').hidden = true;
-    }
-  }); %>
+    } %>
+  <%# }); %>

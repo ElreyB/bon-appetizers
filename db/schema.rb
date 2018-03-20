@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317233936) do
+ActiveRecord::Schema.define(version: 20180320200900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20180317233936) do
     t.string   "name"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "price"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 20180317233936) do
     t.string   "name"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "price"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -53,7 +51,6 @@ ActiveRecord::Schema.define(version: 20180317233936) do
     t.string   "name"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "price"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -64,21 +61,20 @@ ActiveRecord::Schema.define(version: 20180317233936) do
   create_table "menus", force: :cascade do |t|
     t.integer  "event_id"
     t.string   "style"
-    t.string   "wine"
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-    t.text     "desserts",                            default: [],              array: true
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.text     "desserts",                            default: [],                 array: true
     t.decimal  "price",       precision: 8, scale: 2
-    t.text     "antipastis",                          default: [],              array: true
-    t.text     "pastas",                              default: [],              array: true
-    t.text     "main_dishes",                         default: [],              array: true
+    t.text     "antipastis",                          default: [],                 array: true
+    t.text     "pastas",                              default: [],                 array: true
+    t.text     "main_dishes",                         default: [],                 array: true
+    t.boolean  "wine",                                default: false
   end
 
   create_table "pasta_dishes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "price"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -120,18 +116,6 @@ ActiveRecord::Schema.define(version: 20180317233936) do
     t.boolean  "admin",                  default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "wines", force: :cascade do |t|
-    t.string   "grape"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.integer  "price"
-    t.text     "description"
   end
 
 end

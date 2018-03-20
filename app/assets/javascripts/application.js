@@ -27,21 +27,22 @@ $(document).ready(function () {
     interval: 3000
   });
 
+
   const menuStyle = document.getElementById('menu_style');
 
-  if (menuStyle || menuStyle.value === null) {
-    const menuStyleValue = menuStyle.value;
-    if (menuStyleValue === "HORS D’OEUVRES") {
-      document.getElementById('bits_form').hidden = false;
-      document.getElementById('family_form').hidden = true;
-    } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
-      document.getElementById('family_form').hidden = false;
-      document.getElementById('bits_form').hidden = true;
-    } else {
-      document.getElementById('family_form').hidden = true;
-      document.getElementById('bits_form').hidden = true;
-    }
+  // if (menuStyle && menuStyle.value != null) {
+  const menuStyleValue = menuStyle.value;
+  if (menuStyleValue === "HORS D’OEUVRES") {
+    document.getElementById('bits_form').hidden = false;
+    document.getElementById('family_form').hidden = true;
+  } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
+    document.getElementById('family_form').hidden = false;
+    document.getElementById('bits_form').hidden = true;
+  } else {
+    document.getElementById('family_form').hidden = true;
+    document.getElementById('bits_form').hidden = true;
   }
+  // }
 
   if (menuStyle.value) {
     menuStyle.addEventListener('change', function () {
@@ -58,4 +59,5 @@ $(document).ready(function () {
       }
     });
   }
+
 });

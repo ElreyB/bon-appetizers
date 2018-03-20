@@ -1,7 +1,4 @@
 FactoryBot.define do
-  factory :style do
-    type ""
-  end
 
   factory :user do
     first_name 'Bob'
