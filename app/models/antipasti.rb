@@ -8,15 +8,7 @@ class Antipasti < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def self.pick_of_the_day
-    samples = []
-    i = 2
-    until i == samples.length
-      antipasti = Antipasti.all.sample
-      unless samples.include?(antipasti)
-        samples.push(antipasti)
-      end
-    end
-    samples
+    Antipasti.all.length > 1 ? Antipasti.all.sample(2) : Antipasti.all
   end
 
 end

@@ -1,7 +1,7 @@
 
 require 'simplecov'
 require "paperclip/matchers"
-
+require 'factory_bot'
 
 SimpleCov.start
 
@@ -14,6 +14,8 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+  config.include FactoryBot::Syntax::Methods
 
   config.include Paperclip::Shoulda::Matchers
 

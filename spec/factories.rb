@@ -14,6 +14,26 @@ FactoryBot.define do
     date_and_time "dec. 03,2017"
   end
 
+  factory :antipasti do
+    name "antipasti item"
+    description "words"
+  end
+  factory :main do
+    name "main item"
+    description "words"
+  end
+  factory :pasta_dish do
+    name "pasta_dish item"
+    description "words"
+  end
+  factory :dessert do
+    name "dessert item"
+    description "words"
+  end
+  factory :bit do
+    name "bit item"
+  end
+
   factory :menu do
     style "Family Style"
     price 3456.00

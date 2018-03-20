@@ -50,6 +50,6 @@ class DessertsController < ApplicationController
   private
 
   def dessert_params
-    params.require(:dessert).permit(:name, :price, :image, :description)
+    params.require(:dessert).permit(:name, :image, :description)
   end
 end

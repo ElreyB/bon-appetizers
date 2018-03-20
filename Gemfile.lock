@@ -299,7 +299,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   devise (~> 4.3.0)
-  factory_bot_rails
+  factory_bot_rails (~> 4.0)
   faker
   jbuilder (~> 2.5)
   jquery-rails

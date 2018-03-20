@@ -27,7 +27,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '~> 4.0'
   gem 'simplecov', require: false
 end
 

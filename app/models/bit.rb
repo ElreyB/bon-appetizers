@@ -7,15 +7,7 @@ class Bit < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def self.pick_of_the_day
-    samples = []
-    i = 2
-    until i == samples.length
-      bit = Bit.all.sample
-      unless samples.include?(bit)
-        samples.push(bit)
-      end
-    end
-    samples
+    Bit.all.length > 1 ? Bit.all.sample(2) : Bit.all
   end
 
 end

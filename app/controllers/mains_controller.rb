@@ -50,6 +50,6 @@ class MainsController < ApplicationController
   private
 
   def main_params
-    params.require(:main).permit(:name, :price, :image, :description)
+    params.require(:main).permit(:name, :image, :description)
   end
 end
