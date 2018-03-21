@@ -48,7 +48,19 @@ describe Menu do
       menu.style_id = style.id
       menu.update_price
       menu.save
-      expect(menu.price).to eq 300.00
+      expect(menu.price).to eq 390.00
+    end
+
+    it "will add price to according to menu style with pairing" do
+      event = FactoryBot.create(:event)
+      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00, pairing: 12.00)
+      menu = FactoryBot.create(:menu)
+      menu.event_id = event.id
+      menu.style_id = style.id
+      menu.wine = true
+      menu.update_price
+      menu.save
+      expect(menu.price).to eq 402.00
     end
   end
 

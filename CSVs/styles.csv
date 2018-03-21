@@ -1,5 +1,5 @@
-name,price
-"HORS D’OEUVRES",25.00
-"The Traditional Italian Dinner",55.00
-"The Traditional Italian Dinner with Individually Plated Entrees",70.00
+name,price,pairing
+"HORS D’OEUVRES",25.00,12.00
+"The Traditional Italian Dinner",55.00,35.00
+"The Traditional Italian Dinner with Individually Plated Entrees",70.00,40.00
 

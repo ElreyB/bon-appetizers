@@ -17,9 +17,13 @@ class Menu < ActiveRecord::Base
 
   def update_price
     event = Event.find(self.event_id)
-    style_price = Style.find(self.style_id).price
-    self.price = style_price * event.number_of_people
-
+    style = Style.find(self.style_id)
+    menu_price = style.price.to_f * event.number_of_people
+    tax_and_gratuity = menu_price * 0.30
+    if self.wine
+      return self.price = menu_price  + tax_and_gratuity + style.pairing
+    end
+    self.price = menu_price  + tax_and_gratuity
   end
 
 end
