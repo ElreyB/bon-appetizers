@@ -23,17 +23,15 @@ menu_items.each do |class_name, file_name|
   CSV.foreach("CSVs/#{file_name}.csv", { headers: true, :header_converters => :symbol }) do |row|
     new_menu_item = "#{class_name}".constantize.new(row.to_h)
     new_menu_item.save
-    # binding.pry
   end
 end
-
 
 2.times do
   users = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, password: "User123!", password_confirmation: "User123!")
   3.times do
     events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: Faker::Time.between(2.days.ago, 1.year.from_now, :evening), party_for: Faker::Superhero.name + " Birthday")
     1.times do
-      events.menus.create!(style: Style.all[rand(0...Style.all.length)], antipastis: [Antipasti.all[rand(0...Antipasti.all.length)].name], pastas: [PastaDish.all[rand(0...PastaDish.all.length)].name], main_dishes: [Main.all[rand(0...Main.all.length)].name], desserts: [Dessert.all[rand(0...Dessert.all.length)].name])
+      Menu.create!(style: Style.all[rand(0...Style.all.length)], antipastis: [Antipasti.all[rand(0...Antipasti.all.length)].name], pastas: [PastaDish.all[rand(0...PastaDish.all.length)].name], main_dishes: [Main.all[rand(0...Main.all.length)].name], desserts: [Dessert.all[rand(0...Dessert.all.length)].name], event_id: events.id, style_id: Style.all.sample.id)
     end
 
     5.times do
