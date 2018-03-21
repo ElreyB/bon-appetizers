@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320224850) do
+ActiveRecord::Schema.define(version: 20180321041029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180320224850) do
     t.datetime "updated_at",                       null: false
     t.string   "party_for"
     t.boolean  "confirm",          default: false
+    t.integer  "menu_id"
   end
 
   create_table "mains", force: :cascade do |t|
@@ -70,7 +71,6 @@ ActiveRecord::Schema.define(version: 20180320224850) do
 
   create_table "menus", force: :cascade do |t|
     t.integer  "event_id"
-    t.string   "style"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
     t.text     "desserts",                            default: [],                 array: true
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20180320224850) do
     t.text     "main_dishes",                         default: [],                 array: true
     t.boolean  "wine",                                default: false
     t.text     "bits",                                default: [],                 array: true
+    t.integer  "style_id"
   end
 
   create_table "pasta_dishes", force: :cascade do |t|
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 20180320224850) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "menu_id"
   end
 
   create_table "users", force: :cascade do |t|

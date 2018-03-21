@@ -34,12 +34,15 @@ FactoryBot.define do
     name "bit item"
   end
 
+  factory :style do
+    name "The Traditional Italian Dinner with Individually Plated Entrees"
+  end
+
   factory :menu do
-    style "Family Style"
     bits ["example bit"]
-    antipasti ["meats"]
-    pasta ["Linage"]
-    main ["example main"]
-    dessert ["example dessert"]
+    antipastis ["meats"]
+    pastas ["Linage"]
+    main_dishes ["other item", "another item"]
+    desserts ["example dessert"]
   end
 end

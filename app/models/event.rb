@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :menus
+  has_one :menu
   has_many :reviews
   belongs_to :user
 

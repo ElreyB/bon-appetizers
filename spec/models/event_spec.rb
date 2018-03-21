@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Event do
   it { should belong_to :user }
-  it { should have_many :menus }
+  it { should have_one :menu }
   it { should validate_numericality_of(:number_of_people).is_less_than_or_equal_to(50)}
 
   it { should validate_numericality_of(:number_of_people).is_greater_than_or_equal_to(10)}
