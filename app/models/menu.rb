@@ -26,4 +26,8 @@ class Menu < ActiveRecord::Base
     self.price = menu_price  + tax_and_gratuity
   end
 
+  def style_name
+    Style.find(self.style_id).name
+  end
+
 end

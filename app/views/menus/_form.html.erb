@@ -6,10 +6,10 @@
 
   <div class="form-group">
     <%= f.label :style %>
-    <%= f.select :style, options_for_select(@styles.collect { |style| [style.name, style.id] }, :selected => @menu.style),  include_blank: true ,  class: "form form-group form-control"%>
+    <%= f.collection_select :style_id, Style.all, :id, :name , include_blank: true ,  class: "form form-group form-control"%>
   </div>
 
-  <div id="bits_form" hidden>
+  <div id="bits_form">
     <div class="form-group">
       <%= f.label :bits %>
       <div>

@@ -64,4 +64,17 @@ describe Menu do
     end
   end
 
+  describe "#style_name" do
+    it "will return menu style name" do
+      event = FactoryBot.create(:event)
+      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00)
+      menu = FactoryBot.create(:menu)
+      menu.event_id = event.id
+      menu.style_id = style.id
+      menu.update_price
+      menu.save
+      expect(menu.style_name).to eq "HORS D’OEUVRES"
+    end
+  end
+
 end

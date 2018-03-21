@@ -32,8 +32,7 @@ class MenusController < ApplicationController
     @styles = Style.by_name
     @bits = Bit.by_name
     @event = Event.find(params[:event_id])
-    binding.pry
-    @menu = @event.menu.new(menu_params)
+    @menu = @event.create_menu(menu_params)
     if @menu.save
       flash[:notice] = "Guest menu has been added."
       if current_user.admin
@@ -53,7 +52,7 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:id])
     @antipastis = Antipasti.by_name
     @pastas = PastaDish.by_name
-    @main_dishes = Main.by_name
+    @mains = Main.by_name
     @desserts = Dessert.by_name
     @styles = Style.by_name
     @bits = Bit.by_name
@@ -66,7 +65,6 @@ class MenusController < ApplicationController
   def update
     @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
-    # binding.pry
     if @menu.update(menu_params)
       flash[:notice] = "Menu has been updated"
       redirect_to event_path(@event)
@@ -93,6 +91,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style_id, :price, :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
+    params.require(:menu).permit(:style_id, :price, :bits => [], :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
   end
 end
