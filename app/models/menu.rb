@@ -6,9 +6,6 @@ class Menu < ActiveRecord::Base
   scope :three_menu, -> {order(created_at: :DESC).limit(3)}
 
   def inject_or
-
-    binding.pry
-
     style = Style.find(self.style_id)
     if style.name == "The Traditional Italian Dinner with Individually Plated Entrees"
       return self.main_dishes.reduce(Array.new(0)) do |result, dish|
@@ -18,8 +15,10 @@ class Menu < ActiveRecord::Base
     self.main_dishes
   end
 
-  def add_price
+  def update_price
     event = Event.find(self.event_id)
+    style_price = Style.find(self.style_id).price
+    self.price = style_price * event.number_of_people
 
   end
 

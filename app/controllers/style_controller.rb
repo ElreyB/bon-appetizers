@@ -45,7 +45,7 @@ class StyleController < ApplicationController
   end
 
   def style_params
-    params.requrie(:style).permit(:name)
+    params.requrie(:style).permit(:name, :price)
   end
 
 end

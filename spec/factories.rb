@@ -36,6 +36,7 @@ FactoryBot.define do
 
   factory :style do
     name "The Traditional Italian Dinner with Individually Plated Entrees"
+    price 70.00
   end
 
   factory :menu do
