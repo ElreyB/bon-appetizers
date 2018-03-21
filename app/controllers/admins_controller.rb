@@ -6,6 +6,5 @@ class AdminsController < ApplicationController
     @antipastis = Antipasti.pick_of_the_day
     @mains = Main.pick_of_the_day
     @pasta_dishes = PastaDish.pick_of_the_day
-    @wines = Wine.pick_of_the_day
   end
 end

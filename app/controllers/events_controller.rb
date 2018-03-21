@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   def index
     @user = current_user
     @events = Event.all
-    @event_menus = @events.first.menus
+    @event_menus = @events.first.menu
     @ex_menu = Menu.three_menu
   end
 

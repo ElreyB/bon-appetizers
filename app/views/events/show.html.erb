@@ -38,9 +38,9 @@
   </div>
   <div class="panel-body">
 
-    <% if @event.menus.any? %>
+    <% if @event.menu %>
       <ul>
-        <% @event.menus.each do |menu| %>
+        <% @event.menu.each do |menu| %>
         <li>
           <div class="thumbnail gold-bg">
             <div class="caption">
@@ -67,9 +67,6 @@
               <% menu.desserts.each do |dessert|%>
               <p><%= dessert %></p>
               <%end%>
-              <h2>Wine</h2>
-              <hr class="hr-menu">
-              <p><%= menu.wine %></p>
             </div>
           </div>
         </li>

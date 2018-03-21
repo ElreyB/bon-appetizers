@@ -18,6 +18,8 @@ class MenusController < ApplicationController
     @pastas = PastaDish.by_name
     @mains = Main.by_name
     @desserts = Dessert.by_name
+    @styles = Style.by_name
+    @bits = Bit.by_name
   end
 
   def create
@@ -27,9 +29,11 @@ class MenusController < ApplicationController
     @pastas = PastaDish.by_name
     @mains = Main.by_name
     @desserts = Dessert.by_name
+    @styles = Style.by_name
+    @bits = Bit.by_name
     @event = Event.find(params[:event_id])
-    @menu = @event.menus.new(menu_params)
-    # binding.pry
+    binding.pry
+    @menu = @event.menu.new(menu_params)
     if @menu.save
       flash[:notice] = "Guest menu has been added."
       if current_user.admin
@@ -52,6 +56,7 @@ class MenusController < ApplicationController
     @main_dishes = Main.by_name
     @desserts = Dessert.by_name
     @styles = Style.by_name
+    @bits = Bit.by_name
     respond_to do |format|
       format.html { }
       format.js { }
@@ -76,7 +81,7 @@ class MenusController < ApplicationController
     if params([:event_id])
       @event = Event.find(params[:event_id])
       @menu = Menu.find(params[:id])
-      @event.menus.delete(@menu)
+      @event.menu.delete(@menu)
       redirect_to event_path(@event)
     else
       @menu = Menu.find(params[:id])
@@ -88,6 +93,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style, :price, :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
+    params.require(:menu).permit(:style_id, :price, :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
   end
 end

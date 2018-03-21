@@ -6,25 +6,23 @@
 
   <div class="form-group">
     <%= f.label :style %>
-    <%= f.select :style, options_for_select(@styles.collect { |style| [style.name] }, :selected => @menu.style),  include_blank: true ,  class: "form form-group form-control"%>
+    <%= f.select :style, options_for_select(@styles.collect { |style| [style.name, style.id] }, :selected => @menu.style),  include_blank: true ,  class: "form form-group form-control"%>
   </div>
 
   <div id="bits_form" hidden>
-    <p>Bites</p>
     <div class="form-group">
-      <%= f.label :antipasti %>
+      <%= f.label :bits %>
       <div>
-        <% @antipastis.each do |antipasti|%>
+        <% @bits.each do |bit|%>
           <div class="checkbox-inline">
-            <%= check_box_tag("menu[antipastis][]", antipasti.name, @menu.antipastis.include?(antipasti.name), class: "checkbox") %><%= antipasti.name %>
-          </div>
+            <%= check_box_tag("menu[bits][]", bit.name, @menu.bits.include?(bit.name), class: "checkbox") %><%= bit.name %>
+          </div><br>
         <% end %>
       </div>
     </div>
   </div>
 
   <div id="family_form" hidden>
-    <p>Family</p>
     <div class="form-group">
       <%= f.label :antipasti %>
       <div>
@@ -48,7 +46,7 @@
     <div class="form-group">
       <%= f.label :main_dish %>
       <div>
-      <% @main_dishes.each do |main|%>
+      <% @mains.each do |main|%>
         <div class="checkbox-inline">
           <%= check_box_tag("menu[main_dishes][]", main.name, @menu.main_dishes.include?(main.name), class: "checkbox") %><%= main.name %>
         </div>
