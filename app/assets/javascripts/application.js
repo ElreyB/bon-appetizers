@@ -27,12 +27,12 @@ $(document).ready(function () {
     interval: 3000
   });
 
-  function showMenuForm(menu) {
-    const menuStyleValue = menu.options[menu.selectIndex].innerText;
-    if (menuStyleValue === "HORS D’OEUVRES") {
+  function OnSelectionChange() {
+    const selectedOption = this.options[this.selectedIndex].innerText;
+    if (selectedOption === "HORS D’OEUVRES") {
       document.getElementById('bits_form').hidden = false;
       document.getElementById('family_form').hidden = true;
-    } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
+    } else if ((selectedOption === "The Traditional Italian Dinner") || (selectedOption === "The Traditional Italian Dinner with Individually Plated Entrees")) {
       document.getElementById('family_form').hidden = false;
       document.getElementById('bits_form').hidden = true;
     } else {
@@ -41,10 +41,18 @@ $(document).ready(function () {
     }
   }
 
-
   const menuStyle = document.getElementById('menu_style_id');
-  showMenuForm(menuStyle);
-  menuStyle.addEventListener('change', showMenuForm(menuStyle));
-
-
+  if (menuStyle !== null) {
+    const menuStyleValue = menuStyle.options[menuStyle.selectedIndex].innerText;
+    if (menuStyleValue === "HORS D’OEUVRES") {
+      document.getElementById('bits_form').hidden = false;
+      document.getElementById('family_form').hidden = true;
+    } else if ((menuStyleValue === "The Traditional Italian Dinner") || (menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees")) {
+      document.getElementById('family_form').hidden = false;
+      document.getElementById('bits_form').hidden = true;
+    } else {
+      document.getElementById('family_form').hidden = true;
+      document.getElementById('bits_form').hidden = true;
+    }
+  }
 });

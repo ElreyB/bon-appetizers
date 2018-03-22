@@ -21,11 +21,15 @@
   <div class="panel-heading">
     <div class="page-header">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-2">
+          <h2>Price</h2>
+          <p><%= number_to_currency @menu.price %></p>
+        </div>
+        <div class="col-sm-3">
           <h2>Party For:</h2>
           <p><%= @event.party_for %></p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <h2>Number of guest:</h2>
           <p><%= @event.number_of_people %></p>
         </div>

@@ -6,11 +6,16 @@
 
   <div class="form-group">
     <%= f.label :style %>
-    <%= f.collection_select :style_id, Style.all, :id, :name , include_blank: true ,  class: "form form-group form-control"%>
+    <%= f.collection_select :style_id, Style.all, :id, :name , include_blank: true, :onchange => "OnSelectionChange()",  class: "form form-group form-control"%>
   </div>
 
-  <div id="bits_form">
-    <div class="form-group" hidden>
+  <div class="form-group">
+      <%= f.label :Wine%>
+      <%= radio_button_tag "menu[wine]", true %>
+  </div>
+
+  <div id="bits_form" hidden>
+    <div class="form-group">
       <%= f.label :bits %>
       <div>
         <% @bits.each do |bit|%>
