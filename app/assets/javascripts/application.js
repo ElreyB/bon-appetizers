@@ -27,36 +27,24 @@ $(document).ready(function () {
     interval: 3000
   });
 
+  function showMenuForm(menu) {
+    const menuStyleValue = menu.options[menu.selectIndex].innerText;
+    if (menuStyleValue === "HORS D’OEUVRES") {
+      document.getElementById('bits_form').hidden = false;
+      document.getElementById('family_form').hidden = true;
+    } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
+      document.getElementById('family_form').hidden = false;
+      document.getElementById('bits_form').hidden = true;
+    } else {
+      document.getElementById('family_form').hidden = true;
+      document.getElementById('bits_form').hidden = true;
+    }
+  }
 
-  // const menuStyle = document.getElementById('menu_style');
 
-  // // if (menuStyle) {
-  // const menuStyleValue = menuStyle.options[menuStyle.selectIndex].innerText;
-  // if (menuStyleValue === "HORS D’OEUVRES") {
-  //   document.getElementById('bits_form').hidden = false;
-  //   document.getElementById('family_form').hidden = true;
-  // } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
-  //   document.getElementById('family_form').hidden = false;
-  //   document.getElementById('bits_form').hidden = true;
-  // } else {
-  //   document.getElementById('family_form').hidden = true;
-  //   document.getElementById('bits_form').hidden = true;
-  // }
-  // // }
+  const menuStyle = document.getElementById('menu_style_id');
+  showMenuForm(menuStyle);
+  menuStyle.addEventListener('change', showMenuForm(menuStyle));
 
-  // // if (menuStyle.value) {
-  // menuStyle.addEventListener('change', function () {
-  //   if (menuStyleValue === "HORS D’OEUVRES") {
-  //     document.getElementById('bits_form').hidden = false;
-  //     document.getElementById('family_form').hidden = true;
-  //   } else if (menuStyleValue === "The Traditional Italian Dinner" || menuStyleValue === "The Traditional Italian Dinner with Individually Plated Entrees") {
-  //     document.getElementById('family_form').hidden = false;
-  //     document.getElementById('bits_form').hidden = true;
-  //   } else {
-  //     document.getElementById('family_form').hidden = true;
-  //     document.getElementById('bits_form').hidden = true;
-  //   }
-  // });
-  // // }
 
 });

@@ -29,5 +29,23 @@ describe Event do
     expect(Event.within_30_days).to eq [event, event2]
   end
 
+  describe "#add_review" do
+    context "when today's date/time is the same or less than event date/time" do
+      it "will return true" do
+        event = FactoryBot.create(:event)
+        event.update({date_and_time: Faker::Date.between(Date.today,Date.today)})
+        expect(event.add_review).to eq true
+      end
+    end
+
+    context "when today's date/time is greater than event date/time" do
+      it "will return false" do
+        event = FactoryBot.create(:event)
+        event.update({date_and_time: Faker::Date.forward(10)})
+        expect(event.add_review).to eq false
+      end
+    end
+  end
+
 
 end
