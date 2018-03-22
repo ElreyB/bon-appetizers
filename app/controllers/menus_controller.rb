@@ -49,7 +49,6 @@ class MenusController < ApplicationController
 
   def edit
     @user = current_user
-    @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
     @antipastis = Antipasti.by_name
     @pastas = PastaDish.by_name

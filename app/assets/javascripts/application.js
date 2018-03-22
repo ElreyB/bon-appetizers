@@ -39,9 +39,17 @@ $(document).ready(function () {
   const selectedOption = $('#menu_style_id option:selected').text();
   showForm(selectedOption);
 
-  $('#menu_style_id').change(function () {
-    const changedOption = $('#menu_style_id option:selected').text();
-    showForm(changedOption);
+  $(document).on('change', function () {
+    const selectedOption = $('#menu_style_id option:selected').text();
+    showForm(selectedOption);
+
+    $('#menu_style_id').change(function (e) {
+      e.preventDefault();
+      const changedOption = $('#menu_style_id option:selected').text();
+      showForm(changedOption);
+    })
+
   })
+
 
 });
