@@ -27,16 +27,12 @@ $(document).ready(function () {
     interval: 3000
   });
 
-  function showForm(formOptionText) {
-    if (formOptionText === "HORS D’OEUVRES") {
-      document.getElementById('bits_form').hidden = false;
-      document.getElementById('family_form').hidden = true;
-    } else if ((formOptionText === "The Traditional Italian Dinner") || (formOptionText === "The Traditional Italian Dinner with Individually Plated Entrees")) {
-      document.getElementById('family_form').hidden = false;
-      document.getElementById('bits_form').hidden = true;
-    } else {
-      document.getElementById('family_form').hidden = true;
-      document.getElementById('bits_form').hidden = true;
+  function showForm(formOption) {
+    $('#bits_form, #family_form').addClass('hide');
+    if (formOption === "HORS D’OEUVRES") {
+      $('#bits_form').removeClass('hide');
+    } else if ((formOption === "The Traditional Italian Dinner") || (formOption === "The Traditional Italian Dinner with Individually Plated Entrees")) {
+      $('#family_form').removeClass('hide');
     }
   }
 
