@@ -1,6 +1,13 @@
 <%= render 'layouts/errors', :object => @event %>
 
 <%= form_for [@user, @event] do |f| %>
+  <% if @user.admin %>
+    <div class="form-group">
+      <%= f.label :Confirm%>
+      <%= hidden_field_tag("event[confirm]", value = false)%>
+      <%= check_box_tag("event[confirm]", value = true, @event.confirm ? true :false, class: "checkbox") %>
+  </div>
+  <% end %>
 
   <div class="form-group">
     <%= f.label :party_for %>
@@ -15,7 +22,7 @@
 
   <div class="form-group">
     <%= f.label :date_and_time %>
-    <%= f.datetime_field :date_and_time, value: "#{@event.parse_datetime}", class: "form-control"%>
+    <%= f.datetime_field :date_and_time, value: "#{@event.date_and_time}", class: "form-control"%>
   </div>
 
   <%= f.submit 'Request Reservation', class: "btn btn-block" %>
