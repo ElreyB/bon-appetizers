@@ -21,10 +21,12 @@
   <div class="panel-heading">
     <div class="page-header">
       <div class="row">
-        <div class="col-sm-2">
+        <% if @menu %>
+          <div class="col-sm-2">
           <h2>Price</h2>
           <p><%= number_to_currency @menu.price %></p>
         </div>
+        <% end %>
         <div class="col-sm-3">
           <h2>Party For:</h2>
           <p><%= @event.party_for %></p>

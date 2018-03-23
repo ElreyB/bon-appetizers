@@ -27,29 +27,4 @@ $(document).ready(function () {
     interval: 3000
   });
 
-  function showForm(formOption) {
-    $('#bits_form, #family_form').addClass('hide');
-    if (formOption === "HORS D’OEUVRES") {
-      $('#bits_form').removeClass('hide');
-    } else if ((formOption === "The Traditional Italian Dinner") || (formOption === "The Traditional Italian Dinner with Individually Plated Entrees")) {
-      $('#family_form').removeClass('hide');
-    }
-  }
-
-  const selectedOption = $('#menu_style_id option:selected').text();
-  showForm(selectedOption);
-
-  $(document).on('change', function () {
-    const selectedOption = $('#menu_style_id option:selected').text();
-    showForm(selectedOption);
-
-    $('#menu_style_id').change(function (e) {
-      e.preventDefault();
-      const changedOption = $('#menu_style_id option:selected').text();
-      showForm(changedOption);
-    })
-
-  })
-
-
 });

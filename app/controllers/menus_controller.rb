@@ -63,8 +63,8 @@ class MenusController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:event_id])
     @menu = Menu.find(params[:id])
+    @event = Event.find(@menu.event_id)
     @menu.update_price
     if @menu.update(menu_params)
       flash[:notice] = "Menu has been updated"

@@ -1,5 +1,25 @@
+
+<script>
+ function showForm(formOption) {
+    $('#bits_form, #family_form').addClass('hide');
+    if (formOption === "HORS D’OEUVRES") {
+      $('#bits_form').removeClass('hide');
+    } else if ((formOption === "The Traditional Italian Dinner") || (formOption === "The Traditional Italian Dinner with Individually Plated Entrees")) {
+      $('#family_form').removeClass('hide');
+    }
+  }
+
+  const selectedOption = $('#menu_style_id option:selected').text();
+  showForm(selectedOption);
+  $('#menu_style_id').change(function (e) {
+    e.preventDefault();
+    const changedOption = $('#menu_style_id option:selected').text();
+    showForm(changedOption);
+  })
+
+</script>
+
 <h1>edit menu</h1>
-<%= link_to "Clear menu", edit_menu_path(@menu), class: "btn btn-sm btn-warning" %>
 <div class="well">
   <%= render 'form' %>
 </div>
