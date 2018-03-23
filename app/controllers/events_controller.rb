@@ -16,6 +16,7 @@ class EventsController < ApplicationController
 
   def new
     @users = User.all
+    @user = User.find(params[:user_id])
     @event = Event.new
     respond_to do |format|
       format.html { }
