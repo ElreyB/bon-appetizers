@@ -21,7 +21,7 @@
   <div class="panel-heading">
     <div class="page-header">
       <div class="row">
-        <% if @menu %>
+        <% if @menu && @menu.price%>
           <div class="col-sm-2">
           <h2>Price</h2>
           <p><%= number_to_currency @menu.price %></p>
@@ -48,7 +48,11 @@
       <div class="thumbnail gold-bg">
         <div class="caption">
           <div class="page-heading">
-            <h2>Menu Style: <%= @menu.style_name %> | <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %></h2>
+            <h2>Menu Style: <%= @menu.style_name %>
+              <% if @user.admin %>
+              <span> | </span><%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %>
+              <% end %>
+            </h2>
           </div>
 
           <% if @menu.bits.any? %>

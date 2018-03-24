@@ -9,11 +9,11 @@
     }
   }
 
-  const selectedOption = $('#menu_style_id option:selected').text();
+  var selectedOption = $('#menu_style_id option:selected').text();
   showForm(selectedOption);
   $('#menu_style_id').change(function (e) {
     e.preventDefault();
-    const changedOption = $('#menu_style_id option:selected').text();
+    var changedOption = $('#menu_style_id option:selected').text();
     showForm(changedOption);
   })
 

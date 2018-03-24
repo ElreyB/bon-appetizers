@@ -15,14 +15,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @users = User.all
-    @user = User.find(params[:user_id])
-    @event = Event.new
-    respond_to do |format|
-      format.html { }
-      format.js { }
+    @user = current_user
+    if @user.admin
+      @users = User.all
     end
-
+    @event = Event.new
   end
 
   def create
