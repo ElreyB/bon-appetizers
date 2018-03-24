@@ -21,7 +21,8 @@ a,
 .well,
 .panel,
 .welcome,
-.gold-bg a:hover {
+.gold-bg a:hover,
+a.no-line:hover {
   color: #86B8B7;
 }
 
@@ -78,7 +79,8 @@ a,
 
 .panel-heading,
 .welcome,
-.thumbnail {
+.thumbnail,
+.card {
   text-align: center;
 }
 
@@ -118,11 +120,15 @@ a,
 
 .card {
   padding: 1px;
-  text-align: center;
 }
 
-.no-line a:link {
+.no-line a:link,
+a.no-line {
   text-decoration: none;
+}
+
+a.no-line {
+  color: #CE8826;
 }
 
 .thumb-image {
