@@ -7,27 +7,28 @@ body,
   background-color: #1B1C16;
 }
 
-.navbar-brand,
-body {
-  font-size: 24px;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
-header {
-  background: yellow;
-  height: 80px;
+body {
+  position: relative;
+}
+
+.navbar {
+  height: 50px;
 }
 
 .container {
-  min-height: calc(100vh - 120px);
-  /* 80px header + 40px footer = 120px  */
+  min-height: calc(100vh - 90px);
+  /* 50px header + 40px footer = 90px  */
+  overflow: auto;
+  position: relative;
 }
 
-footer {
+footer,
+.alert.alert-danger {
   height: 40px;
 }
 
@@ -109,7 +110,8 @@ footer,
 .panel-heading,
 .welcome,
 .thumbnail,
-.card {
+.card,
+.log-well {
   text-align: center;
 }
 
@@ -162,4 +164,15 @@ a.no-line {
 
 .thumb-image {
   margin-bottom: 3px;
+}
+
+.btn {
+  background-color: #167516;
+}
+
+.log-well {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -34,7 +34,8 @@
     </nav>
 
     <div class="container">
-      <% if flash[:notice] != nil %>
+      <div id="error-container">
+        <% if flash[:notice] != nil %>
         <div class="alert alert-success">
         <%= flash[:notice] %>
         </div>
@@ -44,6 +45,14 @@
         <%= flash[:alert] %>
         </div>
       <% end %>
+
+      <% if devise_error_messages! != "" %>
+        <div class="alert alert-danger">
+        <%= devise_error_messages! %>
+        </div>
+      <% end %>
+
+      </div>
       <%= yield %>
     </div>
     <footer>

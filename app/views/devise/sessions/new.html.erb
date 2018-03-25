@@ -1,5 +1,6 @@
-<div class="well">
+<div class="well log-well">
   <h2>Log in</h2>
+  <hr>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
@@ -23,7 +24,7 @@
 
 
     <div class="actions">
-      <%= f.submit "Log in", class: "btn btn-block"%>
+      <%= f.submit "Log in", class: "btn btn-block btn-success"%>
     </div>
   <% end %>
 <hr>
