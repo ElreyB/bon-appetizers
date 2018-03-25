@@ -33,26 +33,16 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div id="error-container">
-        <% if flash[:notice] != nil %>
-        <div class="alert alert-success">
-        <%= flash[:notice] %>
-        </div>
+    <div class="container"><% if devise_error_messages! != "" %>
+    <%= content_tag :div, devise_error_messages!, id: "flash", class: "alert alert-danger"%>
+    <%end%>
+      <% flash.each do |name, msg| %>
+      <% if name == notice %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class: "alert alert-success"%>
+      <% elsif name = alert %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class: "alert alert-danger"%>
       <% end %>
-      <% if flash[:alert] != nil %>
-        <div class="alert alert-danger">
-        <%= flash[:alert] %>
-        </div>
       <% end %>
-
-      <% if devise_error_messages! != "" %>
-        <div class="alert alert-danger">
-        <%= devise_error_messages! %>
-        </div>
-      <% end %>
-
-      </div>
       <%= yield %>
     </div>
     <footer>

@@ -27,9 +27,12 @@ body {
   position: relative;
 }
 
-footer,
+footer {
+  height: 40
+}
+
 .alert.alert-danger {
-  height: 40px;
+  height: 60px;
 }
 
 body footer p {
@@ -172,7 +175,7 @@ a.no-line {
 
 .log-well {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
