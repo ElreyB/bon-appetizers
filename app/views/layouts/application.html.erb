@@ -27,15 +27,13 @@
             <li><%= link_to "|  Sign out  |", "/users/sign_out", method: :delete %></li>
           <% else %>
             <li><%= link_to "|  Sign up |", '/users/sign_up' %></li>
-            <li><%= link_to "|  Sign in |", '/users/sign_in' %></li>
+            <li><%= link_to "|  Log in |", '/users/sign_in' %></li>
           <% end %>
         </ul>
       </div>
     </nav>
 
-    <div class="container"><% if devise_error_messages! != "" %>
-    <%= content_tag :div, devise_error_messages!, id: "flash", class: "alert alert-danger"%>
-    <%end%>
+    <div class="container">
       <% flash.each do |name, msg| %>
       <% if name == notice %>
       <%= content_tag :div, msg, id: "flash_#{name}", class: "alert alert-success"%>

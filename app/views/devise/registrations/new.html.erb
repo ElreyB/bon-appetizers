@@ -1,4 +1,6 @@
-
+ <% if devise_error_messages! != "" %>
+  <%= content_tag :div, devise_error_messages!, id: "flash", class: "alert alert-danger"%>
+<%end%>
 <div class="well log-well">
 
     <h2>Sign up</h2>
@@ -41,9 +43,9 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up", class: "btn btn-block btn-primary" %>
+      <%= f.submit "Sign up", class: "btn btn-block btn-success" %>
     </div>
   <% end %>
-  <br>
+  <hr>
   <%= render "devise/shared/links" %>
 </div>
