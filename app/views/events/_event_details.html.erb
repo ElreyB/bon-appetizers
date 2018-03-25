@@ -1,13 +1,16 @@
-<!-- Better view -->
+<hr>
+<div class="row text-center">
+  <div class="col-sm-4">
+    <h4>Party For:</h4>
+    <h5><%= @event.party_for %></h5>
+  </div>
+  <div class="col-sm-4">
+    <h4>Party For:</h>
+    <h5><%= @event.number_of_people %></h5>
 
-<div class="row">
-  <div class="col-sm-4">
-    <h3>Party For: <%= @event.party_for %></h3>
   </div>
   <div class="col-sm-4">
-    <h3>Party For: <%= @event.number_of_people %></h3>
-  </div>
-  <div class="col-sm-4">
-    <h3>Party For: <%= @event.parse_datetime %></h3>
+    <h4>Party For: </h4>
+    <h5><%= @event.parse_datetime %></h5>
   </div>
 </div>

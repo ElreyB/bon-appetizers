@@ -132,7 +132,7 @@ footer,
 }
 
 .form-control {
-  font-size: 30px;
+  font-size: 15px;
 }
 
 .item-header {
@@ -182,4 +182,16 @@ a.no-line {
 
 li a {
   height: 42px;
+}
+
+.user-events {
+  margin-left: 50px;
+}
+
+#style_true {
+  color: #0e470e;
+}
+
+#style_false {
+  color: rgb(100, 11, 9);
 }
