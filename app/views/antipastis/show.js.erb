@@ -2,7 +2,6 @@ if ($('#antipasti_details_<%=@antipasti.id%>').children().length == 1 ){
   $('#antipasti_details_<%=@antipasti.id%>').empty();
   $('#antipasti_details_<%=@antipasti.id%>').html(`
     <%= image_tag @antipasti.image.url(:thumb), class: "thumb-image" %>
-    <p>$<%=@antipasti.price%></p>
     <p><%=@antipasti.description%></p>
   `);
 } else {

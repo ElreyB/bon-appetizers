@@ -16,11 +16,13 @@
             <div class="caption">
               <p class="no-line"><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
               <hr>
-              <p>
-                <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
-                :data => {:confirm => "You sure?",
-                  :method => "delete"} %>
-              </p>
+              <% if @user.admin %>
+                <p>
+                  <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
+                  :data => {:confirm => "You sure?",
+                    :method => "delete"} %>
+                </p>
+              <% end %>
             </div>
           </div>
         </div>

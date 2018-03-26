@@ -1,6 +1,7 @@
 class DessertsController < ApplicationController
   def index
     @desserts = Dessert.by_name
+    @user = current_user
   end
 
   def show

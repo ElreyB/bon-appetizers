@@ -14,13 +14,15 @@
               <%= image_tag bit.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p class="no-line"><%= link_to bit.name, bit_path(bit), id: "bit_#{bit.id}", remote: true %></p>
+              <p class="no-line"><%=bit.name%></p>
               <hr>
-              <p>
+              <% if @user.admin %>
+                <p>
                 <%= link_to "Edit Bit", edit_bit_path(bit) %> | <%= link_to "Delete Bit", bit_path(bit),
               :data => {:confirm => "You sure?",
                 :method => "delete"} %>
               </p>
+              <% end %>
             </div>
           </div>
         </div>

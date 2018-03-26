@@ -2,7 +2,6 @@ if ($('#dessert_details_<%=@dessert.id%>').children().length == 1 ){
   $('#dessert_details_<%=@dessert.id%>').empty();
   $('#dessert_details_<%=@dessert.id%>').html(`
     <%= image_tag @dessert.image.url(:thumb) %>
-    <p>$<%=@dessert.price%></p>
     <p><%=@dessert.description%></p>
   `);
 } else {

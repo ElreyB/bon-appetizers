@@ -2,7 +2,6 @@ if ($('#pasta_dish_details_<%=@pasta_dish.id%>').children().length == 1 ){
   $('#pasta_dish_details_<%=@pasta_dish.id%>').empty();
   $('#pasta_dish_details_<%=@pasta_dish.id%>').html(`
     <%= image_tag @pasta_dish.image.url(:thumb) %>
-    <p>$<%=@pasta_dish.price%></p>
     <p><%=@pasta_dish.description%></p>
   `);
 } else {

@@ -1,6 +1,7 @@
 class AntipastisController <  ApplicationController
   def index
     @antipastis = Antipasti.by_name
+    @user = current_user
   end
 
   def show

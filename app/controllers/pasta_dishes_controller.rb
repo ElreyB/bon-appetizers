@@ -1,6 +1,7 @@
 class PastaDishesController < ApplicationController
   def index
     @pasta_dishes = PastaDish.by_name
+    @user = current_user
   end
 
   def show

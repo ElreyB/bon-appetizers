@@ -1,6 +1,7 @@
 class MainsController < ApplicationController
   def index
     @mains = Main.by_name
+    @user = current_user
   end
 
   def show

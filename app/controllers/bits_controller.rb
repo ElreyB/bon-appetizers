@@ -1,14 +1,11 @@
 class BitsController < ApplicationController
   def index
     @bits = Bit.by_name
+    @user = current_user
   end
 
   def show
     @bit = Bit.find(params[:id])
-    respond_to do |format|
-      format.html { }
-      format.js { }
-    end
   end
 
   def new
