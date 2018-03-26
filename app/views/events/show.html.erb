@@ -17,28 +17,33 @@
   </nav>
 <% end %>
 
+<div class="show-event-container">
 <div class="panel">
   <div class="panel-heading">
     <div class="page-header">
       <div class="row">
-        <% if @menu && @menu.price%>
-          <div class="col-sm-2">
-          <h2>Price</h2>
-          <p><%= number_to_currency @menu.price %></p>
-        </div>
-        <% end %>
         <div class="col-sm-3">
-          <h2>Party For:</h2>
-          <p><%= @event.party_for %></p>
+          <h4>Party For</h4>
+          <hr class="hr-menu">
+          <h5><%= @event.party_for %></h5>
         </div>
         <div class="col-sm-3">
-          <h2>Number of guest:</h2>
-          <p><%= @event.number_of_people %></p>
+          <h4>Number of guest</h4>
+          <hr class="hr-menu">
+          <h5><%= @event.number_of_people %></h5>
         </div>
         <div class="col-sm-4">
-          <h2>Date and Time of Event:</h2>
-          <p><%= @event.parse_datetime %></p>
+          <h4>Date and Time of Event</h4>
+          <hr class="hr-menu">
+          <h5><%= @event.parse_datetime %></h5>
         </div>
+        <% if @menu && @menu.price%>
+          <div class="col-sm-2">
+          <h4>Price</h4>
+          <hr class="hr-menu">
+          <h5><%= number_to_currency @menu.price %></h5>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -48,13 +53,13 @@
       <div class="thumbnail gold-bg">
         <div class="caption">
           <div class="page-heading">
-            <h2>Menu Style: <%= @menu.style_name %>
-              <% if @user.admin %>
-              <span> | </span><%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %>
-              <% end %>
+            <h3><%=@event.party_for%> Menu</h3>
+            <h2> <%= @menu.style_name %>
             </h2>
+              <% if @user.admin %>
+              <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %>
+              <% end %>
           </div>
-
           <% if @menu.bits.any? %>
             <h2>Bits</h2>
             <hr class="hr-menu">
@@ -119,4 +124,6 @@
     <% end %>
   </div>
   <% end %>
+</div>
+
 </div>

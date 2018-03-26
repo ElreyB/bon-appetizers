@@ -7,6 +7,22 @@ body,
   background-color: #1B1C16;
 }
 
+.page-header {
+  h5,
+  h4 {
+    font-size: 16px;
+    color: #CE8826;
+  }
+  .hr-menu {
+    border-top: 1px solid #CE8826;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +41,7 @@ body {
   /* 50px header + 40px footer = 90px  */
   overflow: auto;
   position: relative;
+  width: 100%;
 }
 
 footer {
@@ -180,8 +197,20 @@ a.no-line {
   transform: translate(-50%, -50%);
 }
 
+.show-event-container {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 750px;
+}
+
 li a {
   height: 42px;
+}
+
+footer {
+  height: 40px
 }
 
 .user-events {
