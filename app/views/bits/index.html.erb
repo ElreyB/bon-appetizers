@@ -1,0 +1,33 @@
+<div class="well">
+  <div class="page-header item-header">
+    <h1 class="text-center">Bit</h1>
+    <button type="button" class="btn gold-bg">
+      <%= link_to "Add Bit", new_bit_path %>
+    </button>
+  </div>
+  <% if @bits.any? %>
+    <div class="row">
+      <% @bits.each do |bit| %>
+        <div class="col-sm-4">
+          <div class="thumbnail gold-bg">
+            <div id="bit_details_<%=bit.id%>">
+              <%= image_tag bit.image.url(:medium) %>
+            </div>
+            <div class="caption">
+              <p class="no-line"><%= link_to bit.name, bit_path(bit), id: "bit_#{bit.id}", remote: true %></p>
+              <hr>
+              <p>
+                <%= link_to "Edit Bit", edit_bit_path(bit) %> | <%= link_to "Delete Bit", bit_path(bit),
+              :data => {:confirm => "You sure?",
+                :method => "delete"} %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Currently there are no bit.</p>
+  <% end %>
+
+</div>

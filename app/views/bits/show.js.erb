@@ -1,0 +1,13 @@
+if ($('#bit_details_<%=@bit.id%>').children().length == 1 ){
+  $('#bit_details_<%=@bit.id%>').empty();
+  $('#bit_details_<%=@bit.id%>').html(`
+    <%= image_tag @bit.image.url(:thumb) %>
+    <p>$<%=@bit.price%></p>
+    <p><%=@bit.description%></p>
+  `);
+} else {
+  $('#bit_details_<%=@bit.id%>').empty();
+  $('#bit_details_<%=@bit.id%>').html(
+    '<%= image_tag @bit.image.url(:medium) %>'
+  );
+}
