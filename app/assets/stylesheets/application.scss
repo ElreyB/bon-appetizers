@@ -45,7 +45,7 @@ body {
 }
 
 footer {
-  height: 40
+  height: 40px;
 }
 
 .alert.alert-danger {
@@ -131,7 +131,9 @@ footer,
 .welcome,
 .thumbnail,
 .card,
-.log-well {
+.log-well,
+.home-container,
+.menu-options-container {
   text-align: center;
 }
 
@@ -223,4 +225,25 @@ footer {
 
 #style_false {
   color: rgb(100, 11, 9);
+}
+
+.home-container {
+  p {
+    font-size: 14px;
+  }
+}
+
+.menu-options-container {
+  .card {
+    width: 48rem;
+    padding: 15px;
+    display: table;
+    margin: auto;
+  }
+  .text {
+    margin-top: 4%;
+  }
+  a#style_false.card-link:hover {
+    color: #86B8B7;
+  }
 }

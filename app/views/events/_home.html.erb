@@ -1,61 +1,72 @@
-<div class="well">
+<div class="well home-container">
   <div class="page-header">
     <h1>Vespolina Evento</h1>
   </div>
-  <h2>About Vespolina</h2>
   <p>Thank you for considering Vespolina for your private event!
   This is a simple guide to give you a general idea of what we do. Please know that we are happy to go above and beyond the menus presented here. We work with you one on one to make sure that all of your needs and wants are met and we hope to exceed your expectations every time you visit us! If you have any questions on what is presented in this guide, please feel free to reach out to me by email, by phone, or in person at Vespolina.
   </p>
-  <div class="text-center">
-    <%= image_tag "image2.jpg" %>
-  </div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+  <%= image_tag "restaurant.jpeg" %>
 </div>
 
-
-<div class="row">
-  <div class="well col-sm-6">
-    <div class="thumbnail">
-      <div class="caption">
-        <div class="page-heading">
-          <h2>Menu Style: <%= @ex_menu[0].style %></h2>
+<div class="well menu-options-container">
+  <div class="row">
+    <div class="col-sm-6 text">
+      <div class="card gold-bg">
+        <div class="card-body">
+          <h5 class="card-title">HORS D’OEUVRES SIZED BITES- GREAT FOR MINGLING</h5>
+          <h6 class="card-subtitle mb-2 text-muted">at $25 per person</h6>
+          <hr class="hr-menu">
+          <p class="card-text">These are a great way to welcome your guests into the space and give them a chance to mingle before they have to sit down for dinner. We are happy to create specialty hors d’oeuvres for your party.</p>
+          <hr class="hr-menu">
+          <div class="card-footer">
+          <%= link_to "Request Event", new_user_event_path(current_user), class: "card-link", id: "style_false" %>
+          </div>
         </div>
-        <h2>Antipasti</h2>
-        <hr class="hr-menu">
-        <p><%= @ex_menu[0].antipastis[0] %></p>
-
-        <h2>Pasta</h2>
-        <hr class="hr-menu">
-        <p><%= @ex_menu[0].pastas[0] %></p>
-
-        <h2>Main</h2>
-        <hr class="hr-menu">
-        <p><%= @ex_menu[0].main_dishes[0] %></p>
-
-        <h2>Dessert</h2>
-        <hr class="hr-menu">
-        <p><%= @ex_menu[0].desserts[0] %></p>
-
-        <h2>Wine</h2>
-        <hr class="hr-menu">
-        <p><%= @ex_menu[0].wine %></p>
+      </div>
+    </div>
+    <div class="col-sm-6">
+    <%= image_tag "restaurant.jpeg", class: "home-image" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+    <%= image_tag "restaurant.jpeg", class: "home-image" %>
+    </div>
+    <div class="col-sm-6 text">
+      <div class="card gold-bg">
+        <div class="card-body">
+          <h5 class="card-title">The Traditional Italian Dinner</h5>
+          <h6 class="card-subtitle mb-2 text-muted">at $55 per person</h6>
+          <hr class="hr-menu">
+          <p class="card-text">A family style feast for your guests! This is a classic Italian menu of antipasti followed by pasta, mains, and a sweet bite to finish it off.</p>
+          <hr class="hr-menu">
+          <div class="card-footer">
+          <%= link_to "Request Event", new_user_event_path(current_user), class: "card-link", id: "style_false" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="well">
-      <!-- About menu options -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <div class="text-center">
-        <%= image_tag "image4.jpg", class: "home-image"%>
+  <div class="row">
+    <div class="col-sm-6 text">
+      <div class="card gold-bg">
+        <div class="card-body">
+          <h5 class="card-title">The Traditional Italian Dinner with Individually Plated Entrees</h5>
+          <h6 class="card-subtitle mb-2 text-muted">at $70 per person</h6>
+          <hr class="hr-menu">
+          <p class="card-text">This is a play off of our classic Italian menu of antipasti followed by pasta, entrees, and a sweet bite to finish it off. This menu allows the luxury of having your guests choose their own entrée while sharing antipasti and pasta courses family style.</p>
+          <hr class="hr-menu">
+          <div class="card-footer">
+          <%= link_to "Request Event", new_user_event_path(current_user), class: "card-link", id: "style_false" %>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="col-sm-6">
+    <%= image_tag "restaurant.jpeg", class: "home-image" %>
+    </div>
   </div>
-</div>
-<div class="well">
-  <!-- Contact information  -->
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 
 
