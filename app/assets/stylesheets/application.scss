@@ -133,7 +133,8 @@ footer,
 .card,
 .log-well,
 .home-container,
-.menu-options-container {
+.menu-options-container,
+.menu-items-container {
   text-align: center;
 }
 
@@ -245,5 +246,17 @@ footer {
   }
   a#style_false.card-link:hover {
     color: #86B8B7;
+  }
+}
+
+.menu-items-container {
+  .card {
+    width: 31rem;
+    padding: 15px;
+    display: table;
+    margin: auto;
+  }
+  h5.card-title a {
+    font-size: 18px;
   }
 }
