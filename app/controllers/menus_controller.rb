@@ -73,13 +73,12 @@ class MenusController < ApplicationController
 
   def destroy
     @user = current_user
-    if params([:event_id])
-      @event = Event.find(params[:event_id])
-      @menu = Menu.find(params[:id])
-      @event.menu.delete(@menu)
+    @menu = Menu.find(params[:id])
+    if @menu.event_id
+      @event = Event.find(@menu.event_id)
+      @event.menu.delete
       redirect_to event_path(@event)
     else
-      @menu = Menu.find(params[:id])
       @menu.destroy
       redirect_to menus_path
     end

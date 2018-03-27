@@ -55,7 +55,9 @@
             <h2> <%= @menu.style_name %>
             </h2>
               <% if @user.admin %>
-              <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %>
+              <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
+                  :data => {:confirm => "You sure?",
+                    :method => "delete"} %>
               <% end %>
           </div>
           <% if @menu.bits.any? %>
