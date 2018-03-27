@@ -12,10 +12,29 @@
     <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <ul>
-            <li><a class="navbar-brand" href="/">Vespolina Evento</a></li>
-          </ul>
+          <%= link_to "Vespolina Evento", "/", class: "navbar-brand" %>
         </div>
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to "Bits", bits_path %>
+            </li>
+            <li>
+              <%= link_to "Antipastis", antipastis_path %>
+            </li>
+            <li>
+              <%= link_to "Pasta Dishs", pasta_dishes_path %>
+            </li>
+            <li>
+              <%= link_to "Mains", mains_path %>
+            </li>
+            <li>
+              <%= link_to "Desserts", desserts_path %>
+            </li>
+            <li>
+              <%= link_to "Meet the Chef","https://seattle.eater.com/2015/3/10/8187507/katie-gallego-named-head-chef-vespolina" %>
+            </li>
+          </ul>
+
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
               <% if current_user.admin %>
