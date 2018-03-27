@@ -19,10 +19,9 @@ class PastaDishesController < ApplicationController
   def create
     @pasta_dish = PastaDish.new(pasta_dish_params)
     if @pasta_dish.save
-      flash[:notice] = "You pasta pasta_dishes_path menu item has been created."
-      redirect_to pasta_dishes_path
+      flash[:notice] =
+      redirect_to pasta_dishes_path, notice: "Pasta menu item has been created."
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :new
     end
   end
@@ -34,10 +33,8 @@ class PastaDishesController < ApplicationController
   def update
     @pasta_dish = PastaDish.find(params[:id])
     if @pasta_dish.update(pasta_dish_params)
-      flash[:notice] = "Pasta Dish menu item has been updated!"
-      redirect_to pasta_dishes_path
+      redirect_to pasta_dishes_path, notice: "Pasta menu item has been updated!"
     else
-      flash[:alert] = "Something has gone wrong.."
       render :edit
     end
   end

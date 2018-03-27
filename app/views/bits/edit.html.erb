@@ -1,6 +1,7 @@
-<h1>Edit Bit</h1>
+<%= render 'layouts/errors', :object => @bit %>
 
-<div class="well">
-  <%= render 'layouts/errors', :object => @bit %>
+<div class="well menu-item-well">
+  <h1>Edit <%= @bit.name %></h1>
+  <hr>
   <%= render 'form' %>
 </div>

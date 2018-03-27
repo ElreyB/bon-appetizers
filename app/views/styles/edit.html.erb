@@ -1,2 +1,7 @@
-<h1>Style#edit</h1>
-<p>Find me in app/views/style/edit.html.erb</p>
+<%= render 'layouts/errors', :object => @style %>
+<div class="well menu-item-well">
+  <h1> Edit <%= @style.name %></h1>
+  <hr>
+  <%= render 'form' %>
+</div>
+

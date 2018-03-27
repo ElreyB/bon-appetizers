@@ -1,2 +1,6 @@
-<h1>Style#new</h1>
-<p>Find me in app/views/style/new.html.erb</p>
+<%= render 'layouts/errors', :object => @style %>
+<div class="well menu-item-well">
+  <h1>New Style</h1>
+  <hr>
+  <%= render 'form' %>
+</div>

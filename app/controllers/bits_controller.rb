@@ -15,10 +15,8 @@ class BitsController < ApplicationController
   def create
     @bit = Bit.new(bit_params)
     if @bit.save
-      flash[:notice] = "You bit menu item has been created."
-      redirect_to bits_path
+      redirect_to bits_path, notice: "You Bit menu item has been created."
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :new
     end
   end
@@ -31,9 +29,8 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
     if @bit.update(bit_params)
       flash[:notice] = "Bit menu item has been updated!"
-      redirect_to bits_path
+      redirect_to bits_path, notice: "Bit menu item has been updated!"
     else
-      flash[:alert] = "Something has gone wrong.."
       render :edit
     end
   end

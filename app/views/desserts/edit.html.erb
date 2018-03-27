@@ -1,6 +1,7 @@
-<h1>Edit Dessert</h1>
+<%= render 'layouts/errors', :object => @dessert %>
 
-<div class="well">
-  <%= render 'layouts/errors', :object => @dessert %>
+<div class="well menu-item-well">
+  <h1>Edit <%= @dessert.name%></h1>
+  <hr>
   <%= render 'form' %>
 </div>

@@ -1,6 +1,7 @@
-<h1>Add dessert</h1>
+<%= render 'layouts/errors', :object => @dessert %>
 
-<div class="well">
-  <%= render 'layouts/errors', :object => @dessert %>
+<div class="well menu-item-well">
+  <h1>New dessert</h1>
+  <hr>
   <%= render 'form' %>
 </div>

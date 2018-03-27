@@ -1,4 +1,6 @@
-<h1>Edit <%= @antipasti.name %></h1>
-<div class="well">
+<%= render 'layouts/errors', :object => @main %>
+<div class="well menu-item-well">
+  <h1> Edit <%= @main.name %></h1>
+  <hr>
   <%= render 'form' %>
 </div>

@@ -19,10 +19,8 @@ class AntipastisController <  ApplicationController
   def create
     @antipasti = Antipasti.new(antipasti_params)
     if @antipasti.save
-      flash[:notice] = "Antipasti menu item has been created."
-      redirect_to antipastis_path
+      redirect_to antipastis_path, notice: "Antipasti menu item has been created."
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :new
     end
   end
@@ -34,10 +32,8 @@ class AntipastisController <  ApplicationController
   def update
     @antipasti = Antipasti.find(params[:id])
     if @antipasti.update(antipasti_params)
-      flash[:notice] = "Antipasti menu item has been updated!"
-      redirect_to antipastis_path
+      redirect_to antipastis_path, notice: "Antipasti menu item has been updated!"
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :edit
     end
   end

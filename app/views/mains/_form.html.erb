@@ -1,5 +1,3 @@
-<%= render 'layouts/errors', :object => @main %>
-
 <%= form_for @main do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -7,17 +5,18 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :price %>
-    <%= f.number_field :price, class: "form-control" %>
+    <%= f.label :description%>
+    <%= f.text_area :description, cols: 20, rows: 5, class: "form-control"%>
   </div>
 
+  <label>Add Photo</label>
   <div class="form-group">
     <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
     <div class="file-upload btn btn-primary">
-       <span>Upload Image</span>
+      <span>Upload Image</span>
       <%= f.file_field :image, class: "form-control upload", id: "uploadBtn" %>
     </div>
   </div>
-
+  <hr>
   <%= f.submit "Submit Main Item", class: "btn btn-success btn-block"%>
 <% end %>

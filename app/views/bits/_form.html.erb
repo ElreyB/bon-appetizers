@@ -1,4 +1,3 @@
-<%= render 'layouts/errors', :object => @bit %>
 
 <%= form_for @bit do |f| %>
   <div class="form-group">
@@ -6,6 +5,7 @@
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
+  <label>Add Photo</label>
   <div class="form-group">
     <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
     <div class="file-upload btn btn-primary">

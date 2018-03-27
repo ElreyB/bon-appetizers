@@ -19,10 +19,8 @@ class MainsController < ApplicationController
   def create
     @main = Main.new(main_params)
     if @main.save
-      flash[:notice] = "You main menu item has been created."
-      redirect_to mains_path
+      redirect_to mains_path, notice: "You main menu item has been created."
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :new
     end
   end
@@ -34,10 +32,8 @@ class MainsController < ApplicationController
   def update
     @main = Main.find(params[:id])
     if @main.update(main_params)
-      flash[:notice] = "Main menu item has been updated!"
-      redirect_to mains_path
+      redirect_to mains_path, notice: "Main menu item has been updated!"
     else
-      flash[:alert] = "Something has gone wrong.."
       render :edit
     end
   end

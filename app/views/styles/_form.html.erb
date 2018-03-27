@@ -1,24 +1,29 @@
-<%= render 'layouts/errors', :object => @pasta_dish %>
 
-<%= form_for @pasta_dish do |f| %>
+<%= form_for @style do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :description%>
-    <%= f.text_area :description, cols: 20, rows: 5, class: "form-control"%>
+    <%= f.text_area :description, cols: 20, rows: 5, class: "form-control" %>
   </div>
 
   <label>Add Photo</label>
-  <div class="form-group">
+  <div class="form-group text-center">
     <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
     <div class="file-upload btn btn-primary">
       <span>Upload Image</span>
       <%= f.file_field :image, class: "form-control upload", id: "uploadBtn" %>
     </div>
   </div>
+
   <hr>
-  <%= f.submit "Submit Pasta Dish Item", class: "btn btn-success btn-block"%>
+  <%= f.submit "Submit Style Item", class: "btn btn-success btn-block"%>
 <% end %>

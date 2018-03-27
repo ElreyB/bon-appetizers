@@ -1,2 +1,35 @@
-<h1>Style#index</h1>
-<p>Find me in app/views/style/index.html.erb</p>
+<div class="well">
+  <div class="page-header item-header">
+    <h1 class="text-center">Styles</h1>
+    <button type="button" class="btn gold-bg">
+      <%= link_to "Add Style", new_style_path %>
+    </button>
+  </div>
+  <% if @styles.any? %>
+    <div class="row">
+      <% @styles.each do |style| %>
+        <div class="col-md-4">
+          <div class="thumbnail gold-bg">
+            <div id="style_details_<%=style.id%>">
+              <%= image_tag style.image.url(:medium) %>
+            </div>
+            <div class="caption">
+              <p class="no-line"><%= link_to style.name, style_path(style), id: "style_#{style.id}", remote: true %></p>
+              <hr>
+              <% if @user.admin %>
+                <p>
+                  <%= link_to "Edit", edit_style_path(style) %> | <%= link_to "Delete", style_path(style),
+                  :data => {:confirm => "You sure?",
+                    :method => "delete"} %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Currently there are no styles.</p>
+  <% end %>
+
+</div>

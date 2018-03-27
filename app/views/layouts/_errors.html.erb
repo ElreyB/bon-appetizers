@@ -1,7 +1,3 @@
 <% if object.errors.any? %>
-
-    <% object.errors.full_messages.each do |message| %>
-      <p class="text-danger"><%= message %></p>
-    <% end %>
-
+  <% flash.now[:alert] = object.errors.full_messages.join(', ')%>
 <% end %>

@@ -1,11 +1,16 @@
-class StyleController < ApplicationController
+class StylesController < ApplicationController
 
   def index
     @styles = Style.all
+    @user = current_user
   end
 
   def show
     @style = Style.find(params[:id])
+    respond_to do |format|
+      format.html { }
+      format.js { }
+    end
   end
 
   def new
@@ -15,11 +20,9 @@ class StyleController < ApplicationController
   def create
     @style = Style.new(style_params)
     if @style.save
-      flash[:notice] = "Menu style had been created."
-      redirect_to styles_path
+      redirect_to styles_path, notice: "Menu Style had been created."
     else
-      flash[:alert] = "Something has gone wrong..."
-      render new
+      render :new
     end
   end
 
@@ -30,10 +33,8 @@ class StyleController < ApplicationController
   def update
     @style = Style.find(params[:id])
     if @style.update(style_params)
-      flash[:notice] = "Menu Style has been updated!"
-      redirect_to styles_path
+      redirect_to styles_path, notice: "Menu Style has been updated!"
     else
-      flash[:notice] = "Something went wrong.."
       render :edit
     end
   end
@@ -45,7 +46,7 @@ class StyleController < ApplicationController
   end
 
   def style_params
-    params.requrie(:style).permit(:name, :price, :pairing)
+    params.require(:style).permit(:name, :price, :pairing, :description, :image)
   end
 
 end

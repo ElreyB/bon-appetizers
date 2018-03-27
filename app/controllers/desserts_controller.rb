@@ -19,10 +19,8 @@ class DessertsController < ApplicationController
   def create
     @dessert = Dessert.new(dessert_params)
     if @dessert.save
-      flash[:notice] = "You dessert menu item has been created."
-      redirect_to desserts_path
+      redirect_to desserts_path, notice: "You dessert menu item has been created."
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :new
     end
   end
@@ -34,10 +32,8 @@ class DessertsController < ApplicationController
   def update
     @dessert = Dessert.find(params[:id])
     if @dessert.update(dessert_params)
-      flash[:notice] = "Dessert menu item has been updated!"
-      redirect_to desserts_path
+      redirect_to desserts_path, notice: "Dessert menu item has been updated!"
     else
-      flash[:alert] = "Soemthing has gone wrong.."
       render :edit
     end
   end
