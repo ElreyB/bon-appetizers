@@ -1,6 +1,5 @@
-
 <script>
- function showForm(formOption) {
+  function showForm(formOption) {
     $('#bits_form, #family_form').addClass('hide');
     if (formOption === "HORS D’OEUVRES") {
       $('#bits_form').removeClass('hide');
@@ -19,7 +18,9 @@
 
 </script>
 
-<h1>edit menu</h1>
-<div class="well">
+<%= render 'layouts/errors', :object => @menu %>
+<div class="well menu-form-well">
+  <h1>edit menu</h1>
+  <hr>
   <%= render 'form' %>
 </div>

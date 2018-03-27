@@ -147,7 +147,8 @@ footer,
 .menu-items-container,
 .signup-well,
 .carousel-container,
-.menu-item-well {
+.menu-item-well,
+.menu-form-well h1 {
   text-align: center;
 }
 
@@ -223,7 +224,7 @@ a.no-line {
 
 .show-event-container {
   position: absolute;
-  top: 53%;
+  top: 61%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 750px;
@@ -298,4 +299,11 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 30rem;
+}
+
+.menu-form-well {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

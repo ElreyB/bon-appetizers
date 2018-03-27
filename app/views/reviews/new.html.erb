@@ -1,5 +1,6 @@
-<div class="well">
-  <h1>New Review</h1>
-
-  <%= render 'form' %>
+<%= render 'layouts/errors', :object => @review %>
+<div class="well log-well">
+    <h1>New Review</h1>
+    <hr>
+    <%= render 'form' %>
 </div>

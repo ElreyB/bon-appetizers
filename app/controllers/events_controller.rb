@@ -34,15 +34,14 @@ class EventsController < ApplicationController
     end
     @event = @user.events.new(event_params)
     if @event.save
-      flash[:notice] = "Your event has been saved. Someone will contact you soon."
+      message = "Your event has been saved. Someone will contact you soon."
         # current_user.admin ? (redirect_to admins_path ): (redirect_to user_path(@user))
       if current_user.admin
-        redirect_to user_path(@user)
+        redirect_to user_path(@user), notice: message
       else
-        redirect_to user_path(@user)
+        redirect_to user_path(@user), notice: massage
       end
     else
-      flash[:alert] = "Looks like something wrong:"
       render :new
     end
   end

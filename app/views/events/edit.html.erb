@@ -1,5 +1,5 @@
-
-<div class="well">
+<%= render 'layouts/errors', :object => @event %>
+<div class="well log-well">
   <h1>Edit <%=@event.party_for%></h1>
-  <%= render 'user_form' %>
+  <%= render 'form' %>
 </div>
