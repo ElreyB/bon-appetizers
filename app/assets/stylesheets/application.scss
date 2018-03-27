@@ -134,7 +134,8 @@ footer,
 .log-well,
 .home-container,
 .menu-options-container,
-.menu-items-container {
+.menu-items-container,
+.signup-well {
   text-align: center;
 }
 
@@ -198,6 +199,14 @@ a.no-line {
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.signup-well {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
 }
 
 .show-event-container {

@@ -28,6 +28,6 @@
     <%= f.label :date_and_time %>
     <%= f.datetime_field :date_and_time, value: "#{@event.date_and_time}", class: "form-control"%>
   </div>
-
-  <%= f.submit 'Request Reservation', class: "btn btn-block" %>
+  <hr>
+  <%= f.submit 'Request Reservation', class: "btn btn-block btn-success" %>
 <% end %>
