@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    render "/users/sign_up"
+    if current_user
+      redirect_to "/"
+    else
+      render "/users/sign_up"
+    end
   end
 
 end
