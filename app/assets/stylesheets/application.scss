@@ -249,7 +249,8 @@ footer {
   }
 }
 
-.menu-items-container {
+.menu-items-container,
+.request-container {
   .card {
     width: 31rem;
     padding: 15px;
@@ -258,5 +259,14 @@ footer {
   }
   h5.card-title a {
     font-size: 18px;
+  }
+}
+
+.request-container {
+  blockquote {
+    width: 50rem;
+    padding: 39px 20px 15px;
+    display: table;
+    margin: auto;
   }
 }

@@ -4,7 +4,7 @@
       <h1>Vespolina Evento</h1>
     </div>
     <p>Thank you for considering Vespolina for your private event!
-    This is a simple guide to give you a general idea of what we do. Please know that we are happy to go above and beyond the menus presented here. We work with you one on one to make sure that all of your needs and wants are met and we hope to exceed your expectations every time you visit us! If you have any questions on what is presented in this guide, please feel free to reach out to me by email, by phone, or in person at Vespolina.
+    This is a simple guide to give you a general idea of what we do. Please know that we are happy to go above and beyond the menus presented here. We work with you one on one to make sure that all of your needs and wants are met and we hope to exceed your expectations every time you visit us! If you have any questions on what is presented in this guide, please feel free to reach out by email, by phone, or in person at Vespolina.
     </p>
 
     <%= image_tag "restaurant.jpeg" %>
@@ -129,14 +129,28 @@
 
 
 
-  <div>
+  </div>
 
   <div class="well request-container">
     <div class="row">
       <div class="col-sm-6">
-
+        <blockquote class="blockquote text-center">
+          <p class="mb-0">"Not only are the dishes at Vespolina otherworldly, but this restaurant is also likely one of the more stunningly designed spots in town."</p>
+          <footer class="blockquote-footer"><cite title="Source Title">Thrillist</cite></footer>
+        </blockquote>
       </div>
       <div class="col-sm-6">
+        <div class="card gold-bg">
+          <div class="card-body">
+            <h5 class="card-title">Need to make a Event Request?</h5>
+            <hr class="hr-menu">
+            <p class="card-text">Please feel free to reach out by email, by phone, in person, or make a request throught your account.</p>
+            <hr class="hr-menu">
+            <div class="card-footer">
+            <%= link_to "Request Event", new_user_event_path(current_user), class: "card-link", id: "style_false" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
