@@ -51,11 +51,11 @@
             </h2>
             <hr>
               <% if @user.admin %>
-              <p>
+              <div id="edit-menu-links">
                 <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
                   :data => {:confirm => "You sure?",
                     :method => "delete"} %>
-              </p>
+              </div>
               <hr>
               <% end %>
           </div>

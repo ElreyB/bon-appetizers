@@ -234,6 +234,10 @@ a.no-line,
   #edit-event-links a {
     color: #CE8826;
   }
+  #edit-menu-links a,
+  #edit-event-links a {
+    font-style: italic;
+  }
   #edit-event-links a:hover {
     color: #86B8B7;
   }
@@ -328,6 +332,10 @@ footer {
 
 #checkbox-input {
   display: inline;
+}
+
+small {
+  font-style: italic;
 }
 
 @media only screen and (max-width: 768px) {

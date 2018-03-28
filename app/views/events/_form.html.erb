@@ -1,14 +1,20 @@
 <%= form_for [@user, @event] do |f| %>
   <% if @user.admin %>
-
-    <div class="form-group">
-      <%= f.check_box("confirm", {class: "checkbox", id:"checkbox-input"}, value = true, @event.confirm ? true :false) %>
-      <%= f.label :confirm%>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%=f.label :guest%>
+          <%= f.select "user_id", options_from_collection_for_select(User.all, "id", "first_name") %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.check_box("confirm", {class: "checkbox", id:"checkbox-input"}, value = true, @event.confirm ? true :false) %>
+          <%= f.label :confirm%>
+        </div>
+      </div>
     </div>
     <hr>
-    <div class="form-group">
-      <%= f.select "user_id", options_from_collection_for_select(User.all, "id", "first_name") %>
-    </div>
   <% end %>
 
   <div class="form-group">
