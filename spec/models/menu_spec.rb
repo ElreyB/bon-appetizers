@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Menu do
   it { should belong_to :event }
   it { should have_one :style }
+  it { should validate_presence_of :style_id }
 
   it "will be an Array" do
     event = FactoryBot.create(:event)

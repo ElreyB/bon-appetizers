@@ -43,6 +43,7 @@ FactoryBot.define do
   end
 
   factory :menu do
+    style_id 1
     bits ["example bit"]
     antipastis ["meats"]
     pastas ["Linage"]

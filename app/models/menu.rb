@@ -2,6 +2,8 @@ class Menu < ActiveRecord::Base
   belongs_to :event
   has_one :style
 
+  validates :style_id, presence: true
+
   scope :menu_styles, ->(menu_style){where("style = ?", menu_style)}
   scope :three_menu, -> {order(created_at: :DESC).limit(3)}
 
