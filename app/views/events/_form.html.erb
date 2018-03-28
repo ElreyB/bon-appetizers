@@ -2,13 +2,12 @@
   <% if @user.admin %>
 
     <div class="form-group">
-      <%#= hidden_field_tag("event[confirm]", value = false)%>
       <%= f.check_box("confirm", {class: "checkbox", id:"checkbox-input"}, value = true, @event.confirm ? true :false) %>
       <%= f.label :confirm%>
     </div>
-
+    <hr>
     <div class="form-group">
-      <%= f.select "user_id", options_from_collection_for_select(@users, "id", "first_name") %>
+      <%= f.select "user_id", options_from_collection_for_select(User.all, "id", "first_name") %>
     </div>
   <% end %>
 

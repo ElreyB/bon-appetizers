@@ -12,17 +12,10 @@ class EventsController < ApplicationController
     @user = current_user
     @event = Event.find(params[:id])
     @menu = @event.menu
-    # respond_to do |format|
-    #     format.html { }
-    #     format.js { }
-    # end
   end
 
   def new
     @user = current_user
-    if @user.admin
-      @users = User.all
-    end
     @event = Event.new
   end
 
@@ -49,7 +42,6 @@ class EventsController < ApplicationController
   def edit
     @user = User.find(current_user.id)
     @event = Event.find(params[:id])
-
   end
 
   def update
