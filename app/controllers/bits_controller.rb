@@ -28,7 +28,6 @@ class BitsController < ApplicationController
   def update
     @bit = Bit.find(params[:id])
     if @bit.update(bit_params)
-      flash[:notice] = "Bit menu item has been updated!"
       redirect_to bits_path, notice: "Bit menu item has been updated!"
     else
       render :edit

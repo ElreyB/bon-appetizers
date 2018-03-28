@@ -8,8 +8,9 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="form-group">
-          <%= f.check_box("confirm", {class: "checkbox", id:"checkbox-input"}, value = true, @event.confirm ? true :false) %>
+        <div class="form-group form-inline">
+          <%= hidden_field_tag("event[confirm]", value = false)%>
+          <%= check_box_tag("event[confirm]", value = true, @event.confirm ? true :false, class: "checkbox") %>
           <%= f.label :confirm%>
         </div>
       </div>

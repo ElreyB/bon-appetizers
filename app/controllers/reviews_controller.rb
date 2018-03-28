@@ -19,10 +19,8 @@ class ReviewsController < ApplicationController
     @event = Event.find(params[:event_id])
     @review = @event.reviews.new(review_params)
     if @review.save
-      flash[:notice] = "Your review has been added. Thank you!"
-      redirect_to event_path(@event)
+      redirect_to event_path(@event), notice: "Your review has been added. Thank you!"
     else
-      flash[:errors] = "It looks like you are missing something:"
       render :new
     end
   end
@@ -36,10 +34,8 @@ class ReviewsController < ApplicationController
     @event = Event.find(params[:event_id])
     @review = Review.find(params[:id])
     if @review.update
-      flash[:notice] = "Review has be updated!"
-      redirect_to event_path(@event)
+      redirect_to event_path(@event), notice: "Review has be updated!"
     else
-      flash[:alert] = "Looks like something went wrong:"
       render :edit
     end
   end

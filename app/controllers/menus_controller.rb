@@ -35,14 +35,12 @@ class MenusController < ApplicationController
     @menu = @event.create_menu(menu_params)
     @menu.update_price
     if @menu.save
-      flash[:notice] = "Guest menu has been added."
       if current_user.admin
-        redirect_to event_path(@event)
+        redirect_to event_path(@event), notice: "Guest menu has been added."
       else
         redirect_to user_path(@user)
       end
     else
-      flash[:alert] = "Looks like something went wrong:"
       render :new
     end
   end
@@ -63,10 +61,8 @@ class MenusController < ApplicationController
     @event = Event.find(@menu.event_id)
     @menu.update_price
     if @menu.update(menu_params)
-      flash[:notice] = "Menu has been updated"
-      redirect_to event_path(@event)
+      redirect_to event_path(@event), notice: "Menu has been updated"
     else
-      flash[:alert] = "Something went wrong:"
       render :edit
     end
   end

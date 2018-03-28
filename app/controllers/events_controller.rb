@@ -28,7 +28,6 @@ class EventsController < ApplicationController
     @event = @user.events.new(event_params)
     if @event.save
       message = "Your event has been saved. Someone will contact you soon."
-        # current_user.admin ? (redirect_to admins_path ): (redirect_to user_path(@user))
       if current_user.admin
         redirect_to admins_path, notice: message
       else
@@ -48,13 +47,13 @@ class EventsController < ApplicationController
     @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
     if @event.update(event_params)
+      message = "Your event has been updated!"
       if current_user.admin
-        redirect_to event_path(@event), notice: "Your event has been updated!"
+        redirect_to event_path(@event), notice: message
       else
-        redirect_to user_path(@user), notice: "Your event has been updated!"
+        redirect_to user_path(@user), notice: message
       end
     else
-      flash[:alert] = "Looks like something went wrong:"
       render :edit
     end
   end
