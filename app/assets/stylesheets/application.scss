@@ -334,7 +334,12 @@ footer {
   display: inline;
 }
 
-small {
+.item-well p a,
+.item-well small,
+a#style_false.card-link,
+h5.card-title a,
+#edit-event-links a,
+.card-text p a {
   font-style: italic;
 }
 
