@@ -228,6 +228,12 @@ a.no-line {
   left: 50%;
   transform: translateX(-50%);
   min-width: 750px;
+  #edit-event-links a {
+    color: #CE8826;
+  }
+  #edit-event-links a:hover {
+    color: #86B8B7;
+  }
 }
 
 li a {

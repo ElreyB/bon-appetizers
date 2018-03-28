@@ -1,21 +1,5 @@
 <div class="show-event-container">
-  <% if current_user.admin %>
-    <nav aria-label="breadcrumb" role="navigation">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#"><%= link_to 'Edit Event', edit_event_path(@event) %></a>
-        </li>
-          <li class="breadcrumb-item">
-            <a href="#"><%= link_to 'Select Menu', new_event_menu_path(@event) %></a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            <a href="#"><%= link_to "Delete Event", event_path(@event),
-                      :data => {:confirm => "You sure?",
-                        :method => "delete"} %></a>
-          </li>
-      </ol>
-    </nav>
-  <% end %>
+
 <div class="panel">
   <div class="panel-heading">
     <div class="page-header">
@@ -43,6 +27,17 @@
           </div>
         <% end %>
       </div>
+
+      <% if current_user.admin %>
+      <hr>
+        <div id="edit-event-links"><%= link_to 'Edit Event', edit_event_path(@event) %> |
+        <% if !@event.menu %>
+          <%= link_to 'Select Menu', new_event_menu_path(@event) %> |
+        <% end %>
+        <%= link_to "Delete Event", event_path(@event),
+                    :data => {:confirm => "You sure?",
+                      :method => "delete"} %></div>
+      <% end %>
     </div>
   </div>
   <div class="panel-body">
@@ -54,10 +49,14 @@
             <h3><%=@event.party_for%> Menu</h3>
             <h2> <%= @menu.style_name %>
             </h2>
+            <hr>
               <% if @user.admin %>
-              <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
+              <p>
+                <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
                   :data => {:confirm => "You sure?",
                     :method => "delete"} %>
+              </p>
+              <hr>
               <% end %>
           </div>
           <% if @menu.bits.any? %>
