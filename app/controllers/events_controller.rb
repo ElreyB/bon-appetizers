@@ -37,7 +37,7 @@ class EventsController < ApplicationController
       message = "Your event has been saved. Someone will contact you soon."
         # current_user.admin ? (redirect_to admins_path ): (redirect_to user_path(@user))
       if current_user.admin
-        redirect_to user_path(@user), notice: message
+        redirect_to admins_path, notice: message
       else
         redirect_to user_path(@user), notice: massage
       end
