@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :events
 
   validate :password_complexity
+  validates :phone, presence: true
 
   def self.get_fullname(user_id)
     user = User.find(user_id)
