@@ -103,9 +103,6 @@ footer {
   max-height: 100% !important;
 }
 
-// .carousel-caption {
-//   font-size: 40px;
-// }
 .carousel-caption h2 a {
   color: white;
 }
@@ -150,17 +147,17 @@ footer,
 .signup-well,
 .carousel-container,
 .menu-item-well,
-.menu-form-well {
+.menu-form-well,
+.style-well {
   text-align: center;
 }
 
 .gold-bg {
-  background-color: #CE8826;
-}
-
-.gold-bg a,
-.gold-bg {
   color: #333333;
+  background-color: #CE8826;
+  a {
+    color: #333333;
+  }
 }
 
 .panel-footer ul {
@@ -310,6 +307,14 @@ footer {
 .menu-item-well {
   position: absolute;
   top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 30rem;
+}
+
+.style-well {
+  position: absolute;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 30rem;
