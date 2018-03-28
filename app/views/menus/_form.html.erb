@@ -1,63 +1,71 @@
 <%= form_for [@event, @menu] do |f| %>
 
-  <div class="form-group">
-    <%= f.label :style %>
-    <%= f.collection_select :style_id, Style.all, :id, :name , include_blank: true, class: "form form-group form-control"%>
-  </div>
-
-  <div class="form-group">
-      <%= f.label :Pairing%>
-      <%= hidden_field_tag("menu[wine]", value = false)%>
-      <%= check_box_tag("menu[wine]", value = true, @menu.wine ? true :false, class: "checkbox") %>
+  <div class-"row menu-content">
+    <div class="col-sm-7">
+      <div class=form-group>
+        <div class="form-check">
+          <%= f.label :style, class: "form-check-label" %>
+          <%= f.collection_select :style_id, Style.all, :id, :name , include_blank: true, class: "form-control"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-sm-offset-2">
+      <div class=form-group>
+        <div class="form-check">
+          <%= f.label :pairing%>
+          <%= f.check_box("wine", {class: "checkbox"}, value = true, @menu.wine ? true :false, ) %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="bits_form" class="hide">
-    <div class="form-group">
-      <%= f.label :bits %>
-      <div>
-        <% @bits.each do |bit|%>
-          <div class="checkbox-inline">
-            <%= check_box_tag("menu[bits][]", bit.name, @menu.bits.include?(bit.name), class: "checkbox") %><%= bit.name %>
-          </div><br>
-        <% end %>
+    <div class=form-group>
+      <div class="form-check">
+          <%= f.label :bits %>
+          <% @bits.each do |bit|%>
+            <div class="checkbox-inline">
+              <%= check_box_tag("menu[bits][]", bit.name, @menu.bits.include?(bit.name), class: "checkbox") %><%= bit.name %>
+            </div><br>
+          <% end %>
       </div>
     </div>
   </div>
 
-  <div id="family_form" class="hide">
-    <div class="form-group">
-      <%= f.label :antipasti %>
-      <div>
-      <% @antipastis.each do |antipasti|%>
-        <div class="checkbox-inline">
-          <%= check_box_tag("menu[antipastis][]", antipasti.name, @menu.antipastis.include?(antipasti.name), class: "checkbox") %><%= antipasti.name %>
-        </div>
-      <% end %>
+  <div id="family_form" class="menu-content hide">
+    <div class=form-group>
+      <div class="form-check">
+        <%= f.label :antipasti %>
+        <% @antipastis.each do |antipasti|%>
+          <div class="checkbox-inline">
+            <%= check_box_tag("menu[antipastis][]", antipasti.name, @menu.antipastis.include?(antipasti.name), class: "checkbox") %><%= antipasti.name %>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label :pasta %>
-      <div>
-      <% @pastas.each do |pasta|%>
-        <div class="checkbox-inline">
-          <%= check_box_tag("menu[pastas][]", pasta.name, @menu.pastas.include?(pasta.name), class: "checkbox") %><%= pasta.name %>
-        </div>
-      <% end %>
+    <div class=form-group>
+      <div class="form-check">
+        <%= f.label :pasta %>
+        <% @pastas.each do |pasta|%>
+          <div class="checkbox-inline">
+            <%= check_box_tag("menu[pastas][]", pasta.name, @menu.pastas.include?(pasta.name), class: "checkbox") %><%= pasta.name %>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label :main_dish %>
-      <div>
-      <% @mains.each do |main|%>
-        <div class="checkbox-inline">
-          <%= check_box_tag("menu[main_dishes][]", main.name, @menu.main_dishes.include?(main.name), class: "checkbox") %><%= main.name %>
-        </div>
-      <% end %>
+    <div class=form-group>
+      <div class="form-check">
+        <%= f.label :main_dish %>
+        <% @mains.each do |main|%>
+          <div class="checkbox-inline">
+            <%= check_box_tag("menu[main_dishes][]", main.name, @menu.main_dishes.include?(main.name), class: "checkbox") %><%= main.name %>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label :desserts %>
-      <div>
+    <div class=form-group>
+      <div class="form-check">
+        <%= f.label :desserts %>
         <% @desserts.each do |dessert|%>
           <div class="checkbox-inline">
             <%= check_box_tag("menu[desserts][]", dessert.name, @menu.desserts.include?(dessert.name), class: "checkbox") %><%= dessert.name %>
@@ -66,8 +74,6 @@
       </div>
     </div>
   </div>
-
-
-
-  <%= f.submit "Create Menu", class: "btn btn-block btn-primary" %>
+  <hr>
+  <%= f.submit "Create Menu", class: "btn btn-block btn-success" %>
 <% end %>

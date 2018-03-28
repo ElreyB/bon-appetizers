@@ -150,7 +150,7 @@ footer,
 .signup-well,
 .carousel-container,
 .menu-item-well,
-.menu-form-well h1 {
+.menu-form-well {
   text-align: center;
 }
 
@@ -198,7 +198,8 @@ a.no-line {
 }
 
 a.no-line,
-.signup-well em {
+.signup-well em,
+.menu-form-well label {
   color: #CE8826;
 }
 
@@ -319,6 +320,12 @@ footer {
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
+  label {
+    display: block;
+  }
+  select {
+    max-width: 100%;
+  }
 }
 
 .admin-30days-well {
