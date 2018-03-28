@@ -121,7 +121,8 @@ footer {
 .btn-review,
 .breadcrumb,
 footer,
-.navbar-nav li a:hover {
+.navbar-nav li a:hover,
+#chef-link:focus {
   background-color: #7A0E0C;
 }
 
