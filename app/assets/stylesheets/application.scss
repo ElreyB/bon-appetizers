@@ -218,10 +218,11 @@ a.no-line {
 
 .signup-well {
   position: absolute;
-  top: 57%;
+  top: 41%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 25rem;
+  width: 75rem;
+  padding-bottom: 0;
 }
 
 .show-event-container {

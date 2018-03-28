@@ -39,7 +39,7 @@ class EventsController < ApplicationController
       if current_user.admin
         redirect_to admins_path, notice: message
       else
-        redirect_to user_path(@user), notice: massage
+        redirect_to user_path(@user), notice: message
       end
     else
       render :new
