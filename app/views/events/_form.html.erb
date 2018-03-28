@@ -1,14 +1,14 @@
 <%= form_for [@user, @event] do |f| %>
   <% if @user.admin %>
     <div class="form-group">
-      <%= f.label :Confirm%>
       <%= hidden_field_tag("event[confirm]", value = false)%>
+      <%= f.label :Confirm%>
       <%= check_box_tag("event[confirm]", value = true, @event.confirm ? true :false, class: "checkbox") %>
-  </div>
+    </div>
 
-  <div class="form-group">
-    <%= f.select "user_id", options_from_collection_for_select(@users, "id", "first_name") %>
-  </div>
+    <div class="form-group">
+      <%= f.select "user_id", options_from_collection_for_select(@users, "id", "first_name") %>
+    </div>
   <% end %>
 
   <div class="form-group">
