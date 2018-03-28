@@ -225,9 +225,8 @@ a.no-line {
 
 .show-event-container {
   position: absolute;
-  top: 61%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   min-width: 750px;
 }
 
