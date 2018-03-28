@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Aladin');
+@import url("https://fonts.googleapis.com/css?family=Clicker+Script|Lovers+Quarrel");
 body,
 .panel-footer {
   // font-family: 'Aladin', cursive;
@@ -238,6 +238,14 @@ a.no-line,
   }
   #edit-event-links a:hover {
     color: #86B8B7;
+  }
+  .caption-menu-text {
+    font-family: 'Clicker Script', cursive;
+    font-size: 35px;
+  }
+  .menu-title {
+    font-weight: bold;
+    font-size: 40px;
   }
 }
 

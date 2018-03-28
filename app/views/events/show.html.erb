@@ -46,9 +46,15 @@
       <div class="thumbnail gold-bg">
         <div class="caption">
           <div class="page-heading">
-            <h3><%=@event.party_for%> Menu</h3>
-            <h2> <%= @menu.style_name %>
-            </h2>
+            <div class="caption-menu-text">
+              <p class="menu-title"><%=@event.party_for%>'s menu
+              </p>
+              <p> <%= @menu.style_name %>
+              <% if @menu.wine %>
+                with wine pairing
+              <% end %>
+              </p>
+            </div>
             <hr>
               <% if @user.admin %>
               <div id="edit-menu-links">
@@ -59,46 +65,51 @@
               <hr>
               <% end %>
           </div>
-          <% if @menu.bits.any? %>
-            <h2>Bits</h2>
-            <hr class="hr-menu">
-            <% @menu.bits.each do |bit|%>
-            <p><%= bit %></p>
-            <%end%>
-          <% end %>
+          <div class="caption-menu-text">
+            <% if @menu.bits.any? %>
+              <p class="menu-title">Bits</p>
+              <hr class="hr-menu">
+              <% @menu.bits.each do |bit|%>
+              <p><%= bit %></p>
+              <%end%>
+              <br>
+            <% end %>
 
-          <% if @menu.antipastis.any?%>
-            <h2>Antipasti</h2>
-            <hr class="hr-menu">
-            <% @menu.antipastis.each do |antipasti|%>
-            <p><%= antipasti %></p>
+            <% if @menu.antipastis.any?%>
+              <p class="menu-title">Antipasti</p>
+              <hr class="hr-menu">
+              <% @menu.antipastis.each do |antipasti|%>
+              <p><%= antipasti %></p>
+              <%end%>
+              <br>
             <%end%>
-          <%end%>
 
-          <% if @menu.pastas.any? %>
-            <h2>Pasta</h2>
-            <hr class="hr-menu">
-            <% @menu.pastas.each do |pasta|%>
-            <p><%= pasta %></p>
-            <%end%>
-          <% end %>
+            <% if @menu.pastas.any? %>
+              <p class="menu-title">Pasta</p>
+              <hr class="hr-menu">
+              <% @menu.pastas.each do |pasta|%>
+              <p><%= pasta %></p>
+              <%end%>
+              <br>
+            <% end %>
 
+            <% if @menu.main_dishes.any? %>
+              <p class="menu-title">Main</p>
+              <hr class="hr-menu">
+              <% @menu.inject_or.each do |main_dish|%>
+              <p><%= main_dish %></p>
+              <%end%>
+              <br>
+            <% end %>
 
-          <% if @menu.main_dishes.any? %>
-            <h2>Main</h2>
-            <hr class="hr-menu">
-            <% @menu.inject_or.each do |main_dish|%>
-            <p><%= main_dish %></p>
-            <%end%>
-          <% end %>
-
-          <% if @menu.desserts.any? %>
-            <h2>Dessert</h2>
-            <hr class="hr-menu">
-            <% @menu.desserts.each do |dessert|%>
-            <p><%= dessert %></p>
-            <%end%>
-          <% end %>
+            <% if @menu.desserts.any? %>
+              <p class="menu-title">Dessert</p>
+              <hr class="hr-menu">
+              <% @menu.desserts.each do |dessert|%>
+              <p><%= dessert %></p>
+              <%end%>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
