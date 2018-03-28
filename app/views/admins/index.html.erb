@@ -9,6 +9,8 @@
             <div class="card-text">
               <p><%= event.parse_datetime %></p>
               <p><%= link_to event.party_for, event_path(event) %></p>
+              <hr class="hr-menu">
+              <p id="style_<%=event.confirm%>"><%= event.confirm ? "Confirmed" : "Unconfirmed" %></p>
             </div>
           </div>
         </div>
