@@ -10,8 +10,9 @@ FactoryBot.define do
   end
 
   factory :event do
+    party_for "Sam's Bday"
     number_of_people 12
-    date_and_time "dec. 03,2017"
+    date_and_time "2019-01-19 20:08:04 -0800"
   end
 
   factory :antipasti do
@@ -37,6 +38,8 @@ FactoryBot.define do
   factory :style do
     name "The Traditional Italian Dinner with Individually Plated Entrees"
     price 70.00
+    pairing 35.00
+    description "words"
   end
 
   factory :menu do

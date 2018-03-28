@@ -4,7 +4,8 @@ describe Event do
   it { should belong_to :user }
   it { should have_one :menu }
   it { should validate_numericality_of(:number_of_people).is_less_than_or_equal_to(50)}
-
+  it { should validate_presence_of(:party_for) }
+  it { should validate_presence_of(:date_and_time) }
   it { should validate_numericality_of(:number_of_people).is_greater_than_or_equal_to(10)}
 
   it "returns list of users events" do
@@ -34,7 +35,7 @@ describe Event do
       it "will return true" do
         event = FactoryBot.create(:event)
         event.update({date_and_time: Faker::Date.between(Date.today,Date.today)})
-        expect(event.add_review).to eq true
+        expect(event.add_review?).to eq true
       end
     end
 
@@ -42,10 +43,16 @@ describe Event do
       it "will return false" do
         event = FactoryBot.create(:event)
         event.update({date_and_time: Faker::Date.forward(10)})
-        expect(event.add_review).to eq false
+        expect(event.add_review?).to eq false
       end
     end
   end
 
+  describe "#parse_datetime" do
+    it "will make DateTime input user friendly" do
+      event = FactoryBot.create(:event)
+      expect(event.parse_datetime).to eq "1/19/2019 08:08 PM PST"
+    end
+  end
 
 end

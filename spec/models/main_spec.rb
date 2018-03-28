@@ -4,6 +4,7 @@ describe Main do
 
   it { should validate_presence_of :name}
   it { should validate_uniqueness_of :name}
+  it { should validate_presence_of :description}
 
   it "will return 2 samples of mains" do
     main = FactoryBot.create(:main)

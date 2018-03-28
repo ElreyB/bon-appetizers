@@ -42,7 +42,7 @@ describe Menu do
   describe '#update_price' do
     it "will add price to according to menu style" do
       event = FactoryBot.create(:event)
-      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00)
+      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00, pairing: 12.00, description: "words")
       menu = FactoryBot.create(:menu)
       menu.event_id = event.id
       menu.style_id = style.id
@@ -53,7 +53,7 @@ describe Menu do
 
     it "will add price to according to menu style with pairing" do
       event = FactoryBot.create(:event)
-      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00, pairing: 12.00)
+      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00, pairing: 12.00, description: "words")
       menu = FactoryBot.create(:menu)
       menu.event_id = event.id
       menu.style_id = style.id
@@ -67,7 +67,7 @@ describe Menu do
   describe "#style_name" do
     it "will return menu style name" do
       event = FactoryBot.create(:event)
-      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00)
+      style = Style.create!(name: "HORS D’OEUVRES", price: 25.00, pairing: 12.00, description: "words")
       menu = FactoryBot.create(:menu)
       menu.event_id = event.id
       menu.style_id = style.id

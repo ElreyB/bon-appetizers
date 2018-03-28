@@ -3,6 +3,7 @@ require 'rails_helper'
 describe PastaDish do
 
   it { should validate_presence_of :name}
+  it { should validate_presence_of :description}
   it { should validate_uniqueness_of :name}
 
   it "will return 2 samples of PastaDish" do

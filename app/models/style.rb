@@ -1,7 +1,7 @@
 class Style < ApplicationRecord
   belongs_to :menu
   validates :name, uniqueness: true
-  validates :name, presence: true
+  validates :name, :description, :price, :pairing, presence: true
   scope :by_name, -> {order(name: :ASC)}
 
   has_attached_file :image, styles: { large: "600X600>", medium: "300x300>", thumb: "100x100#" }, default_url: ":style/missing.jpg"
