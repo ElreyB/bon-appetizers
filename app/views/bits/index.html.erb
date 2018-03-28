@@ -1,9 +1,10 @@
 <div class="well">
   <div class="page-header item-header">
-    <h1 class="text-center">Bit</h1>
-    <button type="button" class="btn gold-bg">
-      <%= link_to "Add Bit", new_bit_path %>
-    </button>
+    <h1 class="text-center">Bit
+    <% if current_user.admin %>
+    <small><%= link_to "Add Bit", new_bit_path %></small>
+    <% end %>
+    </h1>
   </div>
   <% if @bits.any? %>
     <div class="row">

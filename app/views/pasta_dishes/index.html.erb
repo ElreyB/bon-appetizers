@@ -1,9 +1,10 @@
 <div class="well">
   <div class="page-header item-header">
-    <h1 class="text-center">Pasta Dishes</h1>
-    <button type="button" class="btn gold-bg">
-      <%= link_to "Add Pasta Dish", new_pasta_dish_path %>
-    </button>
+    <h1 class="text-center">Pasta Dishes
+    <% if current_user.admin %>
+    <small><%= link_to "Add Pasta Dish", new_pasta_dish_path %></small>
+    <% end %>
+    </h1>
   </div>
   <% if @pasta_dishes.any? %>
     <div class="row">

@@ -1,9 +1,10 @@
 <div class="well">
   <div class="page-header item-header">
-    <h1 class="text-center">Mains</h1>
-    <button type="button" class="btn gold-bg">
-      <%= link_to "Add Main", new_main_path %>
-    </button>
+    <h1 class="text-center">Mains
+    <% if current_user.admin %>
+    <small><%= link_to "Add Main", new_main_path %></small>
+    <% end %>
+    </h1>
   </div>
   <% if @mains.any? %>
   <div class="row">
