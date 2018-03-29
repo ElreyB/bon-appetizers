@@ -1,25 +1,27 @@
 <script>
-  function showForm(formOption) {
-    $('#bits_form, #family_form').addClass('hide');
-    if (formOption === "HORS D’OEUVRES") {
-      $('#bits_form').removeClass('hide');
-    } else if ((formOption === "The Traditional Italian Dinner") || (formOption === "The Traditional Italian Dinner with Individually Plated Entrees")) {
-      $('#family_form').removeClass('hide');
+  $(document).ready(function(){
+    $('.menu-form-well').removeClass('hide');
+    function showForm(formOption) {
+      $('#bits_form, #family_form').addClass('hide');
+      if (formOption === "HORS D’OEUVRES") {
+        $('#bits_form').removeClass('hide');
+      } else if ((formOption === "The Traditional Italian Dinner") || (formOption === "The Traditional Italian Dinner with Individually Plated Entrees")) {
+        $('#family_form').removeClass('hide');
+      }
     }
-  }
 
-  var selectedOption = $('#menu_style_id option:selected').text();
-  showForm(selectedOption);
-  $('#menu_style_id').change(function (e) {
-    e.preventDefault();
-    var changedOption = $('#menu_style_id option:selected').text();
-    showForm(changedOption);
+    var selectedOption = $('#menu_style_id option:selected').text();
+    showForm(selectedOption);
+    $('#menu_style_id').change(function (e) {
+      e.preventDefault();
+      var changedOption = $('#menu_style_id option:selected').text();
+      showForm(changedOption);
+    })
   })
-
 </script>
 
 <%= render 'layouts/errors', :object => @menu %>
-<div class="well menu-form-well">
+<div class="well menu-form-well hide">
   <h1>New Menu</h1>
   <hr>
   <%= render 'form' %>
