@@ -8,7 +8,7 @@
 
   <div class="row">
     <% @user.events.each do |event| %>
-      <h3 class="col-sm-4"><%= link_to event.party_for, event_path(event) %></h3>
+      <h3 class="col-md-4"><%= link_to event.party_for, event_path(event) %></h3>
     <% end %>
   </div>
 </div>

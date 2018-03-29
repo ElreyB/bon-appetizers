@@ -9,7 +9,7 @@
   <% if @pasta_dishes.any? %>
     <div class="row">
       <% @pasta_dishes.each do |pasta_dish| %>
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <div class="thumbnail gold-bg">
             <div id="pasta_dish_details_<%=pasta_dish.id%>">
               <%= image_tag pasta_dish.image.url(:medium) %>

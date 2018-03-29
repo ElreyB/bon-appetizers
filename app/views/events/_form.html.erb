@@ -1,13 +1,13 @@
 <%= form_for [@user, @event] do |f| %>
   <% if @user.admin %>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <div class="form-group">
           <%=f.label :guest%>
           <%= f.select "user_id", options_from_collection_for_select(User.all, "id", "first_name") %>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <div class="form-group form-inline">
           <%= hidden_field_tag("event[confirm]", false)%>
           <%= check_box_tag("event[confirm]", true, @event.confirm ? true :false, class: "checkbox") %>

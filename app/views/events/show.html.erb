@@ -7,23 +7,23 @@
       <% end %>
     <div class="page-header">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <h4>Party For</h4>
           <hr class="hr-menu">
           <h5><%= @event.party_for %></h5>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <h4>Number of guest</h4>
           <hr class="hr-menu">
           <h5><%= @event.number_of_people %></h5>
         </div>
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <h4>Date and Time of Event</h4>
           <hr class="hr-menu">
           <h5><%= @event.parse_datetime %></h5>
         </div>
         <% if @menu && @menu.price%>
-          <div class="col-sm-2">
+          <div class="col-md-2">
           <h4>Price</h4>
           <hr class="hr-menu">
           <h5><%= number_to_currency @menu.price %></h5>

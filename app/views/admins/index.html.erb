@@ -3,7 +3,7 @@
   <% if @events_within_30_days.any? %>
     <div class="row">
       <% @events_within_30_days.each do |event| %>
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <div class="card gold-bg">
             <h2 class="card-title" ><%= User.get_fullname(event.user_id) %></h2 >
             <h6 class="card-subtitle mb-2 text-muted"><%= User.find(event.user_id).phone%></h6>

@@ -9,7 +9,7 @@
   <% if @bits.any? %>
     <div class="row">
       <% @bits.each do |bit| %>
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <div class="thumbnail gold-bg">
             <div id="bit_details_<%=bit.id%>">
               <%= image_tag bit.image.url(:medium) %>

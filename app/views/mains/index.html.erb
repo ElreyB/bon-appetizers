@@ -9,7 +9,7 @@
   <% if @mains.any? %>
   <div class="row">
       <% @mains.each do |main| %>
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <div class="thumbnail gold-bg">
             <div id="main_details_<%=main.id%>">
               <%= image_tag main.image.url(:medium) %>
