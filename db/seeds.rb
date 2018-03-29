@@ -58,6 +58,10 @@ Menu.all.each do |menu|
   end
 end
 
+PastaDish.all.each do |pasta|
+  pasta.update(image: File.new("app/assets/images/calamari-black-pasta.jpg"))
+end
+
 Event.all.each do |event|
   event.date_and_time <= Time.parse(DateTime.now.to_s) ? event.update(confirm: true) : nil
 end
