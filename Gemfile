@@ -18,6 +18,7 @@ gem 'devise', '~> 4.3.0'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'rails_admin', '~> 1.2'
 gem 'cancancan', '~> 2.0'
+gem 'data-confirm-modal'
 
 
 group :development, :test do

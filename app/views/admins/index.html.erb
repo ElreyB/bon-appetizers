@@ -6,6 +6,8 @@
         <div class="col-sm-4">
           <div class="card gold-bg">
             <h2 class="card-title" ><%= User.get_fullname(event.user_id) %></h2 >
+            <h6 class="card-subtitle mb-2 text-muted"><%= User.find(event.user_id).phone%></h6>
+            <hr class="hr-menu">
             <div class="card-text">
               <p><%= event.parse_datetime %></p>
               <p><%= link_to event.party_for, event_path(event) %></p>

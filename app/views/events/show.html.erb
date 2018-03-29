@@ -3,6 +3,11 @@
 <div class="panel">
   <div class="panel-heading">
     <div class="page-header">
+
+      <% if current_user.admin %>
+        <p>Contact Person: <%= @guest.get_fullname%> @ <%= @guest.phone%></p>
+      <% end %>
+
       <div class="row">
         <div class="col-sm-3">
           <h4>Party For</h4>
@@ -35,7 +40,7 @@
           <%= link_to 'Select Menu', new_event_menu_path(@event) %> |
         <% end %>
         <%= link_to "Delete Event", event_path(@event),
-                    :data => {:confirm => "You sure?",
+                    :data => {:confirm => "Please contact #{@guest.get_fullname} at #{@guest.phone} to confirm cancellation!!!!",
                       :method => "delete"} %></div>
       <% end %>
     </div>
@@ -59,7 +64,7 @@
               <% if @user.admin %>
               <div id="edit-menu-links">
                 <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
-                  :data => {:confirm => "You sure?",
+                  :data => {:confirm => "Please contact #{@guest.get_fullname} at #{@guest.phone} to confirm cancellation!!!!",
                     :method => "delete"} %>
               </div>
               <hr>

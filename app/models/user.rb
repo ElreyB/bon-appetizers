@@ -15,6 +15,11 @@ class User < ApplicationRecord
   end
 
 
+  def get_fullname
+    "#{self.first_name} #{self.last_name}"
+  end
+
+
   def password_complexity
 
     # PASSWORD_FORMAT = /\A

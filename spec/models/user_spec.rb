@@ -8,7 +8,7 @@ describe User do
   it "returns users's full name" do
     user = FactoryBot.create(:user)
     user.update({first_name: "Elrey", last_name: "Belmonti"})
-    expect(User.get_fullname(user.id)).to eq "Elrey Belmonti"
+    expect(user.get_fullname).to eq "Elrey Belmonti"
   end
 
 end

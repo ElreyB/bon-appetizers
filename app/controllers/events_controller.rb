@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   def show
     @user = current_user
     @event = Event.find(params[:id])
+    @guest = User.find(@event.user_id)
     @menu = @event.menu
   end
 
