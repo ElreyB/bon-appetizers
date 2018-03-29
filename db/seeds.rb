@@ -31,9 +31,10 @@ party_type = ["birthday", "anniversary", "office holiday party"]
 2.times do
   users = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, password: "User123!", password_confirmation: "User123!")
   3.times do
-    events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: Faker::Time.between(2.days.ago, 2.days.from_now, :evening), party_for: Faker::Superhero.name + " " + party_type.sample)
+    events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: Faker::Time.between(2.days.ago, Date.today + 2, :evening), party_for: Faker::Superhero.name + " " + party_type.sample)
     1.times do
-      Menu.create!(event_id: Event.all.sample.id, style_id: Style.all.sample.id)
+      menu = Menu.create!(event_id: Event.all.sample.id, style_id: Style.all.sample.id)
+      events.update(menu_id: menu.id)
     end
 
     5.times do
@@ -52,6 +53,10 @@ Menu.all.each do |menu|
     menu.update(main_dishes: Main.all.sample(2).map{|main| main.name})
     menu.update(desserts: [Dessert.all.sample.name])
   end
+end
+
+Event.all.each do |event|
+  event.date_and_time <= Time.parse(DateTime.now.to_s) ? event.update(confirm: true) : nil
 end
 
 p "Created #{Bit.count} bits."
