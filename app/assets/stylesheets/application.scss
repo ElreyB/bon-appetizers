@@ -120,7 +120,8 @@ footer {
 .breadcrumb,
 footer,
 .navbar-nav li a:hover,
-#chef-link:focus {
+#chef-link:focus,
+.modal-content {
   background-color: #7A0E0C;
 }
 
@@ -148,11 +149,13 @@ footer,
 .carousel-container,
 .menu-item-well,
 .menu-form-well,
-.style-well {
+.style-well,
+.modal-content {
   text-align: center;
 }
 
-.gold-bg {
+.gold-bg,
+.modal-content {
   color: #333333;
   background-color: #CE8826;
   a {
@@ -265,7 +268,8 @@ footer {
   color: #0e470e;
 }
 
-#style_false {
+#style_false,
+  {
   color: rgb(100, 11, 9);
 }
 
@@ -361,6 +365,20 @@ h5.card-title a,
 #edit-event-links a,
 .card-text p a {
   font-style: italic;
+}
+
+.modal-content {
+  .modal-footer {
+    text-align: center;
+  }
+  h5 {
+    color: #7A0E0C;
+    font-size: 23px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (max-width: 768px) {

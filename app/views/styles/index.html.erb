@@ -20,7 +20,7 @@
               <% if @user.admin %>
                 <p>
                   <%= link_to "Edit", edit_style_path(style) %> | <%= link_to "Delete", style_path(style),
-                  :data => {:confirm => "You sure?",
+                  :data => {:confirm => "Deleting will remove #{style.name} from site!!!!",
                     :method => "delete"} %>
                 </p>
               <% end %>

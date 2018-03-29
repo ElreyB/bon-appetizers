@@ -20,7 +20,7 @@
               <% if @user.admin %>
                 <p>
                 <%= link_to "Edit Bit", edit_bit_path(bit) %> | <%= link_to "Delete Bit", bit_path(bit),
-              :data => {:confirm => "You sure?",
+              :data => {:confirm => "Deleting will remove #{bit.name} from site!!!!",
                 :method => "delete"} %>
               </p>
               <% end %>

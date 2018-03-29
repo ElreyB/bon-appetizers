@@ -20,7 +20,7 @@
               <% if @user.admin %>
                 <p>
                   <%= link_to "Edit", edit_antipasti_path(antipasti) %> | <%= link_to "Delete", antipasti_path(antipasti),
-                  :data => {:confirm => "You sure?",
+                  :data => {:confirm => "Deleting will remove #{antipasti.name} from site!!!!",
                     :method => "delete"} %>
                 </p>
               <% end %>
