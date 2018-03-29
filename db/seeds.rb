@@ -27,11 +27,12 @@ menu_items.each do |class_name, file_name|
 end
 
 party_type = ["birthday", "anniversary", "office holiday party"]
+days = [DateTime.now.rfc3339, DateTime.now.days_ago(-2).rfc3339, DateTime.now.days_ago(-1).rfc3339,  DateTime.now.next_day(1).rfc3339]
 
 2.times do
   users = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, password: "User123!", password_confirmation: "User123!")
   3.times do
-    events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: Faker::Time.between(2.days.ago, Date.today + 2, :evening), party_for: Faker::Superhero.name + " " + party_type.sample)
+    events = users.events.create!(number_of_people: Faker::Number.between(10, 50), date_and_time: days.sample.slice(0,16), party_for: Faker::Superhero.name + " " + party_type.sample)
     1.times do
       menu = Menu.create!(event_id: Event.all.sample.id, style_id: Style.all.sample.id)
       events.update(menu_id: menu.id)
@@ -45,13 +46,15 @@ end
 
 Menu.all.each do |menu|
   style_id = menu.style_id
-  if Style.find(style_id) == "HORS D’OEUVRES"
+  if Style.find(style_id).name == "HORS D’OEUVRES"
     menu.update(bits: Bit.all.sample(5).map{|bit| bit.name})
+    menu.update(price: menu.update_price)
   else
     menu.update(antipastis: Antipasti.all.sample(2).map{|antipasti| antipasti.name})
     menu.update(pastas: PastaDish.all.sample(2).map{|pasta_dish| pasta_dish.name})
     menu.update(main_dishes: Main.all.sample(2).map{|main| main.name})
     menu.update(desserts: [Dessert.all.sample.name])
+    menu.update(price: menu.update_price)
   end
 end
 

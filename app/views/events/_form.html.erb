@@ -9,8 +9,8 @@
       </div>
       <div class="col-sm-6">
         <div class="form-group form-inline">
-          <%= hidden_field_tag("event[confirm]", value = false)%>
-          <%= check_box_tag("event[confirm]", value = true, @event.confirm ? true :false, class: "checkbox") %>
+          <%= hidden_field_tag("event[confirm]", false)%>
+          <%= check_box_tag("event[confirm]", true, @event.confirm ? true :false, class: "checkbox") %>
           <%= f.label :confirm%>
         </div>
       </div>
@@ -31,7 +31,7 @@
 
   <div class="form-group">
     <%= f.label :date_and_time %>
-    <%= f.datetime_field :date_and_time, value: "#{@event.date_and_time}", class: "form-control"%>
+    <%= f.datetime_local_field :date_and_time, value: "#{@event.date_and_time}", class: "form-control"%>
   </div>
   <hr>
   <%= f.submit 'Request Reservation', class: "btn btn-block btn-success" %>
