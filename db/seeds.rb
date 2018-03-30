@@ -58,8 +58,30 @@ Menu.all.each do |menu|
   end
 end
 
-PastaDish.all.each do |pasta|
-  pasta.update(image: File.new("app/assets/images/calamari-black-pasta.jpg"))
+bits = ["Seasonal_Bruschetta.jpg","homemade-chips.jpg","nuts.jpg","olives.jpg","fitters.jpg","chicken-meatballs.jpg","Prosciutto_wrapped_asparagus.jpeg","onion_asparagus_frittata_squares.jpg","Rosemary_beef_tenderloin_skewers.jpg","beef-braciole.jpg"]
+antipastis = ["prosciutto_di_parma.jpg","Salame-Plums-and-Pickled-Blackberries.jpg","Caesar_Salad.jpg","ChicorySalad.jpg","Antipasto-misto.jpg","Arugula_salad.jpg","Stuffed_Artichokes.jpeg"]
+desserts = ["Bombolini.jpg","White-Chocolate-Cake.jpg","Olive-Oil-Cake.jpg","Sweet-potato-crespelle.jpg","Winter-ale-gelato.jpg"]
+mains = ["Scallops.jpg","Pork-Belly.jpg","Grilled-Rib-eye.jpeg"]
+pastas = ["braised-beef-cheeks-with-tagliatelle.jpg","calamari-black-pasta.jpg","ravs-1.jpg","Gnocchi.jpg"]
+styles = ["bits.jpg","traditional.jpg","family.jpg"]
+
+Bit.all.each_with_index do |bit, index|
+  bit.update(image: File.new("app/assets/images/bits/" + bits[index]))
+end
+Antipasti.all.each_with_index do |antipasti, index|
+  antipasti.update(image: File.new("app/assets/images/antipastis/" + antipastis[index]))
+end
+PastaDish.all.each_with_index do |pasta, index|
+  pasta.update(image: File.new("app/assets/images/pastas/" + pastas[index]))
+end
+Main.all.each_with_index do |main, index|
+  main.update(image: File.new("app/assets/images/mains/" + mains[index]))
+end
+Dessert.all.each_with_index do |dessert, index|
+  dessert.update(image: File.new("app/assets/images/desserts/" + desserts[index]))
+end
+Style.all.each_with_index do |style, index|
+  style.update(image: File.new("app/assets/images/styles/" + styles[index]))
 end
 
 Event.all.each do |event|
