@@ -6,6 +6,12 @@ class EventsController < ApplicationController
     @events = Event.all
     @event_menus = @events.first.menu
     @ex_menu = Menu.three_menu
+    @desserts = Dessert.pick_of_the_day
+    @antipastis = Antipasti.pick_of_the_day
+    @mains = Main.pick_of_the_day
+    @pasta_dishes = PastaDish.pick_of_the_day
+    @bits = Bit.pick_of_the_day
+    @styles = Style.all
   end
 
   def show

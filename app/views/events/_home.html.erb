@@ -32,12 +32,12 @@
         </div>
       </div>
       <div class="col-md-6">
-      <%= image_tag "restaurant.jpeg", class: "home-image" %>
+      <%= image_tag @styles[0].image.url(:large) %>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
-      <%= image_tag "restaurant.jpeg", class: "home-image" %>
+      <%= image_tag @styles[1].image.url(:large) %>
       </div>
       <div class="col-md-6 text">
         <div class="card gold-bg">
@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="col-md-6">
-      <%= image_tag "restaurant.jpeg", class: "home-image" %>
+      <%= image_tag @styles[2].image.url(:large) %>
       </div>
     </div>
   </div>
@@ -80,10 +80,10 @@
       <h3>Take a look at our deliciouse menu items.
       </h3>
     </div>
-    <div class="row">
+    <div class="row display-flex">
       <div class="col-md-4">
         <div class="card">
-          <%= image_tag "restaurant.jpeg", class: "home-image" %>
+          <%= image_tag @bits[0].image.url(:medium) %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to "Bits List", bits_path %></h5>
           </div>
@@ -91,7 +91,7 @@
       </div>
       <div class="col-md-4">
         <div class="card">
-          <%= image_tag "restaurant.jpeg", class: "home-image" %>
+          <%= image_tag @antipastis[0].image.url(:medium) %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to "Antipasti List", antipastis_path %></h5>
           </div>
@@ -99,7 +99,7 @@
       </div>
       <div class="col-md-4">
         <div class="card">
-          <%= image_tag "restaurant.jpeg", class: "home-image" %>
+          <%= image_tag @pasta_dishes[0].image.url(:medium) %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to "Pasta Dish List", pasta_dishes_path %></h5>
           </div>
@@ -109,7 +109,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="card">
-          <%= image_tag "restaurant.jpeg", class: "home-image" %>
+          <%= image_tag @mains[0].image.url(:medium) %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to "Main List", mains_path %></h5>
           </div>
@@ -117,7 +117,7 @@
       </div>
       <div class="col-md-4">
         <div class="card">
-          <%= image_tag "restaurant.jpeg", class: "home-image" %>
+          <%= image_tag @desserts[0].image.url(:medium) %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to "Dessert List", desserts_path %></h5>
           </div>
