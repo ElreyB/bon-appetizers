@@ -341,9 +341,10 @@ footer {
   select {
     max-width: 100%;
   }
-  #bits_form.form-group.checkbox-inline {
-    float: left;
-  }
+}
+
+#bits_form div.form-group div.checkbox-inline {
+  float: left;
 }
 
 .admin-30days-well {

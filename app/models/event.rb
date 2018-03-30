@@ -16,8 +16,10 @@ class Event < ActiveRecord::Base
   end
 
   def add_review?
-    today = DateTime.now
-    (self.date_and_time <= Time.parse(today.to_s)) && self.confirm
+    today = DateTime.now.rfc3339.slice(0,16)
+    (self.date_and_time <= today) && self.confirm
   end
+
+
 
 end
