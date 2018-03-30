@@ -1,12 +1,15 @@
 
 <div class="well admin-30days-well">
   <% if @events_within_30_days.any? %>
+    <h1 class="text-center">Events in the next 30 days</h1>
+    <hr>
     <div class="row">
       <% @events_within_30_days.each do |event| %>
         <div class="col-md-4">
           <div class="card gold-bg">
             <h2 class="card-title" ><%= User.get_fullname(event.user_id) %></h2 >
             <h6 class="card-subtitle mb-2 text-muted"><%= User.find(event.user_id).phone%></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= User.find(event.user_id).email%></h6>
             <hr class="hr-menu">
             <div class="card-text">
               <p><%= event.parse_datetime %></p>
@@ -22,4 +25,3 @@
     <h3>Currently no events within the next 30 days.</h3>
   <% end %>
 </div>
-
