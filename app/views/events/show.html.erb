@@ -118,25 +118,25 @@
     <% end %>
   </div>
 
-  <% if @event.add_review? %>
-    <div class="panel-footer">
-    <button type="button" class="btn btn-review"><%= link_to 'Add Review', new_event_review_path(@event) %></button>
-    <hr>
-    <% if @event.reviews.any? %>
-      <ul>
-        <% @event.reviews.each do |review| %>
-        <li class="well">
-        <p><%= review.reviewer %></p>
-        <% review.rating.times do %>
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        <%end%>
-        <p><%= review.body %></p>
-      </li>
-        <% end %>
-      </ul>
+  <div class="panel-footer">
+    <% if @event.add_review? && @event.menu_id%>
+      <button type="button" class="btn btn-review"><%= link_to 'Add Review', new_event_review_path(@event) %></button>
+      <hr>
+      <% if @event.reviews.any?%>
+        <ul>
+          <% @event.reviews.each do |review| %>
+            <li class="well">
+            <p><%= review.reviewer %></p>
+            <% review.rating.times do %>
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <%end%>
+            <p><%= review.body %></p>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     <% end %>
   </div>
-  <% end %>
 </div>
 
 </div>
