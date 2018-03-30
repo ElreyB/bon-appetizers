@@ -52,8 +52,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
     @event = Event.find(params[:id])
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+    else
+      @user = User.find(@event.user_id)
+    end
     if @event.update(event_params)
       message = "Your event has been updated!"
       if current_user.admin

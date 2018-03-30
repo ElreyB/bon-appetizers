@@ -50,7 +50,7 @@ describe Event do
   # describe "#parse_datetime" do
   #   it "will make DateTime input user friendly" do
   #     event = FactoryBot.create(:event)
-  #     expect(event.parse_datetime).to eq "3/31/2018 01:45 PM PST"
+  #     expect(event.parse_datetime).to eq "3/31/2018 03:22 PM PST"
   #   end
   # end
 
