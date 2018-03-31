@@ -22,10 +22,11 @@ class Menu < ActiveRecord::Base
     style = Style.find(self.style_id)
     menu_price = style.price.to_f * event.number_of_people
     tax_and_gratuity = menu_price * 0.30
-    if self.wine
-      return self.price = menu_price  + tax_and_gratuity + style.pairing
+    if self.wine == true
+      self.price = menu_price  + tax_and_gratuity + style.pairing
+    else
+      self.price = menu_price  + tax_and_gratuity
     end
-    self.price = menu_price  + tax_and_gratuity
   end
 
   def style_name
