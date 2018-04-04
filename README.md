@@ -9,16 +9,17 @@
 _Vespolina Evento is an app that makes it easier to request reservation for an event at Vespolina._
 
 _As a guest...._
-_You can sign up or log in_
-_Navigate through site to see menu items and styles_
-_On your profile page you can see your events and their details_
-_On event start you and you guest can leave reviews_
 
-_As an event coordinator/admin_
-_Full CRUD on all menu items_
-_See events within 30 days_
-_Access to all review by rating and recently made_
-_Request an event for a guest who has an account_
+* _You can sign up or log in_
+* _Navigate through site to see menu items and styles_
+* _On your profile page you can see your events and their details_
+* _On event start you and you guest can leave reviews_
+
+* _As an event coordinator/admin
+* _Full CRUD on all menu items_
+* _See events within 30 days_
+* _Access to all review by rating and recently made_
+* _Request an event for a guest who has an account_
 
 
 ## Setup/Installation Requirements
@@ -44,11 +45,12 @@ _to run tests_
 * _No know bugs_
 
 ## Future Specs
-_Add more checkboxes for event details_
-_Add search for admin to find events by query_
-_Setup message board for guest and admin_
-_User devise to it fullest_
-_And many more....._
+
+* _Add more checkboxes for event details_
+* _Add search for admin to find events by query_
+* _Setup message board for guest and admin_
+* _User devise to it fullest_
+* _And many more....._
 
 
 ## Support and contact details
