@@ -6,7 +6,20 @@
 
 ## Description
 
-_This app makes it easier to request reservation for an event at Vespolina. A guest would be able to sign up request a day to have their event. A host or manager would also be able to request a event day for a guest that is already sign up on the app._
+_Vespolina Evento is an app that makes it easier to request reservation for an event at Vespolina._
+
+_As a guest...._
+_You can sign up or log in_
+_Navigate through site to see menu items and styles_
+_On your profile page you can see your events and their details_
+_On event start you and you guest can leave reviews_
+
+_As an event coordinator/admin_
+_Full CRUD on all menu items_
+_See events within 30 days_
+_Access to all review by rating and recently made_
+_Request an event for a guest who has an account_
+
 
 ## Setup/Installation Requirements
 * _Clone this repository_
@@ -18,9 +31,25 @@ _This app makes it easier to request reservation for an event at Vespolina. A gu
  rails db:test:prepare(for development)
  rails server or s
 ```
+
+_You may need to install imagemagick on to your computer to use paperclip properly. Go to [Paperclip](https://github.com/thoughtbot/paperclip) for details._
+
+_NOTE: when running the rspec test runner_
+```
+$ bundle exec rspec
+_to run tests_
+```
 ## Known Bugs 🐛🐛🐛
 
-* _No Known Bugs_
+* _No know bugs_
+
+## Future Specs
+_Add more checkboxes for event details_
+_Add search for admin to find events by query_
+_Setup message board for guest and admin_
+_User devise to it fullest_
+_And many more....._
+
 
 ## Support and contact details
 
@@ -28,14 +57,15 @@ _Feel free to contact me at elbelmonti@gmail.com_
 
 ## Technologies Used
 
-* _Ruby/Rails_
-* _Rspec_
-* _Pry_
-* _Capybara_
-* _JavaScript_
-* _SimplCov_
-* _FactoryBot_
-* _Bootstrap_
+* _[Ruby/Rails](http://guides.rubyonrails.org/)_
+* _[Rspec](http://rspec.info/)_
+* _[Pry](https://github.com/pry/pry)_
+* _[JavaScript](https://www.tutorialspoint.com/javascript/index.htm)_
+* _[SimplCov](https://github.com/colszowka/simplecov)_
+* _[FactoryBot](https://github.com/thoughtbot/factory_bot_rails)_
+* _[Bootstrap](https://getbootstrap.com/)_
+* _[Paperclip](https://github.com/thoughtbot/paperclip)_
+* _[Devisegem](https://github.com/plataformatec/devise)_
 
 ## Contributors
 
