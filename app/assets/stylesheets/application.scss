@@ -388,6 +388,16 @@ h5.card-title a,
   flex-wrap: wrap;
 }
 
+.item-well {
+  .item-p-link {
+    font-size: 27px
+  }
+  .item-description {
+    margin-top: 22px;
+    font-size: 17px
+  }
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="col-"] {

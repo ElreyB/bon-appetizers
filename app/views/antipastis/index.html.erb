@@ -15,7 +15,7 @@
               <%= image_tag antipasti.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p class="no-line"><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
+              <p class="no-line item-p-link"><%= link_to antipasti.name, antipasti_path(antipasti), id: "antipasti_#{antipasti.id}", remote: true %></p>
               <hr>
               <% if @user.admin %>
                 <p>
