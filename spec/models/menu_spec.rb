@@ -49,7 +49,7 @@ describe Menu do
       menu.style_id = style.id
       menu.update_price
       menu.save
-      expect(menu.price).to eq 390.00
+      expect(menu.price).to eq 402.00
     end
 
     it "will add price to according to menu style with pairing" do
@@ -61,7 +61,7 @@ describe Menu do
       menu.wine = true
       menu.update_price
       menu.save
-      expect(menu.price).to eq 402.00
+      expect(menu.price).to eq 390.00
     end
   end
 

@@ -31,12 +31,14 @@ describe Event do
   end
 
   describe "#add_review" do
-    # context "when today's date/time is the same or less than event date/time" do
-    #   it "will return true" do
-    #     event = FactoryBot.create(:event)
-    #     expect(event.add_review?).to eq true
-    #   end
-    # end
+    context "when today's date/time is the same or less than event date/time" do
+      it "will return true" do
+        event = FactoryBot.create(:event)
+        event.update({confirm: true})
+        event.confirm
+        expect(event.add_review?).to eq true
+      end
+    end
 
     context "when today's date/time is greater than event date/time" do
       it "will return false" do
@@ -47,11 +49,11 @@ describe Event do
     end
   end
 
-  # describe "#parse_datetime" do
-  #   it "will make DateTime input user friendly" do
-  #     event = FactoryBot.create(:event)
-  #     expect(event.parse_datetime).to eq "3/31/2018 03:22 PM PST"
-  #   end
-  # end
+  describe "#parse_datetime" do
+    it "will make DateTime input user friendly" do
+      event = FactoryBot.create(:event)
+      expect(event.parse_datetime).to eq Time.now.days_ago(-1).strftime("%-m/%-d/%Y %I:%M %p %Z")
+    end
+  end
 
 end

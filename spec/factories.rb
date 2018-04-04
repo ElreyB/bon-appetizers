@@ -12,7 +12,7 @@ FactoryBot.define do
   factory :event do
     party_for "Sam's Bday"
     number_of_people 12
-    date_and_time DateTime.now.days_ago(-1).rfc3339
+    date_and_time DateTime.now.days_ago(-1).rfc3339.slice(0,16)
   end
 
   factory :antipasti do
