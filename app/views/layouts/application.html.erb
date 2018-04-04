@@ -34,6 +34,11 @@
           <li>
             <%= link_to "Styles", styles_path %>
           </li>
+          <% if current_user.admin %>
+            <li>
+              <%= link_to "Reviews", reviews_path %>
+            </li>
+          <% end %>
           <li>
             <%= link_to "Meet the Chef","https://seattle.eater.com/2015/3/10/8187507/katie-gallego-named-head-chef-vespolina", id: "chef-link", target: "_blank" %>
           </li>

@@ -3,7 +3,9 @@
 <% if @user.events.any? %>
   <ul class="row text-center">
     <% @user.events.each do |event| %>
+
       <li class="col-md-5 col-md-offset-1 well gold-bg user-events">
+      <p><%= event.menu_id%></p>
         <h3><%=event.party_for%></h3>
         <%= link_to "Full Details", event_path(event) %> | <%= link_to "Quick Detail", event_path(event), id: "event#{event.id}", remote: true %>
         <div id="event-detail<%=event.id%>">

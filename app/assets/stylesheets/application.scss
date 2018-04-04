@@ -150,7 +150,11 @@ footer,
 .menu-item-well,
 .menu-form-well,
 .style-well,
-.modal-content {
+.modal-content,
+#edit-review-links,
+.review-well h3,
+.review-well h4,
+.stars {
   text-align: center;
 }
 
@@ -199,7 +203,8 @@ a.no-line {
 
 a.no-line,
 .signup-well em,
-.menu-form-well label {
+.menu-form-well label,
+#edit-review-links a:hover {
   color: #CE8826;
 }
 
@@ -232,7 +237,8 @@ a.no-line,
     color: #CE8826;
   }
   #edit-menu-links a,
-  #edit-event-links a {
+  #edit-event-links a,
+  #edit-review-links a {
     font-style: italic;
   }
   #edit-event-links a:hover {
@@ -245,6 +251,9 @@ a.no-line,
   .menu-title {
     font-weight: bold;
     font-size: 40px;
+  }
+  hr {
+    margin-top: 9px
   }
 }
 
@@ -391,6 +400,13 @@ h5.card-title a,
   .item-description {
     margin-top: 22px;
     font-size: 17px
+  }
+}
+
+.review-well {
+  .review-well-col {
+    overflow: auto;
+    max-height: 700px
   }
 }
 

@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @user = current_user
     @event = Event.find(params[:id])
     @guest = User.find(@event.user_id)
-    @menu = @event.menu
+    @menu = Menu.find(@event.menu_id)
   end
 
   def new

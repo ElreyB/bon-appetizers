@@ -120,12 +120,24 @@
 
     <div class="panel-footer">
       <% if @event.add_review? && @event.menu_id%>
-        <button type="button" class="btn btn-review"><%= link_to 'Add Review', new_event_review_path(@event) %></button>
+        <% if !current_user.admin %>
+          <div id="edit-review-links">
+            <%= link_to 'Add Review', new_event_review_path(@event) %>
+          </div>
+        <% end %>
         <hr>
         <% if @event.reviews.any?%>
           <ul>
             <% @event.reviews.each do |review| %>
               <li class="well">
+              <% if !current_user.admin %>
+                <div id="edit-review-links">
+                  <%= link_to 'Edit Review', edit_event_review_path(review) %> | <%= link_to "Delete Review", review_path(review),
+                    :data => {:confirm => "Are you sure you wish to delete #{review.reviewer} review????",
+                      :method => "delete"} %>
+                  <hr>
+                </div>
+              <% end %>
               <p><%= review.reviewer %></p>
               <% review.rating.times do %>
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>

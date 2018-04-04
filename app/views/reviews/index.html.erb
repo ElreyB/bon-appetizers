@@ -1,1 +1,52 @@
-<h1>all reviews</h1>
+
+<div class="well review-well">
+  <div class="page-header item-header">
+    <h1 class="text-center">Reviews</h1>
+  </div>
+
+  <% if @reviews.any? %>
+    <div class="row">
+    <div class="col-md-6">
+      <div class="well gold-bg review-well-col">
+        <h3>Top Reviews
+        </h3>
+        <hr>
+        <ul>
+          <% @reviews_by_rating.each do |review| %>
+          <li>
+            <div class="stars">
+              <% review.rating.times do %>
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <%end%>
+            </div>
+            <p><%= review.body %></p>
+            <hr class="hr-menu">
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well gold-bg review-well-col">
+        <h3>
+          Most Recent Reviews
+        </h3>
+        <hr>
+        <ul>
+          <% @reviews_by_date.each do |review| %>
+          <li>
+            <h4><%= review.reviewer %></h4>
+            <p><%= review.body %></p>
+            <hr class="hr-menu">
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <h3>Currently there are no reviews!!!!</h3>
+  <% end %>
+
+</div>
+

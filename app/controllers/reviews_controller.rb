@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
   def index
     @user = current_user
     @reviews = Review.all
+    @reviews_by_date = Review.by_date
+    @reviews_by_rating = Review.by_rating
   end
 
   def show
@@ -40,9 +42,9 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def destory
-    @event = Event.find(params[:event_id])
+  def destroy
     @review = Review.find(params[:id])
+    @event = Event.find(@review.event_id)
     @review.destroy
     redirect_to event_path(@event)
   end
@@ -50,6 +52,6 @@ class ReviewsController < ApplicationController
 private
 
   def review_params
-    params.require(:review).permit(:rating, :reviewer, :body)
+    params.require(:review).permit(:rating, :reviewer, :body, :event_id)
   end
 end
