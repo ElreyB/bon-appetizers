@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180327215503) do
     t.text     "description"
   end
 
-  create_table "bits", force: :cascade do |t|
+  create_table "bites", force: :cascade do |t|
     t.string   "name"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20180327215503) do
     t.text     "pastas",                              default: [],                 array: true
     t.text     "main_dishes",                         default: [],                 array: true
     t.boolean  "wine",                                default: false
-    t.text     "bits",                                default: [],                 array: true
+    t.text     "bites",                                default: [],                 array: true
     t.integer  "style_id"
   end
 

@@ -1,8 +1,8 @@
-class AddDatetimeToBits < ActiveRecord::Migration[5.0]
+class AddDatetimeToBites < ActiveRecord::Migration[5.0]
   def change
-    drop_table :bits
+    drop_table :bites
 
-    create_table :bits do |t|
+    create_table :bites do |t|
       t.string :name
       t.attachment :image
 

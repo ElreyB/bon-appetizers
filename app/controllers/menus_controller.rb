@@ -19,7 +19,7 @@ class MenusController < ApplicationController
     @mains = Main.by_name
     @desserts = Dessert.by_name
     @styles = Style.by_name
-    @bits = Bit.by_name
+    @bites = Bite.by_name
   end
 
   def create
@@ -30,7 +30,7 @@ class MenusController < ApplicationController
     @mains = Main.by_name
     @desserts = Dessert.by_name
     @styles = Style.by_name
-    @bits = Bit.by_name
+    @bites = Bite.by_name
     @event = Event.find(params[:event_id])
     @menu = @event.create_menu(menu_params)
     @menu.update_price
@@ -53,7 +53,7 @@ class MenusController < ApplicationController
     @mains = Main.by_name
     @desserts = Dessert.by_name
     @styles = Style.by_name
-    @bits = Bit.by_name
+    @bites = Bite.by_name
   end
 
   def update
@@ -83,6 +83,6 @@ class MenusController < ApplicationController
 private
 
   def menu_params
-    params.require(:menu).permit(:style_id, :price, :wine, :bits => [], :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
+    params.require(:menu).permit(:style_id, :price, :wine, :bites => [], :antipastis => [], :pastas => [], :main_dishes => [], :desserts => [])
   end
 end

@@ -6,7 +6,7 @@ User.destroy_all
 Event.destroy_all
 Review.destroy_all
 Style.destroy_all
-Bit.destroy_all
+Bite.destroy_all
 
 
 admin = User.create!(first_name: "Admin", last_name: "Admin", phone: '1111111111', email: "admin@admin.com", password: "Admin123!", password_confirmation: "Admin123!", admin: true)
@@ -17,7 +17,7 @@ menu_items = {
   "Main" => "mains",
   "Dessert" => "desserts",
   "Style" => "styles",
-  "Bit" => 'bits'
+  "Bite" => 'bites'
 }
 menu_items.each do |class_name, file_name|
   CSV.foreach("CSVs/#{file_name}.csv", { headers: true, :header_converters => :symbol }) do |row|
@@ -47,7 +47,7 @@ end
 Menu.all.each do |menu|
   style_id = menu.style_id
   if Style.find(style_id).name == "HORS D’OEUVRES"
-    menu.update(bits: Bit.all.sample(5).map{|bit| bit.name})
+    menu.update(bites: Bite.all.sample(5).map{|bite| bite.name})
     menu.update(price: menu.update_price)
   else
     menu.update(antipastis: Antipasti.all.sample(2).map{|antipasti| antipasti.name})
@@ -58,15 +58,15 @@ Menu.all.each do |menu|
   end
 end
 
-bits = ["Seasonal_Bruschetta.jpg","homemade-chips.jpg","nuts.jpg","olives.jpg","fitters.jpg","chicken-meatballs.jpg","Prosciutto_wrapped_asparagus.jpeg","onion_asparagus_frittata_squares.jpg","Rosemary_beef_tenderloin_skewers.jpg","beef-braciole.jpg"]
+bites = ["Seasonal_Bruschetta.jpg","homemade-chips.jpg","nuts.jpg","olives.jpg","fitters.jpg","chicken-meatballs.jpg","Prosciutto_wrapped_asparagus.jpeg","onion_asparagus_frittata_squares.jpg","Rosemary_beef_tenderloin_skewers.jpg","beef-braciole.jpg"]
 antipastis = ["prosciutto_di_parma.jpg","Salame-Plums-and-Pickled-Blackberries.jpg","Caesar_Salad.jpg","ChicorySalad.jpg","Antipasto-misto.jpg","Arugula_salad.jpg","Stuffed_Artichokes.jpeg"]
 desserts = ["Bombolini.jpg","White-Chocolate-Cake.jpg","Olive-Oil-Cake.jpg","Sweet-potato-crespelle.jpg","Winter-ale-gelato.jpg"]
 mains = ["Scallops.jpg","Pork-Belly.jpg","Grilled-Rib-eye.jpeg"]
 pastas = ["braised-beef-cheeks-with-tagliatelle.jpg","calamari-black-pasta.jpg","ravs-1.jpg","Gnocchi.jpg"]
-styles = ["bits.jpg","traditional.jpg","family.jpg"]
+styles = ["bites.jpg","traditional.jpg","family.jpg"]
 
-Bit.all.each_with_index do |bit, index|
-  bit.update(image: File.new("app/assets/images/bits/" + bits[index]))
+Bite.all.each_with_index do |bite, index|
+  bite.update(image: File.new("app/assets/images/bites/" + bites[index]))
 end
 Antipasti.all.each_with_index do |antipasti, index|
   antipasti.update(image: File.new("app/assets/images/antipastis/" + antipastis[index]))
@@ -88,7 +88,7 @@ Event.all.each do |event|
   event.date_and_time <= Time.parse(DateTime.now.to_s) ? event.update(confirm: true) : nil
 end
 
-p "Created #{Bit.count} bits."
+p "Created #{Bite.count} bites."
 p "Created #{Antipasti.count} antipastis."
 p "Created #{PastaDish.count} pasta."
 p "Created #{Main.count} main dishes."

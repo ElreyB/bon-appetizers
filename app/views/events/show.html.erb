@@ -1,142 +1,142 @@
 <div class="show-event-container">
 
-<div class="panel">
-  <div class="panel-heading">
-      <% if current_user.admin %>
-        <p>Contact Person: <%= @guest.get_fullname%> @ <%= @guest.phone%></p>
-      <% end %>
-    <div class="page-header">
-      <div class="row">
-        <div class="col-md-3">
-          <h4>Party For</h4>
-          <hr class="hr-menu">
-          <h5><%= @event.party_for %></h5>
-        </div>
-        <div class="col-md-3">
-          <h4>Number of guest</h4>
-          <hr class="hr-menu">
-          <h5><%= @event.number_of_people %></h5>
-        </div>
-        <div class="col-md-4">
-          <h4>Date and Time of Event</h4>
-          <hr class="hr-menu">
-          <h5><%= @event.parse_datetime %></h5>
-        </div>
-        <% if @menu && @menu.price%>
-          <div class="col-md-2">
-          <h4>Price</h4>
-          <hr class="hr-menu">
-          <h5><%= number_to_currency @menu.price %></h5>
+  <div class="panel">
+    <div class="panel-heading">
+        <% if current_user.admin %>
+          <p>Contact Person: <%= @guest.get_fullname%> @ <%= @guest.phone%></p>
+        <% end %>
+      <div class="page-header">
+        <div class="row">
+          <div class="col-md-3">
+            <h4>Party For</h4>
+            <hr class="hr-menu">
+            <h5><%= @event.party_for %></h5>
           </div>
+          <div class="col-md-3">
+            <h4>Number of guest</h4>
+            <hr class="hr-menu">
+            <h5><%= @event.number_of_people %></h5>
+          </div>
+          <div class="col-md-4">
+            <h4>Date and Time of Event</h4>
+            <hr class="hr-menu">
+            <h5><%= @event.parse_datetime %></h5>
+          </div>
+          <% if @menu && @menu.price%>
+            <div class="col-md-2">
+            <h4>Price</h4>
+            <hr class="hr-menu">
+            <h5><%= number_to_currency @menu.price %></h5>
+            </div>
+          <% end %>
+        </div>
+
+        <% if current_user.admin %>
+        <hr>
+          <div id="edit-event-links"><%= link_to 'Edit Event', edit_event_path(@event) %> |
+          <% if !@event.menu %>
+            <%= link_to 'Select Menu', new_event_menu_path(@event) %> |
+          <% end %>
+          <%= link_to "Delete Event", event_path(@event),
+                      :data => {:confirm => "Please contact #{@guest.get_fullname} at #{@guest.phone} to confirm cancellation!!!!",
+                        :method => "delete"} %></div>
         <% end %>
       </div>
+    </div>
+    <div class="panel-body">
 
-      <% if current_user.admin %>
-      <hr>
-        <div id="edit-event-links"><%= link_to 'Edit Event', edit_event_path(@event) %> |
-        <% if !@event.menu %>
-          <%= link_to 'Select Menu', new_event_menu_path(@event) %> |
-        <% end %>
-        <%= link_to "Delete Event", event_path(@event),
+      <% if @menu %>
+        <div class="thumbnail gold-bg">
+          <div class="caption">
+            <div class="page-heading">
+              <div class="caption-menu-text">
+                <p class="menu-title"><%=@event.party_for%>'s menu
+                </p>
+                <p> <%= @menu.style_name %>
+                <% if @menu.wine %>
+                  with wine pairing
+                <% end %>
+                </p>
+              </div>
+              <hr>
+                <% if @user.admin %>
+                <div id="edit-menu-links">
+                  <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
                     :data => {:confirm => "Please contact #{@guest.get_fullname} at #{@guest.phone} to confirm cancellation!!!!",
-                      :method => "delete"} %></div>
+                      :method => "delete"} %>
+                </div>
+                <hr>
+                <% end %>
+            </div>
+            <div class="caption-menu-text">
+              <% if @menu.bites.any? %>
+                <p class="menu-title">Bites</p>
+                <hr class="hr-menu">
+                <% @menu.bites.each do |bite|%>
+                <p><%= bite %></p>
+                <%end%>
+                <br>
+              <% end %>
+
+              <% if @menu.antipastis.any?%>
+                <p class="menu-title">Antipasti</p>
+                <hr class="hr-menu">
+                <% @menu.antipastis.each do |antipasti|%>
+                <p><%= antipasti %></p>
+                <%end%>
+                <br>
+              <%end%>
+
+              <% if @menu.pastas.any? %>
+                <p class="menu-title">Pasta</p>
+                <hr class="hr-menu">
+                <% @menu.pastas.each do |pasta|%>
+                <p><%= pasta %></p>
+                <%end%>
+                <br>
+              <% end %>
+
+              <% if @menu.main_dishes.any? %>
+                <p class="menu-title">Main</p>
+                <hr class="hr-menu">
+                <% @menu.inject_or.each do |main_dish|%>
+                <p><%= main_dish %></p>
+                <%end%>
+                <br>
+              <% end %>
+
+              <% if @menu.desserts.any? %>
+                <p class="menu-title">Dessert</p>
+                <hr class="hr-menu">
+                <% @menu.desserts.each do |dessert|%>
+                <p><%= dessert %></p>
+                <%end%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="panel-footer">
+      <% if @event.add_review? && @event.menu_id%>
+        <button type="button" class="btn btn-review"><%= link_to 'Add Review', new_event_review_path(@event) %></button>
+        <hr>
+        <% if @event.reviews.any?%>
+          <ul>
+            <% @event.reviews.each do |review| %>
+              <li class="well">
+              <p><%= review.reviewer %></p>
+              <% review.rating.times do %>
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <%end%>
+              <p><%= review.body %></p>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
       <% end %>
     </div>
   </div>
-  <div class="panel-body">
-
-    <% if @menu %>
-      <div class="thumbnail gold-bg">
-        <div class="caption">
-          <div class="page-heading">
-            <div class="caption-menu-text">
-              <p class="menu-title"><%=@event.party_for%>'s menu
-              </p>
-              <p> <%= @menu.style_name %>
-              <% if @menu.wine %>
-                with wine pairing
-              <% end %>
-              </p>
-            </div>
-            <hr>
-              <% if @user.admin %>
-              <div id="edit-menu-links">
-                <%= link_to "Edit Menu", edit_event_menu_path(@event, @menu) %> | <%= link_to "Delete Menu", menu_path(@menu),
-                  :data => {:confirm => "Please contact #{@guest.get_fullname} at #{@guest.phone} to confirm cancellation!!!!",
-                    :method => "delete"} %>
-              </div>
-              <hr>
-              <% end %>
-          </div>
-          <div class="caption-menu-text">
-            <% if @menu.bits.any? %>
-              <p class="menu-title">Bits</p>
-              <hr class="hr-menu">
-              <% @menu.bits.each do |bit|%>
-              <p><%= bit %></p>
-              <%end%>
-              <br>
-            <% end %>
-
-            <% if @menu.antipastis.any?%>
-              <p class="menu-title">Antipasti</p>
-              <hr class="hr-menu">
-              <% @menu.antipastis.each do |antipasti|%>
-              <p><%= antipasti %></p>
-              <%end%>
-              <br>
-            <%end%>
-
-            <% if @menu.pastas.any? %>
-              <p class="menu-title">Pasta</p>
-              <hr class="hr-menu">
-              <% @menu.pastas.each do |pasta|%>
-              <p><%= pasta %></p>
-              <%end%>
-              <br>
-            <% end %>
-
-            <% if @menu.main_dishes.any? %>
-              <p class="menu-title">Main</p>
-              <hr class="hr-menu">
-              <% @menu.inject_or.each do |main_dish|%>
-              <p><%= main_dish %></p>
-              <%end%>
-              <br>
-            <% end %>
-
-            <% if @menu.desserts.any? %>
-              <p class="menu-title">Dessert</p>
-              <hr class="hr-menu">
-              <% @menu.desserts.each do |dessert|%>
-              <p><%= dessert %></p>
-              <%end%>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="panel-footer">
-    <% if @event.add_review? && @event.menu_id%>
-      <button type="button" class="btn btn-review"><%= link_to 'Add Review', new_event_review_path(@event) %></button>
-      <hr>
-      <% if @event.reviews.any?%>
-        <ul>
-          <% @event.reviews.each do |review| %>
-            <li class="well">
-            <p><%= review.reviewer %></p>
-            <% review.rating.times do %>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            <%end%>
-            <p><%= review.body %></p>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
 
 </div>

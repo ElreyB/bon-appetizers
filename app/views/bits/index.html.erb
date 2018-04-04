@@ -1,26 +1,26 @@
 <div class="well item-well">
   <div class="page-header item-header">
-    <h1 class="text-center">Bit
+    <h1 class="text-center">Bite
     <% if current_user.admin %>
-    <small><%= link_to "Add Bit", new_bit_path %></small>
+    <small><%= link_to "Add Bite", new_bite_path %></small>
     <% end %>
     </h1>
   </div>
-  <% if @bits.any? %>
+  <% if @bites.any? %>
     <div class="row display-flex">
-      <% @bits.each do |bit| %>
+      <% @bites.each do |bite| %>
         <div class="col-md-4">
           <div class="thumbnail gold-bg">
-            <div id="bit_details_<%=bit.id%>">
-              <%= image_tag bit.image.url(:medium) %>
+            <div id="bite_details_<%=bite.id%>">
+              <%= image_tag bite.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p class="no-line"><%=bit.name%></p>
+              <p class="no-line"><%=bite.name%></p>
               <hr>
               <% if @user.admin %>
                 <p>
-                <%= link_to "Edit Bit", edit_bit_path(bit) %> | <%= link_to "Delete Bit", bit_path(bit),
-              :data => {:confirm => "Deleting will remove #{bit.name} from site!!!!",
+                <%= link_to "Edit Bite", edit_bite_path(bite) %> | <%= link_to "Delete Bite", bite_path(bite),
+              :data => {:confirm => "Deleting will remove #{bite.name} from site!!!!",
                 :method => "delete"} %>
               </p>
               <% end %>
@@ -30,7 +30,7 @@
       <% end %>
     </div>
   <% else %>
-    <p>Currently there are no bit.</p>
+    <p>Currently there are no bite.</p>
   <% end %>
 
 </div>

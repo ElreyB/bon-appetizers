@@ -31,8 +31,8 @@ FactoryBot.define do
     name "dessert item"
     description "words"
   end
-  factory :bit do
-    name "bit item"
+  factory :bite do
+    name "bite item"
   end
 
   factory :style do
@@ -44,7 +44,7 @@ FactoryBot.define do
 
   factory :menu do
     style_id 1
-    bits ["example bit"]
+    bites ["example bite"]
     antipastis ["meats"]
     pastas ["Linage"]
     main_dishes ["other item", "another item"]
