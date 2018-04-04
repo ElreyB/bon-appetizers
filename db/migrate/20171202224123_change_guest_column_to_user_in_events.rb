@@ -1,4 +1,4 @@
-class ChangeGuestColumnToUserInEvents < ActiveRecord::Migration[5.1]
+class ChangeGuestColumnToUserInEvents < ActiveRecord::Migration[5.0]
   def change
     rename_column :events, :guest_id, :user_id
   end

@@ -1,4 +1,4 @@
-class CreatePastaDishes < ActiveRecord::Migration[5.1]
+class CreatePastaDishes < ActiveRecord::Migration[5.0]
   def change
     create_table :pasta_dishes do |t|
       t.string :name

@@ -1,4 +1,4 @@
-class CreateMain < ActiveRecord::Migration[5.1]
+class CreateMain < ActiveRecord::Migration[5.0]
   def change
     create_table :mains do |t|
       t.string :name

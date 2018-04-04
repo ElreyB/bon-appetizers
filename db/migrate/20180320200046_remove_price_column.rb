@@ -1,4 +1,4 @@
-class RemovePriceColumn < ActiveRecord::Migration[5.1]
+class RemovePriceColumn < ActiveRecord::Migration[5.0]
   def change
     remove_column :antipastis, :price
     remove_column :desserts, :price
