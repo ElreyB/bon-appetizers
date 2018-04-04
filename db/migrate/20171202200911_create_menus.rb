@@ -1,4 +1,4 @@
-class CreateMenus < ActiveRecord::Migration[5.0]
+class CreateMenus < ActiveRecord::Migration[5.1]
   def change
     create_table :menus do |t|
       t.integer :event_id

@@ -1,4 +1,4 @@
-class RenameMenuColumns < ActiveRecord::Migration[5.0]
+class RenameMenuColumns < ActiveRecord::Migration[5.1]
   def change
     rename_column :menus, :antipasti, :antipastis
     rename_column :menus, :pasta, :pastas

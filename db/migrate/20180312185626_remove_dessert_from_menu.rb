@@ -1,4 +1,4 @@
-class RemoveDessertFromMenu < ActiveRecord::Migration[5.0]
+class RemoveDessertFromMenu < ActiveRecord::Migration[5.1]
   def change
     remove_column :menus, :dessert
   end

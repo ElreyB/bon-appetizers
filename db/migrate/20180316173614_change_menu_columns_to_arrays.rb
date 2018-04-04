@@ -1,4 +1,4 @@
-class ChangeMenuColumnsToArrays < ActiveRecord::Migration[5.0]
+class ChangeMenuColumnsToArrays < ActiveRecord::Migration[5.1]
   def change
     remove_column :menus, :antipasti
     remove_column :menus, :pasta

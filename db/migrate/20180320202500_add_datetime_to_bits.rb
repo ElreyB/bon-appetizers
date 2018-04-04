@@ -1,4 +1,4 @@
-class AddDatetimeToBites < ActiveRecord::Migration[5.0]
+class AddDatetimeToBites < ActiveRecord::Migration[5.1]
   def change
     drop_table :bites
 
