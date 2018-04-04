@@ -1,8 +1,8 @@
 if ($('#main_details_<%=@main.id%>').children().length == 1 ){
   $('#main_details_<%=@main.id%>').empty();
   $('#main_details_<%=@main.id%>').html(`
-    <%= image_tag @main.image.url(:thumb) %>
-    <p><%=@main.description%></p>
+    <%= image_tag @main.image.url(:small) %>
+    <p class="item-description"><%=@main.description%></p>
   `);
 } else {
   $('#main_details_<%=@main.id%>').empty();

@@ -1,8 +1,8 @@
 if ($('#dessert_details_<%=@dessert.id%>').children().length == 1 ){
   $('#dessert_details_<%=@dessert.id%>').empty();
   $('#dessert_details_<%=@dessert.id%>').html(`
-    <%= image_tag @dessert.image.url(:thumb) %>
-    <p><%=@dessert.description%></p>
+    <%= image_tag @dessert.image.url(:small) %>
+    <p class="item-description"><%=@dessert.description%></p>
   `);
 } else {
   $('#dessert_details_<%=@dessert.id%>').empty();

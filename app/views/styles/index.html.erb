@@ -15,7 +15,7 @@
               <%= image_tag style.image.url(:medium) %>
             </div>
             <div class="caption">
-              <p class="no-line"><%= link_to style.name, style_path(style), id: "style_#{style.id}", remote: true %></p>
+              <p class="no-line item-p-link"><%= link_to style.name, style_path(style), id: "style_#{style.id}", remote: true %></p>
               <hr>
               <% if @user.admin %>
                 <p>

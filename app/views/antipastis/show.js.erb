@@ -1,7 +1,7 @@
 if ($('#antipasti_details_<%=@antipasti.id%>').children().length == 1 ){
   $('#antipasti_details_<%=@antipasti.id%>').empty();
   $('#antipasti_details_<%=@antipasti.id%>').html(`
-    <%= image_tag @antipasti.image.url(:small), class: "thumb-image" %>
+    <%= image_tag @antipasti.image.url(:small) %>
     <div>
       <p class="item-description"><%=@antipasti.description%></p>
     </div>

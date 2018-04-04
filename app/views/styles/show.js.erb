@@ -1,8 +1,8 @@
 if ($('#style_details_<%=@style.id%>').children().length == 1 ){
   $('#style_details_<%=@style.id%>').empty();
   $('#style_details_<%=@style.id%>').html(`
-    <%= image_tag @style.image.url(:thumb), class: "thumb-image" %>
-    <p><%=@style.description%></p>
+    <%= image_tag @style.image.url(:small) %>
+    <p class="item-description"><%=@style.description%></p>
   `);
 } else {
   $('#style_details_<%=@style.id%>').empty();
